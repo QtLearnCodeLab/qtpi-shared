@@ -1,5 +1,5 @@
-/*! p5bots.js v0.3.2 January 02, 2017 */
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.p5js = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+/*! p5bots.js v0.3.3 November 26, 2020 */
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.p5js = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(_dereq_,module,exports){
 /**
  * @module Basic constructors
  */
@@ -139,8 +139,9 @@ p5.board = function (port, type){
   // emit board object & listen for return
   utils.boardInit(port, type);
   utils.socket.on('board ready', function(data) {
-    console.log("Data ", data);
+    console.log('Example board ready board.analogPins ', data);
     utils.board.ready = true;
+    console.log('board ready board.eventQ ', utils.board.eventQ);
     utils.board.eventQ.forEach(function(el){
       el.func.apply(null, el.args);
     });
@@ -290,7 +291,9 @@ function led(pin) {
   pin.blink = function(length) {
 
     function ledBlink() {
-      utils.socket.emit('blink', { pin: [this.pin], length: length, id: blinkCounter });
+      utils.socket.emit('blink', {
+        pin: [this.pin], length: length, id: blinkCounter
+      });
     }
 
     utils.dispatch(ledBlink.bind(this));
@@ -313,7 +316,6 @@ function led(pin) {
 }
 
 module.exports = led;
-
 
 },{"./socket_utils.js":9}],4:[function(_dereq_,module,exports){
 var utils = _dereq_('./socket_utils.js');
@@ -465,8 +467,7 @@ function rgb(pin) {
     } else {
       this.color.writeArr = this.color.rgba;
     }
-    console.log("Write Array ", this.color.writeArr);
-    
+    console.log('Write Array ', this.color.writeArr);
     function rgbWrite () {
       utils.socket.emit('rgb write', {
         red: [this.redPin, this.color.writeArr[0]],
@@ -537,7 +538,7 @@ function rgb(pin) {
       utils.socket.emit('rgb blink cancel');
       var setTo = this.offSaved || this.color.writeArr || [top, top, top];
       this.write(setTo);
-      console.log("RGB ON",setTo);
+      console.log('RGB ON',setTo);
     }
 
     utils.dispatch(rgbOn.bind(this));
@@ -651,12 +652,25 @@ var serial = function() {
    * @param  {Object} config Config options, can use any listed
    *                         for node-serialport
    */
-  serialObj.connect = function (path, config) {
-    console.log("path", path, "config", config);
-    socket.emit('serial init', {
+  serialObj.connect = function (path, config, cb) {
+    console.log('p5bots.js connect method', 'path', path,
+      'config', config, 'callback', cb);
+    var data = {
       path: path,
+      callback: cb,
       config: config
-    });
+    };
+    socket.emit('serial init', data);
+    console.log('emitted data init', data);
+  };
+
+  serialObj.close = function (cb) {
+    console.log('p5bots.js close method', 'serial', serial, 'callback', cb);
+    var data = {
+      callback: cb
+    };
+    socket.emit('serial close', data);
+    console.log('emitted close event data init', data);
   };
 
   serialObj.read = function(cb) {
@@ -680,16 +694,17 @@ var serial = function() {
     });
   };
 
-  serialObj.list = function(cb) {
+  serialObj.list = function (cb) {
+    console.log('emits serial list');
     socket.emit('serial list');
     socket.on('serial list return', function(data) {
-      console.log(data);
-      cb && cb(data.data); // unwrap the data so the client doesn't need to
+      if (cb) {
+        console.log('callback called with data =====>');
+        cb(data.ports);
+      }
     });
   };
-
   return serialObj;
-
 };
 
 module.exports = serial;
@@ -762,6 +777,7 @@ var utils =  {
 
   boardInit: function(port, type) {
     // Board should always immediately fire
+    console.log('boardInit emitting board object');
     socket.emit('board object', {
       board: type,
       port: port
@@ -795,7 +811,7 @@ var utils =  {
     }
 
     pin.read = function (arg) {
-      console.log("pin.read", arg);
+      console.log('pin.read', arg);
       var fire = utils.socketGen(mode, 'read', pin);
       utils.dispatch(fire, arg);
       socket.on('return val' + pin.pin, setVal.bind(this));
@@ -808,11 +824,26 @@ var utils =  {
       return function nextWrite(arg) { fire(arg); };
     };
 
+    function sendValue (data) {
+      console.log('sendValue called');
+      this.sysexStringCb && this.sysexStringCb(data);
+    }
+    pin.sendSysex = function (arg, string_cb) {
+      if (string_cb) {
+        this.sysexStringCb = string_cb;
+      }
+      console.log('pin.sendSysex', arg);
+      var fire = utils.socketGen(mode, 'send_sysex', pin);
+      utils.dispatch(fire, arg);
+      socket.on('sysex string', sendValue.bind(this));
+      return function nextWriteSysex (arg) { fire(arg); };
+    };
+
     return pin;
   },
 
   dispatch: function (fn, arg) {
-    console.log("dispatch", fn,arg);
+    console.log('dispatch', fn,arg);
     this.board.ready ?
         fn(arg)
       : this.board.eventQ.push({func: fn, args: [arg]});
@@ -887,6 +918,7 @@ var utils =  {
       if (direction === 'read') {
         pin.readcb = arg;
       }
+      console.log('action emit ',direction, arg);
       socket.emit('action', {
         action: kind + titleCase(direction),
         pin: pin.pin,
@@ -925,6 +957,7 @@ var special = {
 };
 
 module.exports = special;
+
 },{"./button.js":2,"./led.js":3,"./motor.js":4,"./piezo.js":5,"./rgb.js":6,"./serial.js":7,"./servo.js":8,"./temp.js":11,"./variable_resistor.js":12}],11:[function(_dereq_,module,exports){
 var utils = _dereq_('./socket_utils.js');
 
