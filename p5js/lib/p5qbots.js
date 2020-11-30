@@ -1,4 +1,4 @@
-/*! p5qbots.js v1.0.0 November 29, 2020 */
+/*! p5qbots.js v1.0.0 November 30, 2020 */
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.p5js = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(_dereq_,module,exports){
 /**
  * @module Basic constructors
@@ -151,7 +151,7 @@ Board.prototype.ports = function () {
  * @return {Object}     Reference to the object as stored in utils.
  *
  */
-p5.board = function (port, type){
+p5.board = function (port, type, connectcb, disconnectcb){
   utils.board = new Board(port, type);
 
   // emit board object & listen for return
@@ -159,6 +159,7 @@ p5.board = function (port, type){
   utils.socket.on('board ready', function(data) {
     console.log(' board ready board.analogPins ', data);
     utils.board.ready = true;
+    connectcb && connectcb();
     console.log('board ready board.eventQ ', utils.board.eventQ);
     utils.board.eventQ.forEach(function(el){
       el.func.apply(null, el.args);
@@ -168,6 +169,7 @@ p5.board = function (port, type){
   utils.socket.on('board disconnect', function () {
     console.log(' got board disconnect event from server ');
     utils.board.ready = false;
+    disconnectcb && disconnectcb();
   });
 
   return utils.board;
