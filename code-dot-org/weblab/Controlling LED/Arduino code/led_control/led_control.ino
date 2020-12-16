@@ -1,24 +1,3 @@
-void setup()
-{
-  pinMode(13, OUTPUT);
-  Serial.begin(115200);
-  while (!Serial);
-  Serial.println("Input 1 to Turn LED on and 2 to off");
-}
-
-void loop() {
-  if (Serial.available())
-  {
-    int state = Serial.parseInt();
-    if (state == 1)
-    {
-      digitalWrite(13, HIGH);
-      Serial.println("Command completed LED turned ON");
-    }
-    if (state == 2)
-    {
-      digitalWrite(13, LOW);
-      Serial.println("Command completed LED turned OFF");
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6c80e12771ea424a8e2b260d5422cf67d8bc3b57ad3229650092657edd49ea42
+size 488

@@ -1,9 +1,3 @@
-
-License Information
--------------------
-
-The hardware is released under [Creative Commons Share-alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/). 
-
-All other code is open source so please feel free to do anything you want with it; you buy me a beer if you use this and we meet someday ([Beerware license](http://en.wikipedia.org/wiki/Beerware)).
-
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:fc9bdec00d8ed3c7088821eacbbc40321741ec354ecd8ce2566bf09244989040
+size 359
