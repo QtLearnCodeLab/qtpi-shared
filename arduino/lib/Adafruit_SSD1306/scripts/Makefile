@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4d4c0185695c46324050c93dcb3bf7e93bd67b7e40d509835dbb1dbf1842db2
-size 180
+
+PY=python3
+
+splash.h: make_splash.py splash1.png splash2.png
+	${PY} make_splash.py splash1.png splash1 >$@
+	${PY} make_splash.py splash2.png splash2 >>$@
+
+clean:
+	rm -f splash.h
+
