@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.socket.io/socket.io-3.0.3.min.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/p5js/lib/dec10/p5.min.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/p5js/lib/dec10/p5qbots.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2.0.2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.0.2/dist/components.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.0.2/dist/utilities.min.css" rel="stylesheet">
+</head>
+
+<body> 
+    <div class="bg-black text-white">
+        <h1
+            class="bg-gradient-to-r from-green-400 to-blue-500 title-font text-4xl font-extrabold leading-10 tracking-tight text-center sm:text-5xl sm:leading-none md:text-6xl text-white">
+            Qt TEMPERATURE
+        </h1>
+        <iframe src="https://codesandbox.io/embed/qt-temperature-ju4zx?fontsize=14&hidenavigation=1&theme=dark"
+            style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Qt-Temperature"
+            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts">
+        </iframe>
+        <div class="bg-gradient-to-r from-blue-500 to-green-400 grid grid-cols-3 gap-4">
+            <div class="group border-4 rounded group hover:bg-green-400 hover:shadow-lg hover:border-transparent text-justify">
+                <p class="text-center items-center group-hover:text-gray-900">Temperature<br><br>
+                    createElement<br>
+                    <i>const tempsensor = document.createElement("qt-temperature")</i><br><br>
+                    Javascript methods<br><br>
+                    tempsensor.(state);<br>
+                    Enable temperature reading: <i>tempsensor.temp(true)</i><br>
+                    Disable temperature reading: <i>tempsensor.temp(false)</i><br>  
+                </p>
+            </div>
+        
+            <div class="grid overflow-hidden grid-cols-2 grid-rows-2 gap-2 border-4">
+                <div class="box row-span-2 flex justify-center items-center px-5">
+                    <img src="../images/temperature.png" alt="Temperature image">
+                </div>
+                <div class="box flex justify-center items-center">
+                    <div class="h-28 w-32 relative cursor-pointer justify-center">
+                        <div class="absolute inset-0 bg-white opacity-25 rounded-lg shadow-2xl"></div>
+                        <div class="absolute inset-0 transform hover:scale-125 motion-reduce:transform-none ...">
+                            <a href="https://openedx.lms.qtlearn.in/courses/course-v1:QtLearn+RKC_01+2020/course/#block-v1:QtLearn+RKC_01+2020+type@sequential+block@0696ec1e93454807acb607c44662ced6"
+                                target="_blank">
+                                <!--<img alt="LED On/Off" class="block h-full w-full rounded-lg shadow-2xl"
+                                                src="../images/led_on_off.png">-->
+                                <div class="h-full w-full bg-white rounded-lg shadow-2xl text-black text-center py-8">
+                                    Temperature wizard</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box flex justify-center items-center">
+                    <div class="h-28 w-32 relative cursor-pointer justify-center">
+                        <div class="absolute inset-0 bg-white opacity-25 rounded-lg shadow-2xl"></div>
+                        <div class="absolute inset-0 transform hover:scale-125 motion-reduce:transform-none ...">
+                            <a href="https://openedx.lms.qtlearn.in/courses/course-v1:QtLearn+RKC_01+2020/course/#block-v1:QtLearn+RKC_01+2020+type@chapter+block@1a0fa3bc617540a4850595ae15f1909e"
+                                target="_blank">
+                                <!--<img alt="Home automation" class="block h-full w-full rounded-lg shadow-2xl"
+                                                src="../images/home_automation.png">-->
+                                <div class="h-full w-full bg-white rounded-lg shadow-2xl text-black text-center py-8">
+                                    Temperature plotting</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group border-4 rounded group hover:bg-blue-500 hover:shadow-lg hover:border-transparent">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/NlqqwgK7jAo" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    
+</body> 
+
+</html>
