@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.socket.io/socket.io-3.0.3.min.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/p5js/lib/dec10/p5.min.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/p5js/lib/dec10/p5qbots.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2.0.2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.0.2/dist/components.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.0.2/dist/utilities.min.css" rel="stylesheet">
+</head>
+
+<body> 
+    <div class="bg-black text-white">
+        <h1
+            class=" title-font mb-2 text-4xl font-extrabold leading-10 tracking-tight text-center sm:text-5xl sm:leading-none md:text-6xl text-white">
+            LED
+        </h1>
+        <iframe src="https://codesandbox.io/embed/quirky-cartwright-el66z?fontsize=14&hidenavigation=1&theme=dark"
+            style="width:100%; height:600px; border:0; border-radius: 4px; overflow:hidden;" title="quirky-cartwright-el66z"
+            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts">
+        </iframe>
+        <div class="grid grid-cols-3 gap-4 bg-black">
+            <p class="text-justify">Light Emitting Diode.
+                An LED is an electronic device that emmits light when an electric current is passed through it. LED's are
+                commonly
+                used for indicator lights (Such as power on/off lights) on
+                electronic devices. They also have sever al other applications, including electronic signs, clock displays and
+                flashlights.<br>
+                <i>Turn on led</i>
+                led.led("on")<br>
+                <i>Turn off led</i>
+                led.led("off")<br>
+                <i>Blinking led</i>
+                led.led("blink")<br>
+            </p>
+            <img src="../images/led.png" alt="LED image" class="px-8">
+            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/rMi0bu1IiAQ" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    
+</body> 
+
+</html>
