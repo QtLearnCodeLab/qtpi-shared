@@ -12,43 +12,71 @@
 </head>
 
 <body> 
-    <div class="text-center sm:text-left">
-        <h1
-            class=" bg-gradient-to-r from-yellow-400 via-red-500 to-green-300 ... title-font  text-center font-bold text-5xl pt-6 pb-6 text-white">
+
+    <body>
+        <div class="bg-black text-white">
+            <h1
+            class=" bg-gradient-to-r from-green-400 to-blue-500 ... title-font  text-center font-bold text-5xl pt-6 pb-6 text-white">
             QtLED with Google Assistant
         </h1>
-        <iframe src="https://codesandbox.io/embed/nervous-dream-uit84?fontsize=14&hidenavigation=1&theme=light"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="nervous-dream-uit84"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
-
-
-        <div class="bg-gradient-to-r from-green-400 via-red-500 to-yellow-400 ... flex flex-wrap text-center">
-            <div class="p-8">
-                <iframe class= "border-yellow-500 border-8 rounded-lg ..." allowtransparency="true" width="600px" height="400px" src="https://www.youtube.com/embed/WFRITQ0CKow" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            </iframe>
-            </div>
-            <div>
-                <p class="text-justify font-bold pl-6 pt-8 text-3xl">LED is Light Emiting Diode
-                    <a class="text-blue-800 hover:underline" href="https://en.wikipedia.org/wiki/Light-emitting_diode" target="_blank">(Learn More...)</a>
-                    <br>
-                </p>
-                <div class = "flex">
-                    <img style="width: 50%; height: 100%;" src="../images/led.png" alt="LED image" >
-                    <div class = "pt-16 list-outside md:list-inside text-lg font-bold">
-                        <ul >
-                            <li>Voice Controlled LED On</li><br>
-                            <li>Voice Controlled LED Off</li><br>
-                            <li>Voice Controlled LED Blink</li>
-                        </ul>
-                        </div>
-            </div>
-            </div>
-        </div>
-        </div>
+            <iframe src="https://codesandbox.io/embed/affectionate-easley-7dl3w?fontsize=14&hidenavigation=1&theme=dark"
+            style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+            title="affectionate-easley-7dl3w"
+            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+          ></iframe>
+       
+       
+            <div class="bg-gradient-to-r from-blue-500 to-green-400 grid grid-cols-3 gap-4">
+                <div
+                    class="group border-4 rounded group hover:bg-green-400 hover:shadow-lg hover:border-transparent text-justify">
+                    <p class="text-center group-hover:text-gray-900">Light Emitting Diode.<br><br> createElement
+                        <br>
+                        <i>const led = document.createElement("qt-led")</i><br><br> Javascript methods<br><br> Turning on LED: <i>led.led("on")</i><br> Turning off LED: <i>led.led("off")</i><br> Blinking LED: <i>led.led("blink")</i>
+                    </p>
+                </div>
     
+                <div class="grid overflow-hidden grid-cols-2 grid-rows-2 gap-2 border-4 hover:bg-yellow-300">
+                    <div class="box row-span-2 flex justify-center items-center px-5">
+                        <img src="../images/led2.png" alt="RGB LED image">
+                    </div>
+                    <div class="box flex justify-center items-center">
+                        <div class="h-32 w-36 relative cursor-pointer ">
+                            <div class="absolute inset-0 bg-white opacity-25 rounded-lg shadow-2xl"></div>
+                            <div class="absolute inset-0 transform hover:scale-125 motion-reduce:transform-none ...">
+                                <a href="https://openedx.lms.qtlearn.in/courses/course-v1:QtLearn+PE_101+2021_PE/course/"
+                                    target="_blank">
+                                    <!--<img alt="LED On/Off" class="block h-full w-full rounded-lg shadow-2xl"
+                                        src="../images/led_on_off.png">-->
+                                    <div class="h-full w-full bg-white rounded-lg shadow-2xl text-black text-center py-12">View Course</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box flex justify-center items-center">
+                        <div class="h-32 w-36 relative cursor-pointer justify-center">
+                            <div class="absolute inset-0 bg-white opacity-25 rounded-lg shadow-2xl"></div>
+                            <div class="absolute inset-0 transform hover:scale-125 motion-reduce:transform-none ...">
+                                <a href="https://blog.qtlearn.in/iot/"
+                                    target="_blank">
+                                    <!--<img alt="Home automation" class="block h-full w-full rounded-lg shadow-2xl"
+                                        src="../images/home_automation.png">-->
+                                    <div class="h-full w-full bg-white rounded-lg shadow-2xl text-black text-center py-12">Read More</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="group border-4 rounded group hover:bg-blue-500 hover:shadow-lg hover:border-transparent">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/WFRITQ0CKow" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </body>
 </body> 
+
 </html>
