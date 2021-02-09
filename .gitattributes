@@ -16,10 +16,6 @@ tools/p5qbot/linux/p5.qbot-linux-x64-dec10.tar.bz2 filter=lfs diff=lfs merge=lfs
 *.fzpz filter=lfs diff=lfs merge=lfs -text
 *.doc filter=lfs diff=lfs merge=lfs -text
 *.pdf filter=lfs diff=lfs merge=lfs -text
-*.json filter=lfs diff=lfs merge=lfs -text
-*.html filter=lfs diff=lfs merge=lfs -text
-*.js filter=lfs diff=lfs merge=lfs -text
-*.css filter=lfs diff=lfs merge=lfs -text
 *.eep filter=lfs diff=lfs merge=lfs -text
 *.elf filter=lfs diff=lfs merge=lfs -text
 *.hex filter=lfs diff=lfs merge=lfs -text
