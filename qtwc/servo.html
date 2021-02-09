@@ -13,36 +13,67 @@
 
 <body> 
     <div class="bg-black text-white">
-        <h1
-            class=" title-font mb-2 text-4xl font-extrabold leading-10 tracking-tight text-center sm:text-5xl sm:leading-none md:text-6xl text-white">
-            SERVO
+        <h1 class="bg-gradient-to-r from-green-400 to-blue-500 title-font text-4xl font-extrabold leading-10 tracking-tight text-center sm:text-5xl sm:leading-none md:text-6xl text-white">
+            Qt SERVO
         </h1>
-        <iframe src="https://codesandbox.io/embed/quirky-cartwright-el66z?fontsize=14&hidenavigation=1&theme=dark"
-            style="width:100%; height:600px; border:0; border-radius: 4px; overflow:hidden;" title="quirky-cartwright-el66z"
+        <iframe src="https://codesandbox.io/embed/qt-servo-h6tie?fontsize=14&hidenavigation=1&theme=dark"
+            style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Qt-Servo"
             allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
             sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts">
         </iframe>
-        <div class="grid grid-cols-3 gap-4 bg-black">
-            <p class="text-justify">
-                A servo motor is a closed-loop system that uses position feedback to control its motion and final position.
-                • Servo motor works on the PWM ( Pulse Width Modulation ) principle, which means its angle of rotation is controlled by
-                the duration of the pulse applied to its control PIN. Basically servo motor is made up of DC motor which is controlled
-                by a h variable resistor (potentiometer) and some gears.
-                • Servo motors can be of different types on the basis of their applications. The most important amongst them is the AC
-                servo motor, DC servo motor, brushless DC servo motor, positional rotation servo motor, continuous rotation servo motor,
-                and linear servo motor.
-                • A typical servo motor comprises three wires namely- power, control, and ground. The shape and size of these motors
-                depend on their applications.<br>
-                <i>Rotate servo</i>
-                servo.sweep(init_pos, final_pos)<br>
-            </p>
-            <img src="../images/servo.png" alt="Servo image" class="px-8">
-            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/ZgcaEBC8ra4" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            </iframe>
+        <div class="bg-gradient-to-r from-blue-500 to-green-400 grid grid-cols-3 gap-4">
+            <div class="group border-4 rounded group hover:bg-green-400 hover:shadow-lg hover:border-transparent text-justify">
+                <p class="text-center items-center group-hover:text-gray-900">Servo<br><br>
+                    createElement<br>
+                    <i>const servo = document.createElement("qt-servo")</i><br><br>
+                    Javascript methods<br><br>
+                    <i>servo.sweep(start position, end position)</i><br>
+                    Sweep servo from 0 to 180: <i>servo.sweep(0, 180)</i><br>
+                    sweep servo from 180 to 0: <i>servo.sweep(180, 0)</i><br>
+                </p>
+            </div>
+        
+            <div class="grid overflow-hidden grid-cols-2 grid-rows-2 gap-2 border-4">
+                <div class="box row-span-2 flex justify-center items-center px-5">
+                    <img src="../images/servo_motor.png" alt="Buzzer image">
+                </div>
+                <div class="box flex justify-center items-center">
+                    <div class="h-32 w-36 relative cursor-pointer justify-center">
+                        <div class="absolute inset-0 bg-white opacity-25 rounded-lg shadow-2xl"></div>
+                        <div class="absolute inset-0 transform hover:scale-125 motion-reduce:transform-none ...">
+                            <a href="https://openedx.lms.qtlearn.in/courses/course-v1:QtLearn+RKC_01+2020/course/#block-v1:QtLearn+RKC_01+2020+type@sequential+block@0696ec1e93454807acb607c44662ced6"
+                                target="_blank">
+                                <!--<img alt="LED On/Off" class="block h-full w-full rounded-lg shadow-2xl"
+                                            src="../images/led_on_off.png">-->
+                                <div class="h-full w-full bg-white rounded-lg shadow-2xl text-black text-center py-12">Home Automation</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box flex justify-center items-center">
+                    <div class="h-32 w-36 relative cursor-pointer justify-center">
+                        <div class="absolute inset-0 bg-white opacity-25 rounded-lg shadow-2xl"></div>
+                        <div class="absolute inset-0 transform hover:scale-125 motion-reduce:transform-none ...">
+                            <a href="https://openedx.lms.qtlearn.in/courses/course-v1:QtLearn+RKC_01+2020/course/#block-v1:QtLearn+RKC_01+2020+type@chapter+block@1a0fa3bc617540a4850595ae15f1909e"
+                                target="_blank">
+                                <!--<img alt="Home automation" class="block h-full w-full rounded-lg shadow-2xl"
+                                            src="../images/home_automation.png">-->
+                                <div class="h-full w-full bg-white rounded-lg shadow-2xl text-black text-center py-12">Parking slot availability</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group border-4 rounded group hover:bg-blue-500 hover:shadow-lg hover:border-transparent">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/ZgcaEBC8ra4" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        
         </div>
     </div>
-    
+
 </body> 
 
 </html>
