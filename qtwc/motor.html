@@ -14,31 +14,67 @@
 <body> 
     <div class="bg-black text-white">
         <h1
-            class=" title-font mb-2 text-4xl font-extrabold leading-10 tracking-tight text-center sm:text-5xl sm:leading-none md:text-6xl text-white">
-            MOTOR
+            class="bg-gradient-to-r from-green-400 to-blue-500 title-font text-4xl font-extrabold leading-10 tracking-tight text-center sm:text-5xl sm:leading-none md:text-6xl text-white">
+            Qt MOTOR
         </h1>
+        
         <iframe src="https://codesandbox.io/embed/heuristic-engelbart-0n4tz?fontsize=14&hidenavigation=1&theme=dark"
-            style="width:100%; height:600px; border:0; border-radius: 4px; overflow:hidden;" title="heuristic-engelbart-0n4tz"
+            style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="heuristic-engelbart-0n4tz"
             allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-        <div class="grid grid-cols-3 gap-4 bg-black">
-            <p class="text-justify">
-                Direct Current Motors are electromechanical devices that use the interaction of magnetic fields and conductors to
-                convert the
-                electric energy into rotary mechanical energy.
-                The working of a DC motor is based on the principal that when a conductor is placed in a magnetic fiels, the conductor
-                experiences a mechanical force.
-                DC motor range varies from 0 to 255.
-                Electric DC Motors are actuators that produce a continuous angular rotation that can be used to rotate pumps, fans,
-                compressors, wheels, etc.
-                DC motor rotates in a clockwise and anticlockwise direction.<br>
-                <i>Run Motor</i>
-                motor.run(direction, speed)<br>
-            </p>
-            <img src="../images/motor.png" alt="Motor image" class="px-8">
-            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/ZgcaEBC8ra4" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            </iframe>
+            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts">
+        </iframe>
+        <div class="bg-gradient-to-r from-blue-500 to-green-400 grid grid-cols-3 gap-4">
+            <div class="group border-4 rounded group hover:bg-green-400 hover:shadow-lg hover:border-transparent text-justify">
+                <p class="text-center items-center group-hover:text-gray-900">DC Motor.<br><br>
+                    createElement<br>
+                    <i>const motor = document.createElement("qt-motor")</i><br><br>
+                    Javascript methods<br><br>
+                    motor.run(direction, speed);<br>
+                    Run motor in clockwise: <i>motor.run("clockwise", 255)</i><br>
+                    Run motor in anti-clockwise: <i>motor.run("anticlockwise", 255)</i><br>
+                    motor stop: <i>motor.run("clockwise", 0)</i>
+                </p>
+            </div>
+        
+            <div class="grid overflow-hidden grid-cols-2 grid-rows-2 gap-2 border-4">
+                <div class="box row-span-2 flex justify-center items-center px-5">
+                    <img src="../images/DC_motor.png" alt="RGB LED image">
+                </div>
+                <div class="box flex justify-center items-center">
+                    <div class="h-32 w-36 relative cursor-pointer justify-center">
+                        <div class="absolute inset-0 bg-white opacity-25 rounded-lg shadow-2xl"></div>
+                        <div class="absolute inset-0 transform hover:scale-125 motion-reduce:transform-none ...">
+                            <a href="https://openedx.lms.qtlearn.in/courses/course-v1:QtLearn+RKC_01+2020/course/#block-v1:QtLearn+RKC_01+2020+type@sequential+block@0696ec1e93454807acb607c44662ced6"
+                                target="_blank">
+                                <!--<img alt="LED On/Off" class="block h-full w-full rounded-lg shadow-2xl"
+                                                src="../images/led_on_off.png">-->
+                                <div class="h-full w-full bg-white rounded-lg shadow-2xl text-black text-center py-12">
+                                    RC Car</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box flex justify-center items-center">
+                    <div class="h-32 w-36 relative cursor-pointer justify-center">
+                        <div class="absolute inset-0 bg-white opacity-25 rounded-lg shadow-2xl"></div>
+                        <div class="absolute inset-0 transform hover:scale-125 motion-reduce:transform-none ...">
+                            <a href="https://openedx.lms.qtlearn.in/courses/course-v1:QtLearn+RKC_01+2020/course/#block-v1:QtLearn+RKC_01+2020+type@chapter+block@1a0fa3bc617540a4850595ae15f1909e"
+                                target="_blank">
+                                <!--<img alt="Home automation" class="block h-full w-full rounded-lg shadow-2xl"
+                                                src="../images/home_automation.png">-->
+                                <div class="h-full w-full bg-white rounded-lg shadow-2xl text-black text-center py-12">
+                                    Home Automation</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group border-4 rounded group hover:bg-blue-500 hover:shadow-lg hover:border-transparent">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/Q0Ph7tQlcoY" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </div>
     
