@@ -137,7 +137,27 @@
             </a>
         </div>
     </div>
-    
+    <script>!(function () {
+        let e = document.createElement("script"),
+          t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+          "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+          (e.async = !0),
+          (e.onload = () => {
+            window. WebChat.default({
+              selector: "#webchat",
+              initPayload: "/get_started",
+              customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+              socketUrl: "https://qbot.qtlearn.in",
+              socketPath: "/socket.io/",
+              title: "QBot",
+              subtitle: "QtPi",
+              params: {"storage": "session"} // can be set to "local"  or "session". details in storage section.
+           });
+          }),
+          t.insertBefore(e, t.firstChild);
+      })();
+      </script>
 </body>
 
 </html>
