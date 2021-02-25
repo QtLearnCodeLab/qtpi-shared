@@ -12,6 +12,70 @@
 </head>
 
 <body>
+    <style>
+        * {box-sizing: border-box}
+            body {font-family: Verdana, sans-serif; margin:0}
+            img {vertical-align: middle;}
+
+        /* Next & previous buttons */
+        .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+        /* Fading animation */
+        .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+
+        @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+    </style>
     <div class="bg-black text-white">
         <div class="h-14 bg-gradient-to-r from-green-400  to-yellow-400">
             <h1 class=" title-font mb-2 text-3xl font-extrabold leading-10 tracking-tight text-center sm:text-3xl sm:leading-none md:text-5xl text-white">
@@ -21,12 +85,32 @@
         <iframe src="https://codesandbox.io/embed/quirky-cartwright-el66z?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="QtLED" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
             sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts">
         </iframe>
-        <div class="bg-gradient-to-r from-green-400 via-blue to-yellow-500 grid grid-cols-3 gap-4">
-            <div class="group border-4 rounded group hover:bg-yellow-300 hover:shadow-lg hover:border-transparent text-justify">
-                <p class="text-center group-hover:text-gray-900">Light Emitting Diode.<br><br> createElement
-                    <br>
-                    <i>const led = document.createElement("qt-led")</i><br><br> Javascript methods<br><br> Turning on LED: <i>led.led("on")</i><br> Turning off LED: <i>led.led("off")</i><br> Blinking LED: <i>led.led("blink")</i>
-                </p>
+        <div class="bg-gradient-to-red from-green-400 via-blue to-yellow-500 grid grid-cols-3 gap-4 justify-center">
+            <div class="border-4 rounded group hover:bg-yellow-300 hover:shadow-lg hover:border-transparent text-justify justify-center">
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>  
+                <div class="slideshow-container relative w-auto h-auto border-2 rounded " style="height: 90%;">
+                    <div class="mySlides fade w-full h-full bg-pink-500 text-center text-white flex items-center justify-center">
+                        Creating an LED element <br> document.getElementById("led1");
+                    </div>
+                    <div class="mySlides fade w-full h-full bg-pink-400 text-white text-center flex items-center justify-center">
+                        turning on LED <br> <i>.led("on")</i>
+                        <br> 
+                        Turning off LED <br>
+                        <i>.led("off")</i>
+                        <br>
+                        Blinking an LED <br>
+                        <i>.led("blink")</i>
+                    </div>
+                    <div class="mySlides fade w-full h-full bg-pink-400 text-white text-center flex items-center justify-center">
+                        Methods <br> fill, width, height, rotate
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
             </div>
             <div class="group border-4 rounded group hover:bg-blue-500 hover:shadow-lg hover:border-transparent">
                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/4krBQJT6tl4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -61,6 +145,35 @@
 
         </div>
     </div>
+    <script>
+        var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+    </script>
+
     <script>!(function () {
         let e = document.createElement("script"),
           t = document.head || document.getElementsByTagName("head")[0];
