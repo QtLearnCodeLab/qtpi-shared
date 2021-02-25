@@ -1,0 +1,16 @@
+html,
+body {
+  background-color: gray;
+  background-repeat: no-repeat;
+}
+div > #myled {
+  position: absolute;
+  left: 280px;
+  top: 10px;
+}
+
+div > #ldr1 {
+  position: absolute;
+  left: 400px;
+  top: 100px;
+}
