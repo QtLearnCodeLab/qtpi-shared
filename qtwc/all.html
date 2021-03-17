@@ -8,8 +8,8 @@
     <title>All Webcomponents</title>
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
     <script src="https://cdn.socket.io/socket.io-3.0.3.min.js"></script>
-    <script src="https://qtlearncodelab.github.io/qtpi-shared/p5js/lib/dec10/p5.min.js"></script>
-    <script src="https://qtlearncodelab.github.io/qtpi-shared/p5js/lib/dec10/p5qbots.js"></script>
+    <script defer src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/v1.0.1/p5.min.js"></script>
+     <script defer src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/v1.0.2/qad.min.js"></script> 
     <link href="https://unpkg.com/tailwindcss@^2.0.2/dist/tailwind.min.css" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -30,97 +30,104 @@
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
             <a href="board.html" target="_blank">
-                <qt-board></qt-board>
+                <qt-board board-name="veda-1" board-type="veda"></qt-board>
             </a>
         </div>
 
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 space-y-6">
             <!-- Column Content -->
             <a href="led.html" target="_blank">
-                <qt-led id=" led1 " pin="10 " state="off " blink-interval="1000 " board-name="veda-1 " simulation="true "></qt-led>
+                <qt-led id=" led1" pin="10" state="off " blink-interval="1000 " board-name="veda-1" simulation="true "></qt-led>
             </a>
         </div>
 
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
             <a href="buzzer.html" target="_blank">
-                <qt-buzzer id="buzzer1 " pin="3 " state="off " buzz-interval="1000 " board-name="veda-1 "></qt-buzzer>
+                <qt-buzzer id="buzzer1" pin="3 " state="off " buzz-interval="1000 " board-name="veda-1"></qt-buzzer>
             </a>
         </div>
 
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
             <a href="ldr.html" target="_blank">
-                <qt-ldr id="ldr1 " pin="2 " state="off " board-name="veda-1 "></qt-ldr>
+                <qt-ldr id="ldr1" pin="2 " state="off " board-name="veda-1"></qt-ldr>
             </a>
         </div>
 
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
             <a href="ir.html" target="_blank">
-                <qt-ir id="ir1 " pin="10 " state="off " board-name="veda-1 "></qt-ir>
+                <qt-ir id="ir1" pin="10" state="off " board-name="veda-1"></qt-ir>
             </a>
         </div>
 
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
             <a href="limitswitch.html" target="_blank">
-                <qt-limitswitch id="ls1 " pin="10 " state="off " board-name="veda-1 "></qt-limitswitch>
+                <qt-limitswitch id="ls1" pin="10" state="off " board-name="veda-1"></qt-limitswitch>
             </a>
         </div>
 
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <a href="temperature.html" target="_blank">
-                <qt-temperature id="temp1 " pin="10 " state="off " board-name="veda-1 "></qt-temperature>
+                <qt-temperature id="temp1" pin="10" state="off " board-name="veda-1"></qt-temperature>
             </a>
         </div>
 
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
             <a href="ultrasonic.html" target="_blank">
-                <qt-ultrasonic id="us1 " pin="9 " state="off " board-name="veda-1 "></qt-ultrasonic>
+                <qt-ultrasonic id="us1" pin="9 " state="off " board-name="veda-1"></qt-ultrasonic>
             </a>
         </div>
 
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
             <a href="rgb.html" target="_blank" target="_blank">
-                <qt-rgb id="rgbled1 " port="3 " board-type="veda " state="on " blink-interval="1000 " board-name="veda-1 "></qt-rgb>
+                <qt-rgb id="rgbled1 " port="3 " board-type="veda " state="on " blink-interval="1000 " board-name="veda-1"></qt-rgb>
             </a>
         </div>
 
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
             <a href="motor.html" target="_blank">
-                <qt-motor id="motor1 " pin="1 " state="off " direction="clockwise "></qt-motor>
+                <qt-motor id="motor1" pin="1 " state="off " direction="clockwise "></qt-motor>
             </a>
         </div>
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
             <a href="servo.html" target="_blank">
-                <qt-servo id="servo1 " pin="10 " board-name="veda-1 "></qt-servo>
+                <qt-servo id="servo1" pin="10" board-name="veda-1"></qt-servo>
             </a>
         </div>
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
             <a href="gas.html" target="_blank">
-                <qt-gas id="gas1 " pin="10 " board-name="veda-1 "></qt-gas>
+                <qt-gas id="gas1" pin="10" board-name="veda-1"></qt-gas>
             </a>
         </div>
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
-            <qt-argb id="argb1 " pin="10 " state="off " board-name="veda-1 "></qt-argb>
+            <qt-argb id="argb1" pin="10" state="off " board-name="veda-1"></qt-argb>
 
         </div>
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
-            <qt-humidity id="humidity1 " pin="10 " board-name="veda-1 "></qt-humidity>
+            <qt-humidity id="humidity1" pin="10" board-name="veda-1"></qt-humidity>
 
         </div>
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
-            <qt-mpu id="gas1 " pin="10 " board-name="veda-1 "></qt-mpu>
+            <a href="mpu.html" target="_blank">
+                <qt-mpu id="mpu1" pin="10" board-name="veda-1"></qt-mpu>
+            </a>
 
+        </div>
+        <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
+            <a href="apds.html" target="_blank">
+                <qt-apds id="apds1" ccs="true"  ></qt-apds>
+            </a>
         </div>
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
@@ -136,6 +143,8 @@
                 <qt-gv id='gvled1' ccs="true"></qt-gv>
             </a>
         </div>
+        
+       
     </div>
     <script>!(function () {
         let e = document.createElement("script"),
