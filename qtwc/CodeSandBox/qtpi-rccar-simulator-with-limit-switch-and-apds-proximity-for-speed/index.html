@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>QtPi RC Car Sim</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #renderCanvas {
+        width: 100%;
+        height: 80%;
+        touch-action: none;
+      }
+    </style>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/releases/latest/p5.min.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/releases/latest/socket.io.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/releases/latest/qad.min.js"></script>
+    <script
+      defer
+      src="https://qtlearncodelab.github.io/qtpi-shared/qtwc/qtwc.js"
+    ></script>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    <script
+      defer
+      async
+      src="./RCcarSim.js"
+      crossorigin="anonymous"
+      type="module"
+    ></script>
+    <script
+      defer
+      async
+      src="./sketch.js"
+      crossorigin="anonymous"
+      type="module"
+    ></script>
+  </head>
+  <body>
+    <input
+      type="range"
+      min="0"
+      max="25"
+      value="5"
+      class="slider"
+      id="mySpeed"
+    />
+    <canvas id="renderCanvas" touch-action="none"></canvas>
+    <!-- touch-action="none" for best results from PEP -->
+    <div>
+      <qt-board
+        id="board"
+        ccs="true"
+        board-name="veda-1"
+        board-type="veda"
+        com-port="COM6"
+      ></qt-board>
+      <qt-limitswitch
+        id="leftSwitch"
+        port="3"
+        onData="gotDataLeft"
+      ></qt-limitswitch>
+      <qt-limitswitch id="rightSwitch" onData="gotDataRight"></qt-limitswitch>
+      <qt-apds id="speedController" onData="gotDataSpeed"></qt-apds>
+    </div>
+  </body>
+</html>

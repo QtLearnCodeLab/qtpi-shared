@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QtPi Webcomponents</title>
+    <meta charset="UTF-8" />
+    <script
+      defer
+      src="https://qtlearncodelab.github.io/qtpi-shared/qtwc/qtwc.js"
+    ></script>
+    <script src="https://cdn.socket.io/socket.io-3.0.3.min.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/p5js/lib/dec10/p5.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/p5js/lib/dec10/p5qbots.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script defer src="src/index.js"></script>
+  </head>
+  <body>
+    <qt-alexa
+      id="alexaled1"
+      ccs="false"
+      url="https://io.adafruit.com/api/v2/Dnesh/feeds/led"
+    ></qt-alexa>
+
+    <qt-led
+      id="led1"
+      pin="10"
+      board-type="VEDA"
+      board-name="veda-1"
+      ccs="false"
+      width="50"
+      rotate="180"
+    ></qt-led>
+    <qt-board
+      id="board"
+      ccs="true"
+      board-name="veda-1"
+      board-type="veda"
+      com-port="COM14"
+      state="on"
+    ></qt-board>
+  </body>
+</html>

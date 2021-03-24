@@ -1,0 +1,14 @@
+body {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/qtlearn-fe260.appspot.com/o/Qt-Gallery%2Fsimple-house-design9.jpg?alt=media&token=523a324f-c70c-4eeb-a9d2-a26c8acaef97");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+}
+
+#led1 {
+  position: absolute;
+  left: 30%;
+}
+#board {
+  position: absolute;
+  top: 60%;
+}
