@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mixamo</title>
+    <link rel="stylesheet" href="./src/css/core.css" />
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/releases/latest/p5.min.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/releases/latest/socket.io.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/releases/latest/qad.min.js"></script>
+    <script
+      defer
+      src="https://qtlearncodelab.github.io/qtpi-shared/qtwc/qtwc.js"
+    ></script>
+    <!-- Babylon.js v4.1.0-beta.27 -->
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylon.glTFFileLoader.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
+    <script type="module" src="sketch.js"></script>
+  </head>
+  <body>
+    <canvas class="renderCanvas"></canvas>
+    <qt-board id="board1" board-type="veda" board-name="veda1"></qt-board>
+    <qt-limitswitch id="punch" onData="gotData"></qt-limitswitch>
+  </body>
+</html>
