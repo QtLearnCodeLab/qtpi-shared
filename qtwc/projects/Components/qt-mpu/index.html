@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QT-MPU</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/releases/latest/p5.min.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/releases/latest/socket.io.js"></script>
+    <script src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/releases/latest/qad.min.js"></script>
+    <script
+      defer
+      src="https://qtlearncodelab.github.io/qtpi-shared/qtwc/js/releases/latest/qtwc.js"
+    ></script>
+    <script defer src="src/index.js"></script>
+  </head>
+
+  <body>
+    <qt-board
+      id="board"
+      ccs="true"
+      board-name="veda-1"
+      board-type="veda"
+      com-port="/dev/rfcomm4"
+    ></qt-board>
+    <qt-mpu id="mpu1"></qt-mpu>
+    <qt-apds id="apds1" ccs="true"></qt-apds>
+  </body>
+</html>
