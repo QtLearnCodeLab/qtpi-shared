@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>qt-buzzer/qtbuzzer.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="QtARGB.html">QtARGB</a><ul class='methods'><li data-type='method'><a href="QtARGB.html#argb">argb</a></li></ul></li><li><a href="QtBuzzer.html">QtBuzzer</a><ul class='methods'><li data-type='method'><a href="QtBuzzer.html#buzz">buzz</a></li></ul></li><li><a href="QtLED.html">QtLED</a><ul class='methods'><li data-type='method'><a href="QtLED.html#led">led</a></li></ul></li><li><a href="QtMotor.html">QtMotor</a><ul class='methods'><li data-type='method'><a href="QtMotor.html#run">run</a></li></ul></li><li><a href="QtRGB.html">QtRGB</a><ul class='methods'><li data-type='method'><a href="QtRGB.html#rgb">rgb</a></li></ul></li><li><a href="QtServo.html">QtServo</a><ul class='methods'><li data-type='method'><a href="QtServo.html#sweep">sweep</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">qt-buzzer/qtbuzzer.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const qtbuzzertemplate = document.createElement('template');
+qtbuzzertemplate.innerHTML = `
+&lt;link rel='stylesheet' type='text/css' href='https://unpkg.com/tailwindcss@^2.0.3/dist/tailwind.min.css' />
+
+ &lt;style>
+    input:checked + label {
+        background-color: LightSeaGreen;
+    }
+    .animationbuzzon{
+        fill: rgb(255, 0,0);
+    }
+    .animationbuzzoff{
+        fill: rgb(255, 255, 255);
+    }
+&lt;/style>
+&lt;div class="box-content rounded-md h-auto w-auto p-4 bg-purple-400" id="maindiv" style="display: block">
+    &lt;div class="grid grid-cols-1 gap-4">
+        &lt;div class="box-content rounded-md h-auto w-full bg-yellow-400">
+            &lt;p class="text-2xl text-center font-sans font-bold ">BUZZER&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="grid grid-flow-col md:grid-flow-col  py-3">
+        &lt;fieldset class="flex justify-center text-center  px-5">
+            &lt;legend class="font-bold">Control&lt;/legend>
+            &lt;div class="inline-flex" id="state">
+                &lt;input class="hidden" type="radio" id="on" value="on" name="state-d"/>&lt;label class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-6 cursor-pointer rounded-l" for="on">ON&lt;/label>
+                &lt;input class="hidden" type="radio" id="off" value="off" name="state-d" checked="checked"/>&lt;label class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-6 cursor-pointer" for="off">OFF&lt;/label>
+                &lt;input class="hidden" type="radio" id="buzz" value="buzz" name="state-d"/>&lt;label class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-6 cursor-pointer rounded-r" for="buzz">BUZZ&lt;/label>
+            &lt;/div>
+        &lt;/fieldset>
+        &lt;button>
+            &lt;legend class="font-bold">Config&lt;/legend>
+            &lt;svg id = "config_gear" xmlns="http://www.w3.org/2000/svg" width="auto" height="38" viewBox="0 0 24 24">&lt;path d="M24 13.616v-3.232c-1.651-.587-2.694-.752-3.219-2.019v-.001c-.527-1.271.1-2.134.847-3.707l-2.285-2.285c-1.561.742-2.433 1.375-3.707.847h-.001c-1.269-.526-1.435-1.576-2.019-3.219h-3.232c-.582 1.635-.749 2.692-2.019 3.219h-.001c-1.271.528-2.132-.098-3.707-.847l-2.285 2.285c.745 1.568 1.375 2.434.847 3.707-.527 1.271-1.584 1.438-3.219 2.02v3.232c1.632.58 2.692.749 3.219 2.019.53 1.282-.114 2.166-.847 3.707l2.285 2.286c1.562-.743 2.434-1.375 3.707-.847h.001c1.27.526 1.436 1.579 2.019 3.219h3.232c.582-1.636.75-2.69 2.027-3.222h.001c1.262-.524 2.12.101 3.698.851l2.285-2.286c-.744-1.563-1.375-2.433-.848-3.706.527-1.271 1.588-1.44 3.221-2.021zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>&lt;/svg>
+        &lt;/button>
+        &lt;button>
+            &lt;legend class="font-bold">Simulation&lt;/legend>
+            &lt;svg id="simulation_gear" xmlns="http://www.w3.org/2000/svg" width="auto" height="38" fill="none" viewBox="0 0 24 24" stroke="currentColor">&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />&lt;/svg>
+        &lt;/button>  
+    &lt;/div>
+     
+    &lt;div id="ip-parameters" class="flex flex-col " style="display: none">
+        &lt;div class="flex flex-row gap-x-8">
+            &lt;div class="font-sans text-2xl text-left font-bold ">Buzz Interval&lt;/div>
+            &lt;input class="form-input rounded-md box-border"id="buzz-interval">
+        &lt;/div>&lt;br>
+        &lt;div class="flex flex-row gap-x-8">
+            &lt;div class="font-sans text-2xl text-left font-bold ">Board Name&lt;/div>
+              &lt;select class="form-select rounded-md box-border" style="width:75px; overflow:hidden" id="board-name">
+              &lt;option value="" disabled selected>Select&lt;/option>
+              &lt;/select>
+        &lt;/div>&lt;br>
+
+        &lt;div class="flex flex-row gap-x-8">
+            &lt;div class="font-sans text-2xl text-left font-bold">Port Number&lt;/div>
+            &lt;select class="form-select rounded-md box-border" id="port" style="width:75px; overflow:hidden">
+                &lt;option value="1">&amp;nbsp;1&amp;nbsp;&lt;/option>
+                &lt;option value="2">&amp;nbsp;2&amp;nbsp;&lt;/option>
+                &lt;option value="3">&amp;nbsp;3&amp;nbsp;&lt;/option>
+                &lt;option value="4">&amp;nbsp;4&amp;nbsp;&lt;/option>
+                &lt;option value="5">&amp;nbsp;5&amp;nbsp;&lt;/option>
+                &lt;option value="6">&amp;nbsp;6&amp;nbsp;&lt;/option>
+            &lt;/select>
+            &lt;div class="font-sans text-2xl text-left font-bold ">Pin Number&amp;nbsp;&lt;/div>
+            &lt;input class="form-input rounded-md box-border"id="pin">
+        &lt;/div>&lt;br>
+    &lt;/div>
+
+    &lt;div class="bg-white rounded border shadow-lg" id="simulation_box" style="display: none">
+        &lt;div class="rounded-t bg-blue-500">
+            &lt;div class="relative py-3 px-2 flex">
+                &lt;span class="font-semibold text-white md:text-base text-sm">Simulation&lt;/span>
+            &lt;/div>
+        &lt;/div>
+        &lt;div class="bg-gray-400 md:text-base text-sm border-b h-24">
+            &lt;svg style="margin: auto;" width="90" height="90" viewBox="0 0 276 276" fill="none" xmlns="http://www.w3.org/2000/svg">
+                &lt;path id="ledblink"   d="M136.324 34.5052C131.571 34.5677 127.675 30.7727 127.613 26.0203L127.386 8.82428C127.324 4.07187 131.119 0.175668 135.871 0.113134C140.624 0.0506011 144.52 3.8456 144.582 8.59801L144.809 25.794C144.871 30.5465 141.076 34.4427 136.324 34.5052Z" fill="white"/>
+                &lt;path id="ledblink_2" d="M8.59805 130.78L25.7941 130.554C30.5465 130.492 34.4427 134.287 34.5052 139.039C34.5678 143.791 30.7728 147.688 26.0203 147.75L8.82431 147.976C4.0719 148.039 0.175699 144.244 0.113166 139.492C0.0506329 134.739 3.84563 130.843 8.59805 130.78Z" fill="white"/>
+                &lt;path id="ledblink_3" d="M240.858 136.324C240.795 131.571 244.59 127.675 249.342 127.613L266.538 127.386C271.291 127.324 275.187 131.119 275.25 135.871C275.312 140.624 271.517 144.52 266.765 144.582L249.569 144.809C244.816 144.871 240.92 141.076 240.858 136.324Z" fill="white"/>
+                &lt;path id="ledblink_4" d="M57.7245 68.2839C55.5246 68.3129 53.3137 67.5022 51.6123 65.845L39.2942 53.8468C35.8914 50.5324 35.8198 45.0915 39.1342 41.6887C42.4486 38.2859 47.8896 38.2143 51.2924 41.5287L63.6105 53.5269C67.0132 56.8413 67.0848 62.2822 63.7704 65.685C62.1132 67.3864 59.9244 68.255 57.7245 68.2839L57.7245 68.2839Z" fill="white"/>
+                &lt;path id="ledblink_5" d="M221.836 63.6052C220.179 65.3066 217.99 66.1752 215.79 66.2041C213.59 66.2331 211.379 65.4224 209.678 63.7652C206.275 60.4508 206.203 55.0099 209.518 51.6071L221.516 39.289C224.83 35.8862 230.271 35.8146 233.674 39.129C237.077 42.4434 237.148 47.8843 233.834 51.2871L221.836 63.6052L221.836 63.6052Z" fill="white"/>
+                &lt;path id="Bulb" d="M33.0004 189.448L50.1979 189.436L50.1609 137.843C50.1269 90.4322 88.676 51.8277 136.087 51.7937C183.498 51.7597 222.102 90.3088 222.136 137.72L222.173 189.312L239.371 189.3C244.123 189.296 247.972 193.14 247.975 197.892C247.979 202.645 244.136 206.494 239.383 206.497L187.79 206.534L187.778 266.8C187.781 271.552 183.938 275.401 179.185 275.405C174.433 275.408 170.584 271.565 170.58 266.812L170.593 206.547L101.803 206.596L101.846 266.787C101.849 271.54 98.0062 275.389 93.2534 275.392C88.5006 275.396 84.6519 271.552 84.6485 266.8L84.6053 206.608L33.0128 206.645C28.2599 206.649 24.4112 202.806 24.4078 198.053C24.4044 193.3 28.2476 189.451 33.0004 189.448ZM204.976 189.324L204.939 137.732C204.917 107.6 185.401 82.2843 158.425 72.9986C176.093 85.438 187.718 105.895 187.735 129.146L187.778 189.337L204.976 189.324Z" fill="white"/>
+            &lt;/svg>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;br>
+&lt;div class="flex items-center box-border h-auto w-48 p-4 md:box-content bg-purple-400 rounded shadow-lg" id="canvassimulation" style="display: none">
+    &lt;svg id="canvassimulation" style="margin: auto" width="150" height="150" viewBox="0 0 276 276" fill="none" xmlns="http://www.w3.org/2000/svg">
+        &lt;path id="Simulationledblink" d="M136.324 34.5052C131.571 34.5677 127.675 30.7727 127.613 26.0203L127.386 8.82428C127.324 4.07187 131.119 0.175668 135.871 0.113134C140.624 0.0506011 144.52 3.8456 144.582 8.59801L144.809 25.794C144.871 30.5465 141.076 34.4427 136.324 34.5052Z" fill="white"/>
+        &lt;path id="Simulationledblink_2" d="M8.59805 130.78L25.7941 130.554C30.5465 130.492 34.4427 134.287 34.5052 139.039C34.5678 143.791 30.7728 147.688 26.0203 147.75L8.82431 147.976C4.0719 148.039 0.175699 144.244 0.113166 139.492C0.0506329 134.739 3.84563 130.843 8.59805 130.78Z" fill="white"/>
+        &lt;path id="Simulationledblink_3" d="M240.858 136.324C240.795 131.571 244.59 127.675 249.342 127.613L266.538 127.386C271.291 127.324 275.187 131.119 275.25 135.871C275.312 140.624 271.517 144.52 266.765 144.582L249.569 144.809C244.816 144.871 240.92 141.076 240.858 136.324Z" fill="white"/>
+        &lt;path id="Simulationledblink_4" d="M57.7245 68.2839C55.5246 68.3129 53.3137 67.5022 51.6123 65.845L39.2942 53.8468C35.8914 50.5324 35.8198 45.0915 39.1342 41.6887C42.4486 38.2859 47.8896 38.2143 51.2924 41.5287L63.6105 53.5269C67.0132 56.8413 67.0848 62.2822 63.7704 65.685C62.1132 67.3864 59.9244 68.255 57.7245 68.2839L57.7245 68.2839Z" fill="white"/>
+        &lt;path id="Simulationledblink_5" d="M221.836 63.6052C220.179 65.3066 217.99 66.1752 215.79 66.2041C213.59 66.2331 211.379 65.4224 209.678 63.7652C206.275 60.4508 206.203 55.0099 209.518 51.6071L221.516 39.289C224.83 35.8862 230.271 35.8146 233.674 39.129C237.077 42.4434 237.148 47.8843 233.834 51.2871L221.836 63.6052L221.836 63.6052Z" fill="white"/>
+        &lt;path id="SimulationBulb" d="M33.0004 189.448L50.1979 189.436L50.1609 137.843C50.1269 90.4322 88.676 51.8277 136.087 51.7937C183.498 51.7597 222.102 90.3088 222.136 137.72L222.173 189.312L239.371 189.3C244.123 189.296 247.972 193.14 247.975 197.892C247.979 202.645 244.136 206.494 239.383 206.497L187.79 206.534L187.778 266.8C187.781 271.552 183.938 275.401 179.185 275.405C174.433 275.408 170.584 271.565 170.58 266.812L170.593 206.547L101.803 206.596L101.846 266.787C101.849 271.54 98.0062 275.389 93.2534 275.392C88.5006 275.396 84.6519 271.552 84.6485 266.8L84.6053 206.608L33.0128 206.645C28.2599 206.649 24.4112 202.806 24.4078 198.053C24.4044 193.3 28.2476 189.451 33.0004 189.448ZM204.976 189.324L204.939 137.732C204.917 107.6 185.401 82.2843 158.425 72.9986C176.093 85.438 187.718 105.895 187.735 129.146L187.778 189.337L204.976 189.324Z" fill="white"/>
+    &lt;/svg>
+&lt;/div>
+`;
+/**
+ * Qt-Buzzer webcomponent
+ */
+export class QtBuzzer extends HTMLElement {
+    static get observedAttributes () {
+        return ['state', 'pin', 'port', 'board-name', 'ccs', 'width', 'height', 'rotate', 's-style']; //required for v1
+    }
+    constructor () {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.appendChild(qtbuzzertemplate.content.cloneNode(true));
+        this.shadowRoot.querySelector('#pin').value = this.getAttribute('pin');
+        this.shadowRoot.querySelector('#board-name').value = this.getAttribute('board-name');
+        this.shadowRoot.querySelector('#buzz-interval').value = this.getAttribute('buzz-interval');
+        this.shadowRoot.querySelector('#port').value = this.getAttribute('port');
+        this.state = this.getAttribute('state');
+        this.buzzInterval = null;
+        this.pinState = "LOW";
+        this.buzz(this.state);
+        this.audio = new Audio('https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3');
+    }
+    get ccs () {
+        console.log("ccs get method");
+        return this.getAttribute('ccs');
+    }
+    set ccs (newValue) {
+        console.log("ccs set method", newValue);
+        this.setAttribute('ccs', newValue);
+    }
+    get width () {
+        console.log("width get method");
+        return this.getAttribute('width');
+    }
+    set width (newValue) {
+        console.log("width set method", newValue);
+        this.setAttribute('width', newValue);
+    }
+    get height () {
+        console.log("height get method");
+        return this.getAttribute('height');
+    }
+    set height (newValue) {
+        console.log("height set method", newValue);
+        this.setAttribute('height', newValue);
+    }
+    get rotate () {
+        console.log("rotate get method");
+        return this.getAttribute('rotate');
+    }
+    set rotate (newValue) {
+        console.log("rotate set method", newValue);
+        this.setAttribute('rotate', newValue);
+    }
+    get s_style () {
+        console.log("s-style get method");
+        return this.getAttribute('s-style');
+    }
+    set s_style (newValue) {
+        console.log("s-style set method", newValue);
+        this.setAttribute('s-style', newValue);
+    }
+    updateStateValue (e) {
+        var retVal = this.buzz(e.target.id);
+        e.target.checked = retVal;
+        if (!retVal) {
+            this.shadowRoot.querySelector('#off').checked = true;
+        }
+    }
+
+    executeOnStateChange (data) {
+        if (this.getAttribute('onStateChange')) {
+            window[this.getAttribute('onStateChange')](data);
+        }
+    }
+    getParameters () {
+        var x = this.shadowRoot.getElementById("ip-parameters");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    simulate () {
+        var x = this.shadowRoot.getElementById('simulation_box');
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    ccsShow () {
+        this.shadowRoot.getElementById("maindiv").style.display = "block";
+        this.shadowRoot.getElementById("canvassimulation").style.display = "none";
+    }
+    ccsHide () {
+        this.shadowRoot.getElementById("maindiv").style.display = "none";
+        this.shadowRoot.getElementById("canvassimulation").style.display = "block";
+    }
+    animateBuzzer (state) {
+        if (this.shadowRoot.getElementById("canvassimulation").style.display == "block") {
+            this.shadowRoot.getElementById('Simulationledblink').setAttribute('class', state);
+            this.shadowRoot.getElementById('Simulationledblink_2').setAttribute('class', state);
+            this.shadowRoot.getElementById('Simulationledblink_3').setAttribute('class', state);
+            this.shadowRoot.getElementById('Simulationledblink_4').setAttribute('class', state);
+            this.shadowRoot.getElementById('Simulationledblink_5').setAttribute('class', state);
+        } else {
+            this.shadowRoot.getElementById('ledblink').setAttribute('class', state);
+            this.shadowRoot.getElementById('ledblink_2').setAttribute('class', state);
+            this.shadowRoot.getElementById('ledblink_3').setAttribute('class', state);
+            this.shadowRoot.getElementById('ledblink_4').setAttribute('class', state);
+            this.shadowRoot.getElementById('ledblink_5').setAttribute('class', state);
+        }
+    }
+
+    getPin (port) {
+        let boardType = this.getAttribute('boardType');
+        console.log("getPin", port, boardType);
+        if (boardType === 'qtneo') {
+            return null;
+        }
+        var elem = this.shadowRoot.getElementById('board-name');
+        var selectedIndex = elem.selectedIndex;
+        if (selectedIndex == -1) {
+            selectedIndex = 0;
+        }
+        console.log("elem: ", elem.options, selectedIndex);
+        var bName = elem.options[selectedIndex].value;
+        var board = window.boards &amp;&amp; window.boards[bName];
+        if (board) {
+            let pinNumber;
+            console.log("this.port==>", this.ports);
+            if (port &amp;&amp; this.ports) {
+                var digPins = this.ports.rj.digitalPins;
+                var keys = Object.keys(digPins);
+                for (let value in keys) {
+                    var portValue = digPins[keys[value]].port;
+                    if (port.toString() === portValue.toString().trim()) {
+                        pinNumber = digPins[keys[value]].pin;
+                        console.log(" ===>pin ", pinNumber, board);
+                        this.setAttribute('pin', pinNumber);
+                        this.shadowRoot.querySelector('#pin').value = pinNumber;
+                        break;
+                    }
+                }
+            }
+            else {
+                pinNumber = this.getAttribute("pin");
+            }
+            var pin = board.pin(pinNumber, 'DIGITAL', 'OUTPUT');
+            return pin;
+        }
+    }
+
+    /**
+     * to start/stop the buzzer
+     * @param {String} newState - the state of buzzer - on/off
+     */
+    buzz (newState) {
+        console.log("Buzzer new state ==>",newState);
+        var elem = this.shadowRoot.getElementById('board-name');
+        var selectedIndex = elem.selectedIndex;
+        if (selectedIndex == -1) {
+            selectedIndex = 0;
+        }
+        console.log("elem: ", elem.options, selectedIndex);
+        var bName = elem.options[selectedIndex].value;
+        console.log("Buzzer ===> ", bName, window.boards);
+        var board = window.boards &amp;&amp; window.boards[bName];
+        if (board) {
+            var elem = this.shadowRoot.getElementById('port');
+            var selectedIndex = elem.selectedIndex == -1 ? 0 : elem.selectedIndex;
+            console.log("elem: ", elem.options, selectedIndex);
+            var portNumber = elem.options[selectedIndex].value;
+            let pin = this.getPin(portNumber);
+            let boardType = this.getAttribute('boardType');
+            if (!pin) {
+                console.log("pin");
+                this.pin = board.pin(this.getAttribute('pin'), 'DIGITAL', 'OUTPUT');
+            } else {
+                this.pin = pin;
+            }
+        } else {
+            console.log("Board not connected");
+        }
+        console.log(this.pin);
+        if (newState == "on") {
+            console.log("buzzer On");
+            if (board) {
+                this.pin.write('HIGH');
+            }
+            this.animateBuzzer("animationbuzzon");
+            this.audio.play();
+            this.state = "on";
+            clearInterval(this.buzzInterval);
+        } else if (newState == "buzz") {
+            console.log("buzzer buzzing");
+            this.state = "buzz";
+            var self = this;
+            this.buzzInterval = setInterval(function () {
+                if (this.pinState == "LOW") {
+                    if (board) {
+                        self.pin.write('HIGH');
+                    }
+                    self.audio.play();
+                    self.animateBuzzer("animationbuzzon");
+                    this.pinState = "HIGH";
+                } else {
+                    if (board) {
+                        self.pin.write('LOW');
+                    }
+                    //this.audio.pause();
+                    self.animateBuzzer("animationbuzzoff");
+                    this.pinState = "LOW";
+                }
+            }, this.getAttribute('buzz-interval'));
+        } else {
+            if (board) {
+                this.pin.write('LOW');
+            }
+            //this.audio.pause();
+            this.animateBuzzer("animationbuzzoff");
+            this.state = "off";
+            clearInterval(this.buzzInterval);
+        }
+        this.state = newState;
+        this.executeOnStateChange(newState);
+        return true;
+
+    }
+
+    disconnectedCallback () {
+        this.shadowRoot.querySelector('#pin').removeEventListener();
+        this.shadowRoot.querySelector('#port').removeEventListener();
+        this.shadowRoot.querySelector('#board-name').removeEventListener();
+        this.shadowRoot.querySelector('#state').removeEventListener();
+        this.shadowRoot.querySelector('#buzz-interval').removeEventListener();
+    }
+
+    connectedCallback () {
+        var self = this;
+        this.shadowRoot.querySelector('#pin').addEventListener('change', function (e) {
+            self.updatePinValue(e);
+        }, false);
+        this.shadowRoot.querySelector('#port').addEventListener('change', function (e) {
+            self.updatePortValue(e);
+        }, false);
+        this.shadowRoot.querySelector('#board-name').addEventListener('change', function (e) {
+            self.updateBoardNameValue(e);
+        }, false);
+        this.shadowRoot.querySelector('#buzz-interval').addEventListener('change', function (e) {
+            self.updateBlinkIntervalValue(e);
+        }, false);
+        this.shadowRoot.querySelector('#state').addEventListener('change', function (e) {
+            return self.updateStateValue(e);
+        }, false);
+        this.shadowRoot.querySelector('#config_gear').addEventListener('click', function (e) {
+            self.updateParameters(e);
+        }, false);
+        this.shadowRoot.querySelector('#simulation_gear').addEventListener('click', function (e) {
+            self.displaySimulation(e);
+        }, false);
+        window.addEventListener('boardConnected', function (e) {
+            console.log('boardConnected', e.detail, window.boards);
+            self.updateBoardNames();
+            self.buzz(self.state);
+        });
+        window.addEventListener('boardDisConnected', function (e) {
+            console.log('boardDisConnected', e.detail, window.boards);
+            self.updateBoardNames();
+        });
+        window.addEventListener('boardPorts', function (e) {
+            console.log('boardPorts event received');
+            self.updatePorts(e.detail);
+        });
+    }
+    updatePorts (ports) {
+        this.ports = ports;
+        var digPins = ports.rj.digitalPins;
+        var keys = Object.keys(digPins);
+        console.log('updatePorts(ports) ', keys);
+        var boardOptions = "";
+        for (let value in keys) {
+            console.log(digPins[keys[value]]);
+            boardOptions += "&lt;option value='" + digPins[keys[value]].port + "'>" + digPins[keys[value]].port + "(pin " + digPins[keys[value]].pin + ")" + "&lt;/option>";
+        }
+        this.shadowRoot.getElementById("port").innerHTML = boardOptions;
+        console.log('updatePorts(ports) ', ports.rj.digitalPins);
+        this.getPin(1);
+    }
+    updateBoardNames () {
+        var boards = window.boards || {};
+        var keys = Object.keys(boards);
+        if (keys.length == 0) this.shadowRoot.getElementById("board-name").innerHTML = "&lt;option>&lt;/option>";
+        else {
+            var value;
+            var boardOptions = "";
+            for (value in keys) {
+                boardOptions += "&lt;option value='" + keys[value] + "'>" + keys[value] + "(" + boards[keys[value]].type + ")" + "&lt;/option>";
+                console.log("boardOptions", boardOptions);
+            }
+            this.shadowRoot.getElementById("board-name").innerHTML = boardOptions;
+        }
+    }
+    updatePinValue (e) {
+        console.log('pin', e.target.value, this);
+        this.setAttribute('pin', e.target.value);
+    }
+    updatePortValue (e) {
+        console.log('port', e.target.value);
+        this.setAttribute('port', e.target.value);
+    }
+    updateBoardNameValue (e) {
+        console.log('board-name', e.target.value);
+        this.setAttribute('board-name', e.target.value);
+    }
+    updateBlinkIntervalValue (e) {
+        this.setAttribute('buzz-interval', e.target.value);
+    }
+    updateParameters (e) {
+        this.getParameters();
+    }
+    displaySimulation (e) {
+        this.simulate();
+    }
+    attributeChangedCallback (name, oldValue, newValue) {
+        console.log("attributeChangedCallback ", name, oldValue, newValue);
+        if (name === 'ccs') {
+            newValue == "false" ? this.ccsHide() : this.ccsShow();
+        } else if (name === 'width') {
+            this.shadowRoot.getElementById('canvassimulation').style.width = newValue;
+        } else if (name === 'height') {
+            this.shadowRoot.getElementById('canvassimulation').style.height = newValue;
+        } else if (name === 'rotate') {
+            var temp = 'rotate(' + newValue + 'deg)';
+            console.log('temp', temp);
+            this.shadowRoot.getElementById('canvassimulation').style.transform = temp;
+        } else if (name === 's-style') {
+            console.log("s-style: ", newValue);
+            this.shadowRoot.getElementById('canvassimulation').style = newValue;
+        } else if (oldValue != newValue) {
+            this.buzz(newValue);
+        }
+    }
+
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Wed Aug 04 2021 11:49:36 GMT+0530 (India Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

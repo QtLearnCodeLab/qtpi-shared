@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>qt-alexa/qtalexa.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="QtARGB.html">QtARGB</a><ul class='methods'><li data-type='method'><a href="QtARGB.html#argb">argb</a></li></ul></li><li><a href="QtBuzzer.html">QtBuzzer</a><ul class='methods'><li data-type='method'><a href="QtBuzzer.html#buzz">buzz</a></li></ul></li><li><a href="QtLED.html">QtLED</a><ul class='methods'><li data-type='method'><a href="QtLED.html#led">led</a></li></ul></li><li><a href="QtMotor.html">QtMotor</a><ul class='methods'><li data-type='method'><a href="QtMotor.html#run">run</a></li></ul></li><li><a href="QtRGB.html">QtRGB</a><ul class='methods'><li data-type='method'><a href="QtRGB.html#rgb">rgb</a></li></ul></li><li><a href="QtServo.html">QtServo</a><ul class='methods'><li data-type='method'><a href="QtServo.html#sweep">sweep</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">qt-alexa/qtalexa.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const qtalexatemplate = document.createElement('template');
+qtalexatemplate.innerHTML = `
+&lt;link rel='stylesheet' type='text/css' href='https://unpkg.com/tailwindcss@^2.0.3/dist/tailwind.min.css' />
+
+&lt;style> 
+   input:checked + label {
+   background-color: LightSeaGreen;
+   }  
+   .animationledon{
+   fill: rgb(255, 0,0);
+   }
+   .animationledoff{
+   fill: rgb(255, 255, 255);
+   }
+   .animationblink{
+   animation: ledchangeColor 1s infinite;
+   }
+   @keyframes ledchangeColor {
+   0% {
+   fill: rgb(255,0,255);
+   }
+   50%{
+   fill: rgb(0,0,0);
+   }
+   100% {
+   fill: rgb(255, 255, 0);
+   }
+  }
+&lt;/style>
+&lt;div class="box-content rounded-md h-auto w-auto p-4 bg-blue-400" id="alexamain" style="display: block">
+   &lt;div class="grid grid-cols-1 gap-4">
+      &lt;div class="box-content rounded-md h-auto w-full bg-yellow-400">
+         &lt;p class="text-2xl text-center font-sans font-bold ">Alexa&lt;/p>
+      &lt;/div>
+   &lt;/div>
+   &lt;div class="grid grid-flow-col md:grid-flow-col  py-3">
+      
+      &lt;button>
+         &lt;legend class="font-bold">Config&lt;/legend>
+         &lt;svg id = "config_gear" xmlns="http://www.w3.org/2000/svg" width="auto" height="38" viewBox="0 0 24 24">
+            &lt;path d="M24 13.616v-3.232c-1.651-.587-2.694-.752-3.219-2.019v-.001c-.527-1.271.1-2.134.847-3.707l-2.285-2.285c-1.561.742-2.433 1.375-3.707.847h-.001c-1.269-.526-1.435-1.576-2.019-3.219h-3.232c-.582 1.635-.749 2.692-2.019 3.219h-.001c-1.271.528-2.132-.098-3.707-.847l-2.285 2.285c.745 1.568 1.375 2.434.847 3.707-.527 1.271-1.584 1.438-3.219 2.02v3.232c1.632.58 2.692.749 3.219 2.019.53 1.282-.114 2.166-.847 3.707l2.285 2.286c1.562-.743 2.434-1.375 3.707-.847h.001c1.27.526 1.436 1.579 2.019 3.219h3.232c.582-1.636.75-2.69 2.027-3.222h.001c1.262-.524 2.12.101 3.698.851l2.285-2.286c-.744-1.563-1.375-2.433-.848-3.706.527-1.271 1.588-1.44 3.221-2.021zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>
+         &lt;/svg>
+      &lt;/button>
+      
+   &lt;/div>
+   &lt;div id="ip-parameters" class="flex" style="display: none">
+
+    &lt;div class="flex">
+      &lt;div class="font-sans text-2xl text-left font-bold ">URL&lt;/div>
+      &lt;input class="form-input rounded-md box-border"id="url">
+    &lt;/div>&lt;br>
+    &lt;/div>
+&lt;/div>
+
+`;
+
+export class QtAlexa extends HTMLElement {
+
+    static get observedAttributes() {
+        return ['url','ccs']; //required for v1
+    }
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.appendChild(qtalexatemplate.content.cloneNode(true));
+        this.shadowRoot.querySelector('#url').value = this.getAttribute('url');
+
+        this.ccs_state = this.getAttribute('ccs');
+        this.css_state == "false" ? this.ccsHide() : this.ccsShow();
+    }
+    get ccs() {
+        console.log("ccs get method");
+        return this.getAttribute('ccs');
+    }
+    set ccs(newValue) {
+        console.log("ccs set method", newValue);
+        this.setAttribute('ccs', newValue);
+    }
+    getparameters() {
+        var x = this.shadowRoot.getElementById("ip-parameters");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    getProperty(property) {
+        return this.getAttribute(property);
+    }
+    setProperty(property, value) {
+        this.setAttribute(property, value);
+    }
+    togglePropsDisplay() {
+        this.shadowRoot.getElementById("props").classList.toggle("qt-led-props-hide");
+    }
+    /**
+     * to check the command given to alexa via given adafruit url
+     */
+    listen() {
+        if (this.listenInterval) {
+            clearInterval(this.listenInterval);
+        }
+        var url = this.getAttribute('url');
+        var self = this;
+        this.listenInterval = setInterval(this.httpGet, 500, url, self);
+    }
+    stopListen() {
+        if (this.listenInterval) {
+            clearInterval(this.listenInterval);
+        }
+    }
+    executeOnData(data) {
+        if (this.onData &amp;&amp; typeof(this.onData) == "function") {
+            this.onData.call(this, data);
+        } else {
+            console.log("onData not a function", this.onData);
+        }
+
+    }
+    httpGet(theUrl, self) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", theUrl, false); // false for synchronous request
+        xmlHttp.send(null);
+        console.log(xmlHttp.responseText);
+        self.executeOnData(xmlHttp.responseText);
+    }
+
+
+    ccsShow() {
+        this.shadowRoot.getElementById("alexamain").style.display = "block";
+    }
+    ccsHide() {
+        this.shadowRoot.getElementById("alexamain").style.display = "none";
+    }
+
+    executeOnStateChange(data) {
+        if (this.getAttribute('onStateChange')) {
+            window[this.getAttribute('onStateChange')](data);
+        }
+    }
+
+
+    disconnectedCallback() {
+        this.shadowRoot.querySelector('#url').removeEventListener();
+    }
+
+    connectedCallback() {
+        var self = this;
+       
+        this.shadowRoot.querySelector('#url').addEventListener('change', function(e) {
+            self.updateUrlValue(e);
+        }, false);
+        this.shadowRoot.querySelector('#config_gear').addEventListener('click', function(e) {
+            self.updateparameters(e);
+        }, false);
+        
+    }
+
+    updateUrlValue(e) {
+        console.log('url', e.target.value, this);
+        this.setAttribute('url', e.target.value);
+    }
+    updateparameters(e) {
+        this.getparameters();
+    }
+    
+    attributeChangedCallback(name, oldValue, newValue) {
+        console.log("attributeChangedCallback ", name, oldValue, newValue);
+        if (name === 'ccs') {
+            newValue == "false" ? this.ccsHide() : this.ccsShow();
+        }
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Wed Aug 04 2021 11:49:36 GMT+0530 (India Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
