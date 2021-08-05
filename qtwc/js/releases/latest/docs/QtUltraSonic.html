@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>QtBuzzer - Documentation</title>
+    <title>QtUltraSonic - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">QtBuzzer</h1>
+    <h1 class="page-title">QtUltraSonic</h1>
     
 
     
@@ -45,11 +45,11 @@
 <header>
     
         <h2>
-        QtBuzzer
+        QtUltraSonic
         </h2>
         
-            <div class="class-description usertext"><p>Qt-Buzzer webcomponent
-<a href="https://qtlearncodelab.github.io/qtpi-shared/qtwc/buzzer.html"> Click Here for Tutorial</a></p></div>
+            <div class="class-description usertext"><p>Qt-Ultrasonic webcomponent
+<a href="https://qtlearncodelab.github.io/qtpi-shared/qtwc/ultrasonic.html"> Click Here for Tutorial</a></p></div>
         
     
 </header>
@@ -64,7 +64,7 @@
     <h2>Constructor</h2>
     
 
-    <h4 class="name" id="QtBuzzer"><span class="type-signature"></span>new QtBuzzer<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="QtUltraSonic"><span class="type-signature"></span>new QtUltraSonic<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
@@ -125,6 +125,18 @@
 
 
 
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>onData - name of the function using the recieved dataRECIEVED DATA FORMAT - US:0:0 </code></pre>
+
+    <pre class="prettyprint"><code>function gotData(data) {
+  console.log(data);
+  var str_data = data.substring(data.indexOf(":") + 1);
+  var us_val = str_data.split(":")[0];
+  us_value = us_val;
+}</code></pre>
+
+
 
 
 
@@ -156,7 +168,7 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            <dt><a href="QtBuzzer.html">QtBuzzer</a></dt>
+            <dt><a href="QtUltraSonic.html">QtUltraSonic</a></dt>
             <dd></dd>
         </dl>
     
@@ -169,142 +181,6 @@
 
     
 
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    <h4 class="name" id="buzz"><span class="type-signature"></span>buzz<span class="signature">(newState)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>buzz("on")State - on/off/buzzto start/stop the buzzer</code></pre>
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>newState</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the state of buzzer - on/off</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
     
 
     
