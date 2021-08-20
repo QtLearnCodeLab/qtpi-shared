@@ -581,6 +581,14 @@
                     window.dispatchEvent(event);
                     resetMotorPins();
                   } 
+                } else if(utils.M1["pin1"] == 0 && utils.M1["pin2"] > 0){
+                  if(utils.M2["pin1"] == 0 && utils.M2["pin2"] > 0){
+                    //backward
+                    var event = new CustomEvent("motor", { detail: "backward" });
+                    console.log("EVENT DISPATCH ->", event);
+                    window.dispatchEvent(event);
+                    resetMotorPins();                  
+                  }
                 } else if (utils.M2["pin1"] == 0 && utils.M2["pin2"] == 0) {//stop
                   if (utils.M1["pin1"] == 0 && utils.M1["pin2"] == 0) { //stop
                     var event = new CustomEvent("motor", { detail: "stop" });
