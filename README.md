@@ -1,5 +1,6 @@
-# qtpi-shared
+# qtpi-shared 
 Shared Resources for Learners
+Base Page Location: https://qtlearncodelab.github.io/qtpi-shared
 ## QAD 
 https://qtlearncodelab.github.io/qtpi-shared/tools/qad/releases/latest/mac/qad-darwin-x64.gz
 
