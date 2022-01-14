@@ -7,4 +7,7 @@ https://qtlearncodelab.github.io/qtpi-shared/tools/qad/releases/latest/mac/qad-d
 https://qtlearncodelab.github.io/qtpi-shared/tools/qad/releases/latest/windows/qad-win32-x64.zip
 
 ## Folder Structure
+
+##QtPi ESP32 Python Documentation
+https://qtlearncodelab.github.io/qtpi-shared/docs/uqtpy/html/index.html
     
