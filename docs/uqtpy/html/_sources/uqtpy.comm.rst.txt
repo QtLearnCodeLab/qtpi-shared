@@ -8,18 +8,9 @@ Subpackages
    :maxdepth: 4
 
    uqtpy.comm.ble
-   uqtpy.comm.wifi
 
 Submodules
 ----------
-
-uqtpy.comm.websocket module
----------------------------
-
-.. automodule:: uqtpy.comm.websocket
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 Module contents
 ---------------

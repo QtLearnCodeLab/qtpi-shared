@@ -12,14 +12,6 @@ uqtpy.common.device module
    :undoc-members:
    :show-inheritance:
 
-uqtpy.common.message module
----------------------------
-
-.. automodule:: uqtpy.common.message
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 
