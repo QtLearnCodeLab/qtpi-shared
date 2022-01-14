@@ -1,0 +1,106 @@
+:py:mod:`uqtpy.actuators.display`
+=================================
+
+.. py:module:: uqtpy.actuators.display
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   uqtpy.actuators.display.OLED
+
+
+
+
+.. py:class:: OLED(port=None, width=128, height=64, ob=True)
+
+   Display is an OLED module used to show any data on board
+
+   .. py:method:: set_i2c(self, scl=22, sda=21, id=-1, freq=400000)
+
+      :param scl: clock pin of esp32
+
+      :param sda: data pin of esp32
+
+      :param id:  for software set 1/0, hardware set -1
+
+      :param freq:    default frequency
+
+
+   .. py:method:: set_resolution(self, width=128, height=64)
+
+      :param width:   Maximum width of Display module
+
+      :param height:  Maximum height of Display module
+
+      :return:    No return value
+
+
+   .. py:method:: get_type(self)
+
+      :return:
+
+
+   .. py:method:: get_name(self)
+
+      :return:
+
+
+   .. py:method:: initialize(self)
+
+      Used to initialize the display module
+
+      :return:    Initializes the I2C communication
+
+
+   .. py:method:: clear(self)
+
+      clear_display is used to clear the oled display, It clears full disply
+
+      :return:    No return value
+
+
+   .. py:method:: draw_pixel(self, x=0, y=0, color=1, show=True)
+
+      :param x:   Starting x position
+
+      :param y:   Starting y position
+
+      :param color:   For black set 0, for white set 1
+
+      :param show:    To display command
+
+      :return:    No return value
+
+
+   .. py:method:: show(self)
+
+      Used to display on oled
+
+      :return:    No return value
+
+
+   .. py:method:: draw_text(self, text='', row=0, column=0, show=False)
+
+      Used to display on oled
+
+      :param string: Message in string format
+
+      :param row: Starting position in row
+
+      :param column:  Ending position in column
+
+      :param show:    To display
+
+      :return:    No return value
+
+
+   .. py:method:: process_message(self, message=None)
+
+
+

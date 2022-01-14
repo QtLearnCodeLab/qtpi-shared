@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>uqtpy.comm.ble.service &mdash; uqtpy 0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../index.html" class="icon icon-home"> uqtpy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">uqtpy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">uqtpy.comm.ble.service</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/autoapi/uqtpy/comm/ble/service/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-uqtpy.comm.ble.service">
+<span id="uqtpy-comm-ble-service"></span><h1><a class="reference internal" href="#module-uqtpy.comm.ble.service" title="uqtpy.comm.ble.service"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uqtpy.comm.ble.service</span></code></a><a class="headerlink" href="#module-uqtpy.comm.ble.service" title="Permalink to this headline"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#uqtpy.comm.ble.service.QtBLEAdvertiser" title="uqtpy.comm.ble.service.QtBLEAdvertiser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QtBLEAdvertiser</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#uqtpy.comm.ble.service.Service" title="uqtpy.comm.ble.service.Service"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Service</span></code></a></p></td>
+<td><p>Service class to hold uuid and properties for ble service</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#uqtpy.comm.ble.service.QtBLEService" title="uqtpy.comm.ble.service.QtBLEService"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QtBLEService</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#uqtpy.comm.ble.service.QtBLE" title="uqtpy.comm.ble.service.QtBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QtBLE</span></code></a></p></td>
+<td><p>QtBLEService: QtPI BLE Service object for creating component services</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLEAdvertiser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uqtpy.comm.ble.service.</span></span><span class="sig-name descname"><span class="pre">QtBLEAdvertiser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ble</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLEAdvertiser" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLEAdvertiser.create_payload">
+<span class="sig-name descname"><span class="pre">create_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limited_disc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">br_edr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">services</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">appearance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">BLEConstants.ADV_APPEARANCE_GENERIC_COMPUTER</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLEAdvertiser.create_payload" title="Permalink to this definition"></a></dt>
+<dd><p>create_payload : create the ble payload for advertising the service</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLEAdvertiser.advertise">
+<span class="sig-name descname"><span class="pre">advertise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">services</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval_us</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLEAdvertiser.advertise" title="Permalink to this definition"></a></dt>
+<dd><p>advertise: advertise the service</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.Service">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uqtpy.comm.ble.service.</span></span><span class="sig-name descname"><span class="pre">Service</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.Service" title="Permalink to this definition"></a></dt>
+<dd><p>Service class to hold uuid and properties for ble service</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLEService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uqtpy.comm.ble.service.</span></span><span class="sig-name descname"><span class="pre">QtBLEService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'0x1011'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLEService" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uqtpy.comm.ble.service.</span></span><span class="sig-name descname"><span class="pre">QtBLE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'QtPi</span> <span class="pre">ESP32'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE" title="Permalink to this definition"></a></dt>
+<dd><p>QtBLEService: QtPI BLE Service object for creating component services</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.TIMEOUT_MS">
+<span class="sig-name descname"><span class="pre">TIMEOUT_MS</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">5000</span></em><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.TIMEOUT_MS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.add_services">
+<span class="sig-name descname"><span class="pre">add_services</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">services</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.add_services" title="Permalink to this definition"></a></dt>
+<dd><p>register: register service with BLE gatt</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.start_advertising">
+<span class="sig-name descname"><span class="pre">start_advertising</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.start_advertising" title="Permalink to this definition"></a></dt>
+<dd><p>start_advertising: Start Advertise the services</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.irq">
+<span class="sig-name descname"><span class="pre">irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.irq" title="Permalink to this definition"></a></dt>
+<dd><p>Irq: Internal function for interrupts</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE._irq">
+<span class="sig-name descname"><span class="pre">_irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE._irq" title="Permalink to this definition"></a></dt>
+<dd><p>_irq: Internal method for interrupt with data handler</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.handle_data">
+<span class="sig-name descname"><span class="pre">handle_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.handle_data" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.get_component">
+<span class="sig-name descname"><span class="pre">get_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.get_component" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.write" title="Permalink to this definition"></a></dt>
+<dd><p>write: Write data to connected devices</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.read" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.on_receive">
+<span class="sig-name descname"><span class="pre">on_receive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rec_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.on_receive" title="Permalink to this definition"></a></dt>
+<dd><p>on_receive: This method is called to write data to component when data is being received</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.async_write">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">async_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gatts_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_freq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.async_write" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.async_wait">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">async_wait</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_freq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.async_wait" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.start_services">
+<span class="sig-name descname"><span class="pre">start_services</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">90</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.start_services" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.comm.ble.service.QtBLE.wait_for_event">
+<span class="sig-name descname"><span class="pre">wait_for_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout_ms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.comm.ble.service.QtBLE.wait_for_event" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, qtpi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

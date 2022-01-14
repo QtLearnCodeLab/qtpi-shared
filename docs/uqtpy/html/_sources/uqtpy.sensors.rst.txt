@@ -1,0 +1,85 @@
+uqtpy.sensors package
+=====================
+
+Submodules
+----------
+
+uqtpy.sensors.apds module
+-------------------------
+
+.. automodule:: uqtpy.sensors.apds
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.sensors.gas module
+------------------------
+
+.. automodule:: uqtpy.sensors.gas
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.sensors.ir module
+-----------------------
+
+.. automodule:: uqtpy.sensors.ir
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.sensors.joystick module
+-----------------------------
+
+.. automodule:: uqtpy.sensors.joystick
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.sensors.ldr module
+------------------------
+
+.. automodule:: uqtpy.sensors.ldr
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.sensors.limitswitch module
+--------------------------------
+
+.. automodule:: uqtpy.sensors.limitswitch
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.sensors.mpu6050 module
+----------------------------
+
+.. automodule:: uqtpy.sensors.mpu6050
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.sensors.temperature module
+--------------------------------
+
+.. automodule:: uqtpy.sensors.temperature
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.sensors.ultrasonic module
+-------------------------------
+
+.. automodule:: uqtpy.sensors.ultrasonic
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: uqtpy.sensors
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,29 @@
+:py:mod:`uqtpy`
+===============
+
+.. py:module:: uqtpy
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   actuators/index.rst
+   comm/index.rst
+   common/index.rst
+   expander/index.rst
+   helper/index.rst
+   sensors/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   constants/index.rst
+
+

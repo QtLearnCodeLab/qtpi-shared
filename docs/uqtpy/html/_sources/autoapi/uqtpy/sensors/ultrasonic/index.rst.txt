@@ -1,0 +1,126 @@
+:py:mod:`uqtpy.sensors.ultrasonic`
+==================================
+
+.. py:module:: uqtpy.sensors.ultrasonic
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   uqtpy.sensors.ultrasonic.UltraSonic
+
+
+
+
+.. py:class:: UltraSonic(port=None, trig_pin=None, echo_pin=None, echo_timeout_us=500 * 2 * 30, ob=True)
+
+   .. py:method:: _send_pulse_and_wait(self, trig_pin, echo_pin)
+
+      [summary]
+
+      Args:
+          trig_pin ([type]): [description]
+          echo_pin ([type]): [description]
+
+      Raises:
+          OSError: [description]
+          ex: [description]
+
+      Returns:
+          [type]: [description]
+
+
+   .. py:method:: get_type(self)
+
+      get the type
+
+      Returns:
+          str: type of component
+
+
+   .. py:method:: get_name(self)
+
+      get the name
+
+      Returns:
+          str: name of component
+
+
+   .. py:method:: read_value(self, metric='cm', port=None)
+
+      read the ultrasonic value
+
+      Args:
+          metric (str, optional): metric param as millimeter(mm) or centimeter(cm). Defaults to "cm".
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          int: returns ultrasonic value
+
+
+   .. py:method:: read_distance_mm(self, port=None)
+
+      Read the Distance in MilliMeter
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          int: returns ultrasonic distance value in mm
+
+
+   .. py:method:: read_distance_cm(self, port=None)
+
+      Read the Distance in CentiMeter
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          int: returns ultrasonic distance value in cm
+
+
+   .. py:method:: enable_us(self, port=None)
+
+      Enable Ultrasonic Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: disable_us(self, port=None)
+
+      Enable Ultrasonic Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: process_message(self, message=None)
+
+      [summary]
+
+      Args:
+          message (str, optional): Message in JSON format for processing. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+   .. py:method:: get_value(self, port=None)
+
+      get the value in json format
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+

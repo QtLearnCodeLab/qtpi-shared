@@ -1,0 +1,77 @@
+:py:mod:`uqtpy.helper.adapter.service`
+======================================
+
+.. py:module:: uqtpy.helper.adapter.service
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   uqtpy.helper.adapter.service.Service
+
+
+
+
+.. py:class:: Service(name='', stream=None, module=None)
+
+   .. py:method:: set_task(self, task)
+
+
+   .. py:method:: get_task(self)
+
+
+   .. py:method:: get_stream(self)
+
+
+   .. py:method:: set_stream(self, stream)
+
+
+   .. py:method:: get_name(self)
+
+
+   .. py:method:: set_name(self, name)
+
+
+   .. py:method:: get_adapters(self)
+
+
+   .. py:method:: get_next(self)
+
+
+   .. py:method:: handle_control_messages(self, svc_obj)
+      :async:
+
+
+   .. py:method:: save(self, file_name=None, data=None)
+      :async:
+
+
+   .. py:method:: run(self, file_name=None)
+      :async:
+
+
+   .. py:method:: handle_module_messages(self, mod_obj)
+      :async:
+
+
+   .. py:method:: handle_registration_messages(self, message)
+      :async:
+
+
+   .. py:method:: process_message(self, message)
+      :async:
+
+
+   .. py:method:: task(self)
+      :async:
+
+
+   .. py:method:: start_adapter(self)
+
+
+

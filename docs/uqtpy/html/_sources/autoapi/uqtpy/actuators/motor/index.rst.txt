@@ -1,0 +1,81 @@
+:py:mod:`uqtpy.actuators.motor`
+===============================
+
+.. py:module:: uqtpy.actuators.motor
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   uqtpy.actuators.motor.Motor
+
+
+
+
+.. py:class:: Motor(port=None, ob=False)
+
+   .. py:method:: set_i2c(self, scl=22, sda=21, id=-1, freq=400000)
+
+      :param scl: Clock pin in I2C communication
+
+      :param sda: Data pin in I2C communication
+
+      :param id: Software 1, Hardware -1
+
+      :param freq: Frequency
+
+      :return:    No return value
+
+
+   .. py:method:: rotate(self, speed=0, direction=0, port=None)
+
+      :param port:    Port attached to motor
+
+      :param speed:   Speed of motor
+
+      :param direction:   Direction of motor True/False
+
+      :return:    No return value
+
+
+   .. py:method:: get_type(self)
+
+      :return:
+
+
+   .. py:method:: get_name(self)
+
+      :return:
+
+
+   .. py:method:: clockwise(self, port, speed)
+
+      Used to rotate motor in clockwire direction
+
+      :param port:    Motor attached port
+
+      :param speed:   Speed of motor
+
+      :return:    No return value
+
+
+   .. py:method:: anticlockwise(self, port, speed)
+
+      Rotate motor in anticlockwise direction
+
+      :param port:    Motor attached port
+
+      :param speed:   Speed of motor
+
+      :return:    No return value
+
+
+   .. py:method:: process_message(self, message=None)
+
+
+

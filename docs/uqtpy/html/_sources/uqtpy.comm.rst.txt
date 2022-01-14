@@ -1,0 +1,30 @@
+uqtpy.comm package
+==================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   uqtpy.comm.ble
+   uqtpy.comm.wifi
+
+Submodules
+----------
+
+uqtpy.comm.websocket module
+---------------------------
+
+.. automodule:: uqtpy.comm.websocket
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: uqtpy.comm
+   :members:
+   :undoc-members:
+   :show-inheritance:

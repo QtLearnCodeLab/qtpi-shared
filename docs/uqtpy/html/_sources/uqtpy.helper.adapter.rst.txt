@@ -1,0 +1,29 @@
+uqtpy.helper.adapter package
+============================
+
+Submodules
+----------
+
+uqtpy.helper.adapter.module module
+----------------------------------
+
+.. automodule:: uqtpy.helper.adapter.module
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.helper.adapter.service module
+-----------------------------------
+
+.. automodule:: uqtpy.helper.adapter.service
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: uqtpy.helper.adapter
+   :members:
+   :undoc-members:
+   :show-inheritance:

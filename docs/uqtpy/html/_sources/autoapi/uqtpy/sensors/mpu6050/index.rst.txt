@@ -1,0 +1,142 @@
+:py:mod:`uqtpy.sensors.mpu6050`
+===============================
+
+.. py:module:: uqtpy.sensors.mpu6050
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   uqtpy.sensors.mpu6050.MPU6050
+
+
+
+
+.. py:class:: MPU6050(port=None, ob=True)
+
+   .. py:method:: initialize(self)
+
+      :return:    No return value
+
+
+   .. py:method:: get_type(self)
+
+      get the type
+
+      Returns:
+          str: type of component
+
+
+   .. py:method:: get_name(self)
+
+      get the name
+
+      Returns:
+          str: name of component
+
+
+   .. py:method:: enable_gyro(self)
+
+      Enable Gyro Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: disable_gyro(self)
+
+      Enable Gyro Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: enable_accel(self)
+
+      Enable Accelerometer Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: disable_acccel(self)
+
+      Disable Accelerometer Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: enable_temp(self)
+
+      Enable Temperature Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: disable_temp(self)
+
+      Disable Temperature Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: get_accel(self)
+
+      get accelerometer values
+
+      Returns:
+          (int,int,int): xyz accelerometer values
+
+
+   .. py:method:: get_gyro(self)
+
+      get gyroscope values
+
+      Returns:
+          (int,int,int): xyz accelerometer values
+
+
+   .. py:method:: get_temp(self)
+
+      get temperature value
+
+      Returns:
+          int: temperature value
+
+
+   .. py:method:: process_message(self, message=None)
+
+      [summary]
+
+      Args:
+          message (str, optional): Message in JSON format for processing. Defaults to None.
+      Example:
+          { 
+          "g" : ["a" ,"g", "t"]
+          "e" : ["a" ,"g", "t"]
+          "d" : ["a" ,"g", "t"]
+          }
+      Returns:
+          str: returns JSON response
+
+
+   .. py:method:: get_value(self)
+
+      get the value in json format
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+

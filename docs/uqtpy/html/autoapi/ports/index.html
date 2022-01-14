@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ports &mdash; uqtpy 0.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> uqtpy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">uqtpy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ports</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/autoapi/ports/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ports">
+<span id="ports"></span><h1><a class="reference internal" href="#module-ports" title="ports"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ports</span></code></a><a class="headerlink" href="#module-ports" title="Permalink to this headline"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ports.QtPort" title="ports.QtPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QtPort</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="ports.QtPort">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ports.</span></span><span class="sig-name descname"><span class="pre">QtPort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/configs/veda-esp32.json'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ports.QtPort" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="ports.QtPort.getPortsCount">
+<span class="sig-name descname"><span class="pre">getPortsCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ports.QtPort.getPortsCount" title="Permalink to this definition"></a></dt>
+<dd><p>Get The Ports Count</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: get the ports count</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ports.QtPort.getRJPortsCount">
+<span class="sig-name descname"><span class="pre">getRJPortsCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ports.QtPort.getRJPortsCount" title="Permalink to this definition"></a></dt>
+<dd><p>Get The RJ11 Ports Count</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: get the RJ11 ports count</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ports.QtPort.getMotorPortsCount">
+<span class="sig-name descname"><span class="pre">getMotorPortsCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ports.QtPort.getMotorPortsCount" title="Permalink to this definition"></a></dt>
+<dd><p>Get The Motor Ports Count</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: get the motor ports count</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ports.QtPort.getUsbPortsCount">
+<span class="sig-name descname"><span class="pre">getUsbPortsCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ports.QtPort.getUsbPortsCount" title="Permalink to this definition"></a></dt>
+<dd><p>Get The USB Ports Count</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: get the usb ports count</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ports.QtPort.getAnalogPin">
+<span class="sig-name descname"><span class="pre">getAnalogPin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rj'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ports.QtPort.getAnalogPin" title="Permalink to this definition"></a></dt>
+<dd><p>get the analog pin</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>port (int, optional): port number for which analog pin requested. Defaults to None.
+port_type (str, optional): [description]. Defaults to ‘rj’.</p>
+</dd>
+<dt>Returns:</dt><dd><p>int: return the analog pin</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ports.QtPort.getDigitalPin">
+<span class="sig-name descname"><span class="pre">getDigitalPin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rj'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ports.QtPort.getDigitalPin" title="Permalink to this definition"></a></dt>
+<dd><p>get the digital pin</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>port (int, optional): port number for which digital pin requested. Defaults to None.
+port_type (str, optional): [description]. Defaults to ‘rj’.</p>
+</dd>
+<dt>Returns:</dt><dd><p>int: return the analog pin</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ports.QtPort.getMotorPins">
+<span class="sig-name descname"><span class="pre">getMotorPins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ports.QtPort.getMotorPins" title="Permalink to this definition"></a></dt>
+<dd><p>get the motor pins</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>port (int, optional): port number for which motor pins requested. Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>int, int: return the motor pins</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, qtpi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

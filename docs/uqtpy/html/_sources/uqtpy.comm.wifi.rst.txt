@@ -1,0 +1,21 @@
+uqtpy.comm.wifi package
+=======================
+
+Submodules
+----------
+
+uqtpy.comm.wifi.webserver module
+--------------------------------
+
+.. automodule:: uqtpy.comm.wifi.webserver
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: uqtpy.comm.wifi
+   :members:
+   :undoc-members:
+   :show-inheritance:

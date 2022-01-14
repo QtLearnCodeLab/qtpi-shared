@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>uqtpy.sensors.ultrasonic &mdash; uqtpy 0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> uqtpy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">uqtpy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">uqtpy.sensors.ultrasonic</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/autoapi/uqtpy/sensors/ultrasonic/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-uqtpy.sensors.ultrasonic">
+<span id="uqtpy-sensors-ultrasonic"></span><h1><a class="reference internal" href="#module-uqtpy.sensors.ultrasonic" title="uqtpy.sensors.ultrasonic"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uqtpy.sensors.ultrasonic</span></code></a><a class="headerlink" href="#module-uqtpy.sensors.ultrasonic" title="Permalink to this headline"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#uqtpy.sensors.ultrasonic.UltraSonic" title="uqtpy.sensors.ultrasonic.UltraSonic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UltraSonic</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="uqtpy.sensors.ultrasonic.UltraSonic">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uqtpy.sensors.ultrasonic.</span></span><span class="sig-name descname"><span class="pre">UltraSonic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trig_pin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">echo_pin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">echo_timeout_us</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.ultrasonic.UltraSonic" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.sensors.ultrasonic.UltraSonic._send_pulse_and_wait">
+<span class="sig-name descname"><span class="pre">_send_pulse_and_wait</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trig_pin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">echo_pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.ultrasonic.UltraSonic._send_pulse_and_wait" title="Permalink to this definition"></a></dt>
+<dd><p>[summary]</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>trig_pin ([type]): [description]
+echo_pin ([type]): [description]</p>
+</dd>
+<dt>Raises:</dt><dd><p>OSError: [description]
+ex: [description]</p>
+</dd>
+<dt>Returns:</dt><dd><p>[type]: [description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.sensors.ultrasonic.UltraSonic.get_type">
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.ultrasonic.UltraSonic.get_type" title="Permalink to this definition"></a></dt>
+<dd><p>get the type</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: type of component</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.sensors.ultrasonic.UltraSonic.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.ultrasonic.UltraSonic.get_name" title="Permalink to this definition"></a></dt>
+<dd><p>get the name</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: name of component</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.sensors.ultrasonic.UltraSonic.read_value">
+<span class="sig-name descname"><span class="pre">read_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cm'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.ultrasonic.UltraSonic.read_value" title="Permalink to this definition"></a></dt>
+<dd><p>read the ultrasonic value</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>metric (str, optional): metric param as millimeter(mm) or centimeter(cm). Defaults to “cm”.
+port (int, optional): port number. Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>int: returns ultrasonic value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.sensors.ultrasonic.UltraSonic.read_distance_mm">
+<span class="sig-name descname"><span class="pre">read_distance_mm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.ultrasonic.UltraSonic.read_distance_mm" title="Permalink to this definition"></a></dt>
+<dd><p>Read the Distance in MilliMeter</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>int: returns ultrasonic distance value in mm</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.sensors.ultrasonic.UltraSonic.read_distance_cm">
+<span class="sig-name descname"><span class="pre">read_distance_cm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.ultrasonic.UltraSonic.read_distance_cm" title="Permalink to this definition"></a></dt>
+<dd><p>Read the Distance in CentiMeter</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>int: returns ultrasonic distance value in cm</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.sensors.ultrasonic.UltraSonic.enable_us">
+<span class="sig-name descname"><span class="pre">enable_us</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.ultrasonic.UltraSonic.enable_us" title="Permalink to this definition"></a></dt>
+<dd><p>Enable Ultrasonic Sensor</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.sensors.ultrasonic.UltraSonic.disable_us">
+<span class="sig-name descname"><span class="pre">disable_us</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.ultrasonic.UltraSonic.disable_us" title="Permalink to this definition"></a></dt>
+<dd><p>Enable Ultrasonic Sensor</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.sensors.ultrasonic.UltraSonic.process_message">
+<span class="sig-name descname"><span class="pre">process_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.ultrasonic.UltraSonic.process_message" title="Permalink to this definition"></a></dt>
+<dd><p>[summary]</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>message (str, optional): Message in JSON format for processing. Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: returns JSON response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uqtpy.sensors.ultrasonic.UltraSonic.get_value">
+<span class="sig-name descname"><span class="pre">get_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.ultrasonic.UltraSonic.get_value" title="Permalink to this definition"></a></dt>
+<dd><p>get the value in json format</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: returns JSON response</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, qtpi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

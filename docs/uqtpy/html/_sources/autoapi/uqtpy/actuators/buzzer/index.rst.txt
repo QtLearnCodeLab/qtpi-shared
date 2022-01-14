@@ -1,0 +1,68 @@
+:py:mod:`uqtpy.actuators.buzzer`
+================================
+
+.. py:module:: uqtpy.actuators.buzzer
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   uqtpy.actuators.buzzer.Buzzer
+
+
+
+
+.. py:class:: Buzzer(port=None, pin=None, ob=True)
+
+   A buzzer is an audio signaling device that makes buzzing sound.
+
+   .. py:method:: get_type(self)
+
+      :return:
+
+
+   .. py:method:: get_name(self)
+
+      :return:
+
+
+   .. py:method:: buzz(self, port=None, sec=1)
+
+      Buzz Method
+
+      Args:
+          port (Number, optional): Port Number. Defaults to None.
+          sec (int, optional): [No of seconds]. Defaults to 1.
+
+
+   .. py:method:: on(self, port=None)
+
+      On Method
+
+      Args:
+          port (Number, optional): Port Number. Defaults to None.
+
+
+   .. py:method:: off(self, port=None)
+
+      Off Method
+
+      Args:
+          port (Number, optional): Port Number. Defaults to None.
+
+
+   .. py:method:: process_message(self, message=None)
+
+      Process Message
+
+      Args:
+          message ([JSON], optional): Message in JSON Format. Defaults to None.
+      Example: {"s":{"p":1,"v":2,"s":2}}
+
+
+
