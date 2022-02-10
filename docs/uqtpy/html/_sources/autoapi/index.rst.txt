@@ -8,5 +8,8 @@ This page contains auto-generated API reference documentation [#f1]_.
 
    /autoapi/uqtpy/index
    /autoapi/ports/index
+   /autoapi/apds/index
+   /autoapi/ble/index
+   /autoapi/test/index
 
 .. [#f1] Created with `sphinx-autoapi <https://github.com/readthedocs/sphinx-autoapi>`_

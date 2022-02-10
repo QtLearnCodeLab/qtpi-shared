@@ -84,6 +84,12 @@ Classes
    .. py:method:: read(self, sz=None)
 
 
+   .. py:method:: bytessplit(self, string, delimiter=0)
+
+
+   .. py:method:: bytessplit2(self, string, delimiter=0)
+
+
    .. py:method:: on_receive(self, rec_data, component)
 
       on_receive: This method is called to write data to component when data is being received

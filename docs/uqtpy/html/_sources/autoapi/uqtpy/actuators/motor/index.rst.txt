@@ -19,6 +19,26 @@ Classes
 
 .. py:class:: Motor(port=None, ob=False)
 
+   .. py:attribute:: qtPort
+      
+
+      
+
+   .. py:attribute:: pins
+      :annotation: = []
+
+      
+
+   .. py:attribute:: frequency
+      :annotation: = 5000
+
+      
+
+   .. py:attribute:: count
+      
+
+      
+
    .. py:method:: set_i2c(self, scl=22, sda=21, id=-1, freq=400000)
 
       :param scl: Clock pin in I2C communication
