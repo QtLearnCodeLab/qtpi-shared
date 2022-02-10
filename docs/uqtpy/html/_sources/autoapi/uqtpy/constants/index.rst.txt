@@ -185,6 +185,11 @@ Classes
 
       
 
+   .. py:attribute:: QT_TOF_SERVICE
+      
+
+      
+
    .. py:attribute:: MODULE
       
 

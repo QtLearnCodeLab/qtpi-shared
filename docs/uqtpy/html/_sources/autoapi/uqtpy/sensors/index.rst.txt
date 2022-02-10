@@ -18,6 +18,7 @@ Submodules
    limitswitch/index.rst
    mpu6050/index.rst
    temperature/index.rst
+   tof/index.rst
    ultrasonic/index.rst
 
 

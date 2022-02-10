@@ -19,6 +19,26 @@ Classes
 
 .. py:class:: UltraSonic(port=None, trig_pin=None, echo_pin=None, echo_timeout_us=500 * 2 * 30, ob=True)
 
+   .. py:attribute:: qtPort
+      
+
+      
+
+   .. py:attribute:: count
+      
+
+      
+
+   .. py:attribute:: us_pins
+      :annotation: = []
+
+      
+
+   .. py:attribute:: enabled_us
+      
+
+      
+
    .. py:method:: _send_pulse_and_wait(self, trig_pin, echo_pin)
 
       [summary]

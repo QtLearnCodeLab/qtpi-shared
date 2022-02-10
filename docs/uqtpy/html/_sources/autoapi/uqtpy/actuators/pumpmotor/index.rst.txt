@@ -19,6 +19,26 @@ Classes
 
 .. py:class:: PumpMotor(port=None, ob=True)
 
+   .. py:attribute:: qtPort
+      
+
+      
+
+   .. py:attribute:: pins
+      :annotation: = []
+
+      
+
+   .. py:attribute:: frequency
+      :annotation: = 5000
+
+      
+
+   .. py:attribute:: count
+      
+
+      
+
    .. py:method:: set_i2c(self, scl=22, sda=21, id=-1, freq=400000)
 
       :param scl: Clock pin in I2C communication
@@ -28,6 +48,7 @@ Classes
       :param id: Software 1, Hardware -1
 
       :param freq: Frequency
+
 
       :return:    No return value
 

@@ -1,0 +1,29 @@
+:py:mod:`apds`
+==============
+
+.. py:module:: apds
+
+
+Module Contents
+---------------
+
+.. py:data:: apds2
+   
+
+   
+
+.. py:data:: gesture
+   
+
+   
+
+.. py:data:: apds2
+   
+
+   
+
+.. py:data:: gesture
+   
+
+   
+

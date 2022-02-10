@@ -27,9 +27,9 @@ Classes
    Usage :
    set_color( 2,red=255) # Sets 3rd LED to Red
    set_color( 2,green=255) # Sets 3rd LED to Green
-   fill_color( ) # truns Off all LEDs
-   fill_color( green=255 ) # truns  all LEDs Green
-   fill_color( 255,255,255 ) # truns  all LEDs White
+   fill_color( ) # turns Off all LEDs
+   fill_color( green=255 ) # turns  all LEDs Green
+   fill_color( 255,255,255 ) # turns  all LEDs White
    set_color( 2,green=255, show=False) # Sets internal value of 3rd LED to green value.Explicitly call self.show()
 
    .. py:method:: get_pixels_count(self)
