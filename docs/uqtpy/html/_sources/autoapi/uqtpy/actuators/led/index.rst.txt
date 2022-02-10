@@ -20,8 +20,24 @@ Classes
 .. py:class:: LED(port=None, ob=True, pin=None, frequency=5000)
 
    LED stands for Light Emitting Diode.
-   It has two terminals, 1. Anode(positive)-Longer Terminal
+   It has two terminals
+   1. Anode(positive)-Longer Terminal
    2. Cathode(negative)-Shorter terminal
+
+   .. py:attribute:: pins
+      :annotation: = []
+
+      
+
+   .. py:attribute:: qtPort
+      
+
+      
+
+   .. py:attribute:: count
+      
+
+      
 
    .. py:method:: get_type(self)
 

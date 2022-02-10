@@ -19,6 +19,23 @@ Classes
 
 .. py:class:: Servo(port=None, step=10, step_delay=0.05, start_position=0, ob=True)
 
+   Servo 
+
+   .. py:attribute:: servo_pins
+      :annotation: = []
+
+      
+
+   .. py:attribute:: qtPort
+      
+
+      
+
+   .. py:attribute:: count
+      
+
+      
+
    .. py:method:: get_type(self)
 
       :return:

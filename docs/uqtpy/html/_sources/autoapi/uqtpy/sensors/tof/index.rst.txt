@@ -19,6 +19,8 @@ Classes
 
 .. py:class:: TOF(port=1, ob=True)
 
+   TOF
+
    .. py:attribute:: tofFeatureEnabled
       :annotation: = [False, False, False, False, False, False]
 

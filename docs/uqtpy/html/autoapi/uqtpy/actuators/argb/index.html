@@ -78,15 +78,14 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#uqtpy.actuators.argb.ARGB" title="uqtpy.actuators.argb.ARGB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ARGB</span></code></a></p></td>
-<td><p>ARGB stands for Addressable RGB led</p></td>
+<td><p>ARGB stands for Addressable Red Green Blue(RGB) LED. In ARGB you can</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="uqtpy.actuators.argb.ARGB">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uqtpy.actuators.argb.</span></span><span class="sig-name descname"><span class="pre">ARGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB" title="Permalink to this definition"></a></dt>
-<dd><p>ARGB stands for Addressable RGB led
-ARGB stands for Addressable Red Green Blue LED. In ARGB you can
+<dd><p>ARGB stands for Addressable Red Green Blue(RGB) LED. In ARGB you can
 choose the color of any LED of your choice.
 Set the specified digital input pin to the provided value</p>
 <p>Usage :
@@ -96,6 +95,21 @@ fill_color( ) # turns Off all LEDs
 fill_color( green=255 ) # turns  all LEDs Green
 fill_color( 255,255,255 ) # turns  all LEDs White
 set_color( 2,green=255, show=False) # Sets internal value of 3rd LED to green value.Explicitly call self.show()</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.actuators.argb.ARGB.qtPort">
+<span class="sig-name descname"><span class="pre">qtPort</span></span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.qtPort" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.actuators.argb.ARGB.pixel_pins">
+<span class="sig-name descname"><span class="pre">pixel_pins</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.pixel_pins" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.actuators.argb.ARGB.count">
+<span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.count" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.argb.ARGB.get_pixels_count">
 <span class="sig-name descname"><span class="pre">get_pixels_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.get_pixels_count" title="Permalink to this definition"></a></dt>

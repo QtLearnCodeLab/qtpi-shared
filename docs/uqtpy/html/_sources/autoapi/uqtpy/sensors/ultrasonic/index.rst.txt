@@ -19,6 +19,9 @@ Classes
 
 .. py:class:: UltraSonic(port=None, trig_pin=None, echo_pin=None, echo_timeout_us=500 * 2 * 30, ob=True)
 
+   UltraSonic:
+
+
    .. py:attribute:: qtPort
       
 

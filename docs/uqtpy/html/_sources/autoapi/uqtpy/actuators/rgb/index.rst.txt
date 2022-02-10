@@ -21,6 +21,7 @@ Classes
 
    RGB stands for "Red, Green, Blue"
    RGB refers to three hues of light that can be mixed together to create different colors
+   Note: Not Implemented Fully
 
    .. py:method:: set_pin(self, red_pin, green_pin, blue_pin, frequency=5000)
 

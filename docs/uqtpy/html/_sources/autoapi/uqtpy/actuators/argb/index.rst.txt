@@ -19,8 +19,7 @@ Classes
 
 .. py:class:: ARGB(port=None, pin=None, ob=True, pixels=8)
 
-   ARGB stands for Addressable RGB led
-   ARGB stands for Addressable Red Green Blue LED. In ARGB you can
+   ARGB stands for Addressable Red Green Blue(RGB) LED. In ARGB you can
    choose the color of any LED of your choice.
    Set the specified digital input pin to the provided value
 
@@ -31,6 +30,21 @@ Classes
    fill_color( green=255 ) # turns  all LEDs Green
    fill_color( 255,255,255 ) # turns  all LEDs White
    set_color( 2,green=255, show=False) # Sets internal value of 3rd LED to green value.Explicitly call self.show()
+
+   .. py:attribute:: qtPort
+      
+
+      
+
+   .. py:attribute:: pixel_pins
+      :annotation: = []
+
+      
+
+   .. py:attribute:: count
+      
+
+      
 
    .. py:method:: get_pixels_count(self)
 

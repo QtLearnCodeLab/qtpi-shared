@@ -19,6 +19,8 @@ Classes
 
 .. py:class:: PumpMotor(port=None, ob=True)
 
+   PumpMotor 
+
    .. py:attribute:: qtPort
       
 

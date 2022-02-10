@@ -21,6 +21,21 @@ Classes
 
    A buzzer is an audio signaling device that makes buzzing sound.
 
+   .. py:attribute:: buzzer_pins
+      :annotation: = []
+
+      
+
+   .. py:attribute:: qtPort
+      
+
+      
+
+   .. py:attribute:: count
+      
+
+      
+
    .. py:method:: get_type(self)
 
       :return:

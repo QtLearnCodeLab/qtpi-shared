@@ -20,6 +20,7 @@ Classes
 .. py:class:: OLED(port=None, width=128, height=64, ob=True)
 
    Display is an OLED module used to show any data on board
+   Note: Not Implemented Fully
 
    .. py:method:: set_i2c(self, scl=22, sda=21, id=-1, freq=400000)
 
