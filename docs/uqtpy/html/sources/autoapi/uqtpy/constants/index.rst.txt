@@ -1,0 +1,198 @@
+:py:mod:`uqtpy.constants`
+=========================
+
+.. py:module:: uqtpy.constants
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   uqtpy.constants.QConstants
+   uqtpy.constants.QtService
+
+
+
+
+.. py:class:: QConstants
+
+   .. py:attribute:: QT_MOTOR_EXPANDER
+      :annotation: = 80
+
+      
+
+   .. py:attribute:: QT_GPIO_EXPANDER
+      :annotation: = 81
+
+      
+
+   .. py:attribute:: QT_ANALOG_INPUT
+      :annotation: = 1
+
+      
+
+   .. py:attribute:: QT_DIGITAL_INPUT
+      :annotation: = 2
+
+      
+
+   .. py:attribute:: QT_DIGITAL_OUTPUT
+      :annotation: = 3
+
+      
+
+   .. py:attribute:: QT_PWM
+      :annotation: = 4
+
+      
+
+   .. py:attribute:: QT_SERVO
+      :annotation: = 5
+
+      
+
+   .. py:attribute:: QT_NEOPIXEL_INIT
+      :annotation: = 6
+
+      
+
+   .. py:attribute:: QT_NEOPIXEL_CONTROL
+      :annotation: = 7
+
+      
+
+   .. py:attribute:: QT_NEOPIXEL_BEGIN
+      :annotation: = 1
+
+      
+
+   .. py:attribute:: QT_NEOPIXEL_SHOW
+      :annotation: = 2
+
+      
+
+   .. py:attribute:: QT_NEOPIXEL_CLEAR
+      :annotation: = 3
+
+      
+
+   .. py:attribute:: QT_TEMPERATURE_CMD
+      :annotation: = 8
+
+      
+
+   .. py:attribute:: QT_US_READ
+      :annotation: = 9
+
+      
+
+
+.. py:class:: QtService
+
+   Bases: :py:obj:`QConstants`
+
+   .. py:attribute:: QT_UUID
+      
+
+      
+
+   .. py:attribute:: QT_APDS_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_GAS_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_IR_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_LDR_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_LIMITSWITCH_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_TEMPERATURE_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_ULTRASONIC_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_MPU6050_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_ARGB_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_BUZZER_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_DISPLAY_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_LED_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_MOTOR_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_PUMP_MOTOR_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_RGB_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_SERVO_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_JOYSTICK_SERVICE
+      
+
+      
+
+   .. py:attribute:: QT_TOF_SERVICE
+      
+
+      
+
+   .. py:attribute:: MODULE
+      
+
+      
+
+

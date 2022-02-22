@@ -1,0 +1,24 @@
+:py:mod:`uqtpy.sensors`
+=======================
+
+.. py:module:: uqtpy.sensors
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   apds/index.rst
+   gas/index.rst
+   ir/index.rst
+   joystick/index.rst
+   ldr/index.rst
+   limitswitch/index.rst
+   mpu6050/index.rst
+   temperature/index.rst
+   tof/index.rst
+   ultrasonic/index.rst
+
+

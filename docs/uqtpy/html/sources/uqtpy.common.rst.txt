@@ -1,0 +1,21 @@
+uqtpy.common package
+====================
+
+Submodules
+----------
+
+uqtpy.common.device module
+--------------------------
+
+.. automodule:: uqtpy.common.device
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: uqtpy.common
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,35 @@
+:py:mod:`uqtpy.comm.websocket`
+==============================
+
+.. py:module:: uqtpy.comm.websocket
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   uqtpy.comm.websocket.Client
+   uqtpy.comm.websocket.Server
+
+
+
+
+.. py:class:: Client(url, name)
+
+   .. py:method:: set_url(self, url)
+
+
+   .. py:method:: connect(self, url=None, reconnect=False)
+
+
+   .. py:method:: register(self, message=None)
+
+
+
+.. py:class:: Server
+
+
