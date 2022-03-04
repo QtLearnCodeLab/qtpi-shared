@@ -30,14 +30,19 @@
         <div class="w-full overflow-hidden ">
 
             <div class=" box-content rounded-md h-auto w-full h-20 bg-gradient-to-r from-green-400 to-blue-500">
-                <p class="title-font mb-2 text-3xl font-extrabold leading-10 tracking-tight text-center sm:text-3xl sm:leading-none md:text-5xl text-white">QtWebComponents</p>
+                <p class="title-font mb-2 text-3xl font-extrabold leading-10 tracking-tight text-center sm:text-3xl sm:leading-none md:text-5xl text-white">QtWebComponents BLE</p>
             </div>
         </div>
 
         <div class="w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-1 md:px-1 md:w-1/2 lg:w-1/3 xl:w-1/3 ">
             <!-- Column Content -->
             <a href="bleboard.html" target="_blank">
-                <qt-board board-name="veda-1" board-type="veda"></qt-board>
+                <qt-board-ble
+      id="board1"
+      board-type="qtneo"
+      board-name="Qbrick"
+      service-uuid="1011"
+    ></qt-board-ble>
             </a>
         </div>
 
