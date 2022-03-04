@@ -1,0 +1,77 @@
+uqtpy.actuators package
+=======================
+
+Submodules
+----------
+
+uqtpy.actuators.argb module
+---------------------------
+
+.. automodule:: uqtpy.actuators.argb
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.actuators.buzzer module
+-----------------------------
+
+.. automodule:: uqtpy.actuators.buzzer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.actuators.display module
+------------------------------
+
+.. automodule:: uqtpy.actuators.display
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.actuators.led module
+--------------------------
+
+.. automodule:: uqtpy.actuators.led
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.actuators.motor module
+----------------------------
+
+.. automodule:: uqtpy.actuators.motor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.actuators.pumpmotor module
+--------------------------------
+
+.. automodule:: uqtpy.actuators.pumpmotor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.actuators.rgb module
+--------------------------
+
+.. automodule:: uqtpy.actuators.rgb
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uqtpy.actuators.servo module
+----------------------------
+
+.. automodule:: uqtpy.actuators.servo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: uqtpy.actuators
+   :members:
+   :undoc-members:
+   :show-inheritance:

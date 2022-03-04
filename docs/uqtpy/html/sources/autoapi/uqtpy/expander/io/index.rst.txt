@@ -1,0 +1,139 @@
+:py:mod:`uqtpy.expander.io`
+===========================
+
+.. py:module:: uqtpy.expander.io
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   uqtpy.expander.io.GPIO
+
+
+
+
+.. py:class:: GPIO
+
+   .. py:method:: setI2C(self, scl=22, sda=21, id=-1, freq=400000)
+
+      setI2C
+
+      :param scl: Clock pin in I2C communication
+
+      :param sda: Data pin in I2C communication
+
+      :param id:  Software 1, Hardware -1
+
+      :param freq:    Frequency
+
+      :return:    No return value
+
+
+   .. py:method:: sweep(self, port, start_angle, stop_angle, step=1, delay=10)
+
+      Rotate the servo motor
+
+      :param port:    Port number of servo attached
+
+      :param start_angle: Starting position
+
+      :param stop_angle:   stop position
+
+      :param step:   Number of steps
+
+      :param delay:   Delay in milli seconds
+
+      :return:    No return value
+
+
+   .. py:method:: digitalRead(self, port)
+
+      Read the digital status of any port
+
+      :param port:    Port number attached to IO expander
+
+      :return:    Returns last value reported to Pin
+
+
+   .. py:method:: digitalWrite(self, port, value)
+
+      DIgital write functionality to any port
+
+      :param port:     Port number attached to IO expander
+
+      :param value:   Digital Pin state value
+
+      :return:    No return value
+
+
+   .. py:method:: analogRead(self, port)
+
+      Analog read from port
+
+      :param port: Port number attached to IO expander
+
+      :return:    Last value reported to pin
+
+
+   .. py:method:: pwm(self, port, pwmvalue)
+
+      Pwm write to any port
+
+      :param port: Port number attached to IO expander
+
+      :param pwmvalue: Pwm value that need to written for pin
+
+      :return:    No return value
+
+
+   .. py:method:: neopixelInitialize(self, port=None, pixels=None)
+
+      :param port:
+
+      :param pixels:
+
+      :return:
+
+
+   .. py:method:: neopixelSet(self, port, index, red, green, blue, show=False)
+
+      :param port:
+
+      :param index:
+
+      :param red:
+
+      :param green:
+
+      :param blue:
+
+      :return:
+
+
+   .. py:method:: neopixelShow(self, port)
+
+      :param port:
+
+      :return:
+
+
+   .. py:method:: readTemperature(self, port)
+
+      :param port:
+
+      :return:
+
+
+   .. py:method:: readUS(self, port)
+
+      :param port:
+
+      :return:
+
+
+

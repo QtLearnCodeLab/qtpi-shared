@@ -1,0 +1,16 @@
+:py:mod:`uqtpy.common`
+======================
+
+.. py:module:: uqtpy.common
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   device/index.rst
+   message/index.rst
+
+

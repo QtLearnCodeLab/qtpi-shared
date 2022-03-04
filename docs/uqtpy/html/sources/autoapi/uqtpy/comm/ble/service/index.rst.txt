@@ -1,0 +1,112 @@
+:py:mod:`uqtpy.comm.ble.service`
+================================
+
+.. py:module:: uqtpy.comm.ble.service
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   uqtpy.comm.ble.service.QtBLEAdvertiser
+   uqtpy.comm.ble.service.Service
+   uqtpy.comm.ble.service.QtBLEService
+   uqtpy.comm.ble.service.QtBLE
+
+
+
+
+.. py:class:: QtBLEAdvertiser(ble=None)
+
+   .. py:method:: create_payload(self, limited_disc=False, br_edr=False, name=None, services=None, appearance=BLEConstants.ADV_APPEARANCE_GENERIC_COMPUTER)
+
+      create_payload : create the ble payload for advertising the service
+
+
+   .. py:method:: advertise(self, name=None, services=None, interval_us=500000)
+
+      advertise: advertise the service
+
+
+
+.. py:class:: Service(uuid=None, properties=None)
+
+   Service class to hold uuid and properties for ble service
+
+
+.. py:class:: QtBLEService(uuid='0x1011', components=None)
+
+
+.. py:class:: QtBLE(name='QtPi ESP32', debug=False)
+
+   QtBLEService: QtPI BLE Service object for creating component services
+
+   .. py:attribute:: TIMEOUT_MS
+      :annotation: = 5000
+
+      
+
+   .. py:method:: add_services(self, services=None)
+
+      register: register service with BLE gatt
+
+
+   .. py:method:: start_advertising(self)
+
+      start_advertising: Start Advertise the services
+
+
+   .. py:method:: irq(self, handler)
+
+      Irq: Internal function for interrupts
+
+
+   .. py:method:: _irq(self, event, data)
+
+      _irq: Internal method for interrupt with data handler
+
+
+   .. py:method:: handle_data(self, s_index, c_index)
+
+
+   .. py:method:: get_component(self, s_index, c_index)
+
+
+   .. py:method:: write(self, data=None, index=None)
+
+      write: Write data to connected devices
+
+
+   .. py:method:: read(self, sz=None)
+
+
+   .. py:method:: bytessplit(self, string, delimiter=0)
+
+
+   .. py:method:: bytessplit2(self, string, delimiter=0)
+
+
+   .. py:method:: on_receive(self, rec_data, component)
+
+      on_receive: This method is called to write data to component when data is being received
+
+
+   .. py:method:: async_write(self, component, gatts_index, read_freq)
+      :async:
+
+
+   .. py:method:: async_wait(self, component, read_freq)
+      :async:
+
+
+   .. py:method:: start_services(self, read_freq=90)
+
+
+   .. py:method:: wait_for_event(event, timeout_ms)
+
+
+

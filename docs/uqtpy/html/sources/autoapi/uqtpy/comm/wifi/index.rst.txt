@@ -1,0 +1,15 @@
+:py:mod:`uqtpy.comm.wifi`
+=========================
+
+.. py:module:: uqtpy.comm.wifi
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   webserver/index.rst
+
+

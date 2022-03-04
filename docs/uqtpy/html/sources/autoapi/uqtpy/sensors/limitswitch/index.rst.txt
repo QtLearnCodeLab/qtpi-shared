@@ -1,0 +1,102 @@
+:py:mod:`uqtpy.sensors.limitswitch`
+===================================
+
+.. py:module:: uqtpy.sensors.limitswitch
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   uqtpy.sensors.limitswitch.LimitSwitch
+
+
+
+
+.. py:class:: LimitSwitch(port=None, pin=None, ob=True)
+
+   LimitSwitch is a kind of switch
+
+   .. py:method:: get_type(self)
+
+      get the type
+
+      Returns:
+          str: type of component
+
+
+   .. py:method:: get_name(self)
+
+      get the name
+
+      Returns:
+          str: name of component
+
+
+   .. py:method:: read(self, port=None)
+
+      Get the LimitSwitch Sensor value
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: get_type(self)
+
+      get the type
+
+      Returns:
+          str: type of component
+
+
+   .. py:method:: get_status(self, port=None)
+
+      Get the LimitSwitch Sensor value
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: enable_ls(self, port=None)
+
+      Enable LimitSwitch Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: disable_ls(self, port=None)
+
+      Disable LimitSwitch Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+   .. py:method:: process_message(self, message=None)
+
+      [summary]
+
+      Args:
+          message (str, optional): Message in JSON format for processing. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+   .. py:method:: get_value(self, port=None)
+
+      get the value in json format
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+

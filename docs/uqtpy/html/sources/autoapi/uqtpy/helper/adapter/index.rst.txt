@@ -1,0 +1,16 @@
+:py:mod:`uqtpy.helper.adapter`
+==============================
+
+.. py:module:: uqtpy.helper.adapter
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   module/index.rst
+   service/index.rst
+
+
