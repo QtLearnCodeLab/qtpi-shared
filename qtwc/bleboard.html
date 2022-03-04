@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/qtlearn-fe260.appspot.com/o/Qt-Gallery%2Fqt-logo.png?alt=media&token=7536e374-f568-4734-88e0-3d64bf13da9a" type="image/icon type">
+
+    <script src="https://cdn.socket.io/socket.io-3.0.3.min.js"></script>
+    <script defer src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/v1.0.1/p5.min.js"></script>
+    <script defer src="https://qtlearncodelab.github.io/qtpi-shared/qad/js/v1.0.2/qad.min.js"></script> 
+    <link href="https://unpkg.com/tailwindcss@^2.0.2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.0.2/dist/components.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.0.2/dist/utilities.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-black text-white">
+        <div class="h-14 bg-gradient-to-r from-green-400  to-yellow-400">
+            <h1 class=" title-font mb-2 text-3xl font-extrabold leading-10 tracking-tight text-center sm:text-3xl sm:leading-none md:text-5xl text-white">
+                Qt BOARD BLE
+            </h1>
+        </div>
+        <iframe src="https://codesandbox.io/embed/magical-brattain-vqss5x?fontsize=14&hidenavigation=1&theme=dark"
+        style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+        title="qtboard"
+        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+      ></iframe>
+        <div class="bg-gradient-to-r from-green-400 via-blue to-yellow-500 grid grid-cols-3 gap-4">
+            <div class="group border-4 rounded group hover:bg-yellow-300 hover:shadow-lg hover:border-transparent text-justify">
+                <p class="text-center group-hover:text-gray-900">QBrick also called as Motherboard
+                    <br>
+                    Qbrick is the Brain/Processing unit of the robot <br> which is powered by a rechargable battery.
+                    <br>
+                    Number of RJ ports: 6
+                    <br>
+                    Number of programmable Motor Ports: 2
+                    <br>
+                </p>
+            </div>
+            <div class="group border-4 rounded group hover:bg-blue-500 hover:shadow-lg hover:border-transparent">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/RCWF9ExJ11c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="grid overflow-hidden grid-cols-2 grid-rows-2 gap-2 border-4 hover:bg-blue-400 hover:shadow-lg hover:border-transparent  h-auto">
+                <div class="box row-span-2 flex justify-center items-center">
+                    <img src="../images/qbrick_with_qrscan.png" alt="Qbrick image">
+                </div>
+                <div class="box flex justify-center items-center">
+                    <div class="h-32 w-36 relative cursor-pointer justify-center">
+                        <div class="absolute inset-0 bg-white opacity-25 rounded-lg shadow-2xl"></div>
+                        <div class="absolute inset-0 transform hover:scale-125 motion-reduce:transform-none ...">
+                            <a href="https://openedx.lms.qtlearn.in/courses/course-v1:QtLearn+RKC_01+2020/course/#block-v1:QtLearn+RKC_01+2020+type@sequential+block@0696ec1e93454807acb607c44662ced6" target="_blank">
+                                <img alt="LED On/Off" class="block h-full w-full rounded-lg shadow-2xl" src="../images/led_on_off.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box flex justify-center items-center">
+                    <div class="h-32 w-36 relative cursor-pointer justify-center">
+                        <div class="absolute inset-0 bg-white opacity-25 rounded-lg shadow-2xl"></div>
+                        <div class="absolute inset-0 transform hover:scale-125 motion-reduce:transform-none ...">
+                            <a href="https://openedx.lms.qtlearn.in/courses/course-v1:QtLearn+RKC_01+2020/course/#block-v1:QtLearn+RKC_01+2020+type@chapter+block@1a0fa3bc617540a4850595ae15f1909e" target="_blank">
+                                <img alt="Home automation" class="block h-full w-full rounded-lg shadow-2xl" src="../images/home_automation.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+    <script>!(function () {
+        let e = document.createElement("script"),
+          t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+          "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+          (e.async = !0),
+          (e.onload = () => {
+            window. WebChat.default({
+              selector: "#webchat",
+              initPayload: "/get_started",
+              customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+              socketUrl: "https://qbot.qtlearn.in",
+              socketPath: "/socket.io/",
+              title: "QBot",
+              subtitle: "QtPi",
+              params: {"storage": "session"} // can be set to "local"  or "session". details in storage section.
+           });
+          }),
+          t.insertBefore(e, t.firstChild);
+      })();
+      </script>
+</body>
+
+</html>
