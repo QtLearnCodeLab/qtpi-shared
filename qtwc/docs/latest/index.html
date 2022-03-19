@@ -123,6 +123,84 @@
 
 
 
+    <section>
+        <article><!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#qtcomponents-from-qtpi">QtComponents from QtPi</a>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#what-it-contains">What it contains</a>
+<ul>
+<li><a href="#components">Components</a></li>
+<li><a href="#tutorials">Tutorials</a></li>
+</ul>
+</li>
+<li><a href="#about-qtpi">About QtPi</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<h1>QtComponents from QtPi</h1>
+<p>QtComponents component library, which communicate with QtPi's BLE/BT based STEM educational controller boards.</p>
+<h2>Installation</h2>
+<p>Installation is as simple as include library in the <code>&lt;script&gt;</code> tag
+Ex: <code>&lt;script defer=&quot;defer&quot; src=&quot;https://qtlearncodelab.github.io/qtpi-shared/qtwc/js/releases/latest/qtwc.js&quot;&gt;&lt;/script&gt;</code></p>
+<h2>Usage</h2>
+<p>Use in the DOM like this:</p>
+<p><code>&lt;qt-led id=&quot;led1&quot;&gt;&lt;/qt-led&gt;</code></p>
+<p>Use the API:</p>
+<pre class="prettyprint source"><code>const led = document.querySelector('#led1');
+//Turn On LED
+led.led(&quot;on&quot;);
+//Turn Off LED
+led.led(&quot;off&quot;);
+</code></pre>
+<p>If you want, you can just create the element on your own and add it to the DOM:</p>
+<pre class="prettyprint source"><code>const led1 = document.createElement('qt-led');
+document.body.appendChild(led1);
+led1.on()
+</code></pre>
+<h2>What it contains</h2>
+<h3>Components</h3>
+<p>There are Board , Actuator, Sensor and Alexa and Google Voice integrated components :</p>
+<p>Actuators</p>
+<ul>
+<li><a href="QtLED.html">QtLED</a></li>
+<li><a href="QtMotor.html">QtMotor</a></li>
+<li><a href="QtServo.html">QtServo</a></li>
+<li><a href="QtPumpMotor.html">QtPumpMotor</a></li>
+<li><a href="QtBuzzer.html">QtBuzzer</a></li>
+</ul>
+<p>Sensors</p>
+<ul>
+<li><a href="QtAPDS.html">QtAPDS</a></li>
+<li><a href="QtMPU6050.html">QtMPU6050</a></li>
+<li><a href="QtUltraSonic.html">QtUltraSonic</a></li>
+<li><a href="QtTOF.html">QtTOF</a></li>
+</ul>
+<p>IOT Components</p>
+<ul>
+<li><a href="QtGv.html">QtGv</a></li>
+<li><a href="QtAlexa.html">QtAlexa</a></li>
+</ul>
+<p>Boards</p>
+<ul>
+<li><a href="QtBoard.html">QtBoard</a></li>
+<li><a href="QtBoardBLE.html">QtBoardBLE</a></li>
+</ul>
+<p>On the respective pages you can see:</p>
+<ul>
+<li>programming interface with props, methods, and events</li>
+<li>Examples you can fork and modify our templates in codesandbox in the browser.</li>
+</ul>
+<h3>Tutorials</h3>
+<h2>About QtPi</h2>
+<p>Since inception in 2016, QtPi Robotics has built an ecosystem of over 30,000 children aged between 7-17 across India, since we started in 2016. It's about time we pull students out of the rat race and teach them how to think instead of what to think!</p>
+<img src="https://qtpi.in/assets/logo.png" width=240></article>
+    </section>
+
 
 
 
