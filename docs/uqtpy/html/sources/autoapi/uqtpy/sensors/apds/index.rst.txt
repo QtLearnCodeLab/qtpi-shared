@@ -24,6 +24,14 @@ Classes
       :return:    No return value
 
 
+   .. py:method:: enable(self, port=None)
+
+      Enabling sensor
+
+
+   .. py:method:: disable(self, port=None)
+
+
    .. py:method:: get_type(self)
 
       get the type

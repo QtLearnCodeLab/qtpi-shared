@@ -110,6 +110,11 @@ set_color( 2,green=255, show=False) # Sets internal value of 3rd LED to green va
 <span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.count" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.actuators.argb.ARGB.portPixelMap">
+<span class="sig-name descname"><span class="pre">portPixelMap</span></span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.portPixelMap" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.argb.ARGB.get_pixels_count">
 <span class="sig-name descname"><span class="pre">get_pixels_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.get_pixels_count" title="Permalink to this definition"></a></dt>
@@ -142,7 +147,7 @@ set_color( 2,green=255, show=False) # Sets internal value of 3rd LED to green va
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.argb.ARGB.set_color">
-<span class="sig-name descname"><span class="pre">set_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">red</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">green</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.set_color" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">red</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">green</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.set_color" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -152,6 +157,7 @@ set_color( 2,green=255, show=False) # Sets internal value of 3rd LED to green va
 <li><p><strong>blue</strong> – Value of blue, ranges from 0 to 255</p></li>
 <li><p><strong>show</strong> – To turn on LED’s or not, Default this will be True</p></li>
 <li><p><strong>pixel</strong> – pixel</p></li>
+<li><p><strong>pixels</strong> – list of pixel indexes (if this is not given set the color of the pixel using index param)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -166,7 +172,7 @@ set_color( 2,green=255, show=False) # Sets internal value of 3rd LED to green va
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>red</strong> – Led index of your choice 0- 7</p></li>
+<li><p><strong>red</strong> – value ranges from 0-255</p></li>
 <li><p><strong>green</strong> – value ranges from 0-255</p></li>
 <li><p><strong>blue</strong> – value ranges from 0-255</p></li>
 <li><p><strong>pixels</strong> – array of Indexes of an LED</p></li>
@@ -243,7 +249,7 @@ set_color( 2,green=255, show=False) # Sets internal value of 3rd LED to green va
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.argb.ARGB.blue">
-<span class="sig-name descname"><span class="pre">blue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">255</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.blue" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">blue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">255</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.blue" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -277,12 +283,11 @@ set_color( 2,green=255, show=False) # Sets internal value of 3rd LED to green va
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.argb.ARGB.orange">
-<span class="sig-name descname"><span class="pre">orange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.orange" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">orange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.argb.ARGB.orange" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pixels</strong> – Index numbers os led in list format</p></li>
-<li><p><strong>brightness</strong> – Value from 0 to 255</p></li>
 <li><p><strong>show</strong> – show helps you to turn on led of your index number</p></li>
 </ul>
 </dd>

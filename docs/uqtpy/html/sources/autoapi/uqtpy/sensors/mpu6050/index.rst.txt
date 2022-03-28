@@ -17,11 +17,19 @@ Classes
 
 
 
-.. py:class:: MPU6050(port=None, ob=True)
+.. py:class:: MPU6050(port=1, ob=True)
 
    .. py:method:: initialize(self)
 
       :return:    No return value
+
+
+   .. py:method:: enable(self, port=None)
+
+      Enabling sensor
+
+
+   .. py:method:: disable(self, port=None)
 
 
    .. py:method:: get_type(self)

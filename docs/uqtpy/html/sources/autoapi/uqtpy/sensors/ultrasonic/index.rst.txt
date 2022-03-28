@@ -42,6 +42,11 @@ Classes
 
       
 
+   .. py:attribute:: enabled_ports
+      
+
+      
+
    .. py:method:: _send_pulse_and_wait(self, trig_pin, echo_pin)
 
       [summary]
@@ -135,7 +140,7 @@ Classes
           str: returns JSON response
 
 
-   .. py:method:: get_value(self, port=None)
+   .. py:method:: get_value(self)
 
       get the value in json format
 

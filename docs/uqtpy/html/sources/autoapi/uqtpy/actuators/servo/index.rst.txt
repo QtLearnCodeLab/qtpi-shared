@@ -17,7 +17,7 @@ Classes
 
 
 
-.. py:class:: Servo(port=None, step=10, step_delay=0.05, start_position=0, ob=True)
+.. py:class:: Servo(port=None, step=10, step_delay=100, start_position=0, ob=True)
 
    Servo 
 
@@ -52,6 +52,9 @@ Classes
    .. py:method:: sweep(self, start_angle=None, stop_angle=0, port=None, step=None, step_delay=None)
 
 
+   .. py:method:: __goto_start__(self, servoObj, start_position, step, step_delay)
+
+
    .. py:method:: get_current_position(self)
 
 
@@ -60,7 +63,7 @@ Classes
 
    .. py:method:: process_message(self, message=None)
 
-      {"s": {"p": 1, "t": "s", "sp": 20, "ep": 90,"st":10, "d":0.05 } #sweep from 20 to 90 by 10 steps at atime with delay of 0.05 sec
+      {"s": {"p": 1, "t": "s", "sp": 20, "ep": 90,"st":10, "d":10 } #sweep from 20 to 90 by 10 steps at atime with delay of 0.05 sec
       {"s": {"p": 1, "t": "r",  "ep": 180 } #rotate to 180 degrees
 
 

@@ -70,7 +70,7 @@ Classes
       _irq: Internal method for interrupt with data handler
 
 
-   .. py:method:: handle_data(self, s_index, c_index)
+   .. py:method:: handle_data(self, s_index, c_index, data)
 
 
    .. py:method:: get_component(self, s_index, c_index)
@@ -90,7 +90,7 @@ Classes
    .. py:method:: bytessplit2(self, string, delimiter=0)
 
 
-   .. py:method:: on_receive(self, rec_data, component)
+   .. py:method:: on_receive(self, rec_data, component, jsonmsg)
 
       on_receive: This method is called to write data to component when data is being received
 

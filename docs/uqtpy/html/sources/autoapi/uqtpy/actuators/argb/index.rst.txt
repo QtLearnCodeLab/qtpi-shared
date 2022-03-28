@@ -46,6 +46,11 @@ Classes
 
       
 
+   .. py:attribute:: portPixelMap
+      
+
+      
+
    .. py:method:: get_pixels_count(self)
 
       :return:    No return value
@@ -61,7 +66,7 @@ Classes
       :return:
 
 
-   .. py:method:: set_color(self, index=0, red=0, green=0, blue=0, show=False, pixel=None)
+   .. py:method:: set_color(self, index=0, red=0, green=0, blue=0, show=False, pixel=None, pixels=[])
 
       :param index:   Led pixel of your choice 0- 7
 
@@ -74,13 +79,14 @@ Classes
       :param show: To turn on LED's or not, Default this will be True
 
       :param pixel: pixel
+      :param pixels: list of pixel indexes (if this is not given set the color of the pixel using index param)
 
       :return:    No return value
 
 
    .. py:method:: fill_color(self, pixel=None, red=0, green=0, blue=0, pixels=[], show=False)
 
-      :param red: Led index of your choice 0- 7
+      :param red: value ranges from 0-255
 
       :param green:   value ranges from 0-255
 
@@ -133,7 +139,7 @@ Classes
       :return:    no return value
 
 
-   .. py:method:: blue(self, pixels=[], brightness=255, show=True, port=None)
+   .. py:method:: blue(self, pixels=[], brightness=255, show=True, pixel=None)
 
       :param pixels: Index numbers os led in list format
 
@@ -155,11 +161,10 @@ Classes
       :return:    no return value
 
 
-   .. py:method:: orange(self, pixels=[], brightness=100, show=True, pixel=None)
+   .. py:method:: orange(self, pixels=[], show=True, pixel=None)
 
       :param pixels: Index numbers os led in list format
 
-      :param brightness:   Value from 0 to 255
 
       :param show:    show helps you to turn on led of your index number
 

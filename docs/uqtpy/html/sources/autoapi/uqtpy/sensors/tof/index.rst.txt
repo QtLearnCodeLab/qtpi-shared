@@ -76,7 +76,6 @@ Classes
    .. py:method:: reset(self)
 
       Reset TOF Sensor
-                  
               
 
 
@@ -95,9 +94,9 @@ Classes
           message (str, optional): Message in JSON format for processing. Defaults to None.
       Example:
           { 
-          {"g" : "d"}
-          {"e" : "d"}
-          {"d" : "d"}
+          {"g" : {"p":1}}
+          {"e" : {"p":1}}
+          {"d" : {"p":1}}
           }
       Returns:
           str: returns JSON response

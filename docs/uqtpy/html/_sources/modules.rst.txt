@@ -1,7 +1,0 @@
-uqtpy
-=====
-
-.. toctree::
-   :maxdepth: 4
-
-   uqtpy
