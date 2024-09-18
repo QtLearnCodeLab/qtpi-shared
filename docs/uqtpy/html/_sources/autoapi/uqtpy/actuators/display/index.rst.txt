@@ -1,0 +1,137 @@
+uqtpy.actuators.display
+=======================
+
+.. py:module:: uqtpy.actuators.display
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: OLED(port=None, width=128, height=64, ob=True)
+
+   Display is an OLED module used to show any data on board
+   Note: Not Implemented Fully
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: i2c
+      :value: None
+
+
+
+   .. py:attribute:: display
+      :value: None
+
+
+
+   .. py:attribute:: width
+
+
+   .. py:attribute:: height
+
+
+   .. py:attribute:: type
+      :value: 'actuator'
+
+
+
+   .. py:attribute:: name
+      :value: 'oled'
+
+
+
+   .. py:method:: set_i2c(scl=22, sda=21, id=-1, freq=400000)
+
+      :param scl: clock pin of esp32
+
+      :param sda: data pin of esp32
+
+      :param id:  for software set 1/0, hardware set -1
+
+      :param freq:    default frequency
+
+
+
+   .. py:method:: set_resolution(width=128, height=64)
+
+      :param width:   Maximum width of Display module
+
+      :param height:  Maximum height of Display module
+
+      :return:    No return value
+
+
+
+   .. py:method:: get_type()
+
+      :return:
+
+
+
+   .. py:method:: get_name()
+
+      :return:
+
+
+
+   .. py:method:: initialize()
+
+      Used to initialize the display module
+
+      :return:    Initializes the I2C communication
+
+
+
+   .. py:method:: clear()
+
+      clear_display is used to clear the oled display, It clears full disply
+
+      :return:    No return value
+
+
+
+   .. py:method:: draw_pixel(x=0, y=0, color=1, show=True)
+
+      :param x:   Starting x position
+
+      :param y:   Starting y position
+
+      :param color:   For black set 0, for white set 1
+
+      :param show:    To display command
+
+      :return:    No return value
+
+
+
+   .. py:method:: show()
+
+      Used to display on oled
+
+      :return:    No return value
+
+
+
+   .. py:method:: draw_text(text='', row=0, column=0, show=False)
+
+      Used to display on oled
+
+      :param string: Message in string format
+
+      :param row: Starting position in row
+
+      :param column:  Ending position in column
+
+      :param show:    To display
+
+      :return:    No return value
+
+
+
+   .. py:method:: process_message(message=None)
+
+

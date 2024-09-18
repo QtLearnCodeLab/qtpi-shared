@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>uqtpy.sensors.mpu6050 &mdash; uqtpy 0.1 documentation</title>
-      <link rel="stylesheet" href="../../../../static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
+
+  
   <!--[if lt IE 9]>
-    <script src="../../../../static/js/html5shiv.min.js"></script>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../static/documentation_options.js"></script>
-        <script src="../../../../static/jquery.js"></script>
-        <script src="../../../../static/underscore.js"></script>
-        <script src="../../../../static/doctools.js"></script>
-    <script src="../../../../static/js/theme.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="uqtpy.sensors.temperature" href="../temperature/index.html" />
+    <link rel="prev" title="uqtpy.sensors.moisture" href="../moisture/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -26,19 +31,42 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../index.html" class="icon icon-home"> uqtpy
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            uqtpy
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">API Reference</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../ble/index.html">ble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../apds/index.html">apds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../test/index.html">test</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">uqtpy</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../actuators/index.html">uqtpy.actuators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../comm/index.html">uqtpy.comm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../common/index.html">uqtpy.common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../expander/index.html">uqtpy.expander</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../helper/index.html">uqtpy.helper</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">uqtpy.sensors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ports/index.html">ports</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -54,10 +82,13 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">uqtpy.sensors.mpu6050</span></code></li>
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">uqtpy</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">uqtpy.sensors</a></li>
+      <li class="breadcrumb-item active">uqtpy.sensors.mpu6050</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../sources/autoapi/uqtpy/sensors/mpu6050/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/autoapi/uqtpy/sensors/mpu6050/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -66,30 +97,72 @@
            <div itemprop="articleBody">
              
   <section id="module-uqtpy.sensors.mpu6050">
-<span id="uqtpy-sensors-mpu6050"></span><h1><a class="reference internal" href="#module-uqtpy.sensors.mpu6050" title="uqtpy.sensors.mpu6050"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uqtpy.sensors.mpu6050</span></code></a><a class="headerlink" href="#module-uqtpy.sensors.mpu6050" title="Permalink to this headline"></a></h1>
+<span id="uqtpy-sensors-mpu6050"></span><h1>uqtpy.sensors.mpu6050<a class="headerlink" href="#module-uqtpy.sensors.mpu6050" title="Link to this heading"></a></h1>
 <section id="module-contents">
-<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
-<section id="classes">
-<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h3>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#uqtpy.sensors.mpu6050.MPU6050" title="uqtpy.sensors.mpu6050.MPU6050"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MPU6050</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uqtpy.sensors.mpu6050.</span></span><span class="sig-name descname"><span class="pre">MPU6050</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050" title="Permalink to this definition"></a></dt>
-<dd><dl class="py method">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uqtpy.sensors.mpu6050.</span></span><span class="sig-name descname"><span class="pre">MPU6050</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050" title="Link to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.mpu">
+<span class="sig-name descname"><span class="pre">mpu</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.mpu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.port">
+<span class="sig-name descname"><span class="pre">port</span></span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.port" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'mpu'</span></em><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'sensor'</span></em><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.gyro">
+<span class="sig-name descname"><span class="pre">gyro</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.gyro" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.accel">
+<span class="sig-name descname"><span class="pre">accel</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.accel" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.temp">
+<span class="sig-name descname"><span class="pre">temp</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.temp" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.scl">
+<span class="sig-name descname"><span class="pre">scl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">22</span></em><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.scl" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.sda">
+<span class="sig-name descname"><span class="pre">sda</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">21</span></em><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.sda" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.frequency">
+<span class="sig-name descname"><span class="pre">frequency</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">800000</span></em><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.frequency" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.ports_enabled">
+<span class="sig-name descname"><span class="pre">ports_enabled</span></span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.ports_enabled" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.initialize">
-<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.initialize" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.initialize" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>No return value</p>
 </dd>
 </dl>
@@ -97,18 +170,18 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.enable">
-<span class="sig-name descname"><span class="pre">enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.enable" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.enable" title="Link to this definition"></a></dt>
 <dd><p>Enabling sensor</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.disable">
-<span class="sig-name descname"><span class="pre">disable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.disable" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">disable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.disable" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.get_type">
-<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_type" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_type" title="Link to this definition"></a></dt>
 <dd><p>get the type</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>str: type of component</p>
@@ -118,7 +191,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.get_name">
-<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_name" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_name" title="Link to this definition"></a></dt>
 <dd><p>get the name</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>str: name of component</p>
@@ -128,7 +201,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.enable_gyro">
-<span class="sig-name descname"><span class="pre">enable_gyro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.enable_gyro" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">enable_gyro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.enable_gyro" title="Link to this definition"></a></dt>
 <dd><p>Enable Gyro Sensor</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
@@ -138,7 +211,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.disable_gyro">
-<span class="sig-name descname"><span class="pre">disable_gyro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.disable_gyro" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">disable_gyro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.disable_gyro" title="Link to this definition"></a></dt>
 <dd><p>Enable Gyro Sensor</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
@@ -148,7 +221,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.enable_accel">
-<span class="sig-name descname"><span class="pre">enable_accel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.enable_accel" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">enable_accel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.enable_accel" title="Link to this definition"></a></dt>
 <dd><p>Enable Accelerometer Sensor</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
@@ -158,7 +231,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.disable_acccel">
-<span class="sig-name descname"><span class="pre">disable_acccel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.disable_acccel" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">disable_acccel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.disable_acccel" title="Link to this definition"></a></dt>
 <dd><p>Disable Accelerometer Sensor</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
@@ -168,7 +241,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.enable_temp">
-<span class="sig-name descname"><span class="pre">enable_temp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.enable_temp" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">enable_temp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.enable_temp" title="Link to this definition"></a></dt>
 <dd><p>Enable Temperature Sensor</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
@@ -178,7 +251,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.disable_temp">
-<span class="sig-name descname"><span class="pre">disable_temp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.disable_temp" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">disable_temp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.disable_temp" title="Link to this definition"></a></dt>
 <dd><p>Disable Temperature Sensor</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
@@ -188,7 +261,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.get_accel">
-<span class="sig-name descname"><span class="pre">get_accel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_accel" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_accel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_accel" title="Link to this definition"></a></dt>
 <dd><p>get accelerometer values</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>(int,int,int): xyz accelerometer values</p>
@@ -198,7 +271,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.get_gyro">
-<span class="sig-name descname"><span class="pre">get_gyro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_gyro" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_gyro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_gyro" title="Link to this definition"></a></dt>
 <dd><p>get gyroscope values</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>(int,int,int): xyz accelerometer values</p>
@@ -208,7 +281,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.get_temp">
-<span class="sig-name descname"><span class="pre">get_temp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_temp" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_temp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_temp" title="Link to this definition"></a></dt>
 <dd><p>get temperature value</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>int: temperature value</p>
@@ -218,7 +291,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.process_message">
-<span class="sig-name descname"><span class="pre">process_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.process_message" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">process_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.process_message" title="Link to this definition"></a></dt>
 <dd><p>[summary]</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>message (str, optional): Message in JSON format for processing. Defaults to None.</p>
@@ -236,7 +309,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.sensors.mpu6050.MPU6050.get_value">
-<span class="sig-name descname"><span class="pre">get_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_value" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.sensors.mpu6050.MPU6050.get_value" title="Link to this definition"></a></dt>
 <dd><p>get the value in json format</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>port (int, optional): port number. Defaults to None.</p>
@@ -250,12 +323,14 @@
 
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../moisture/index.html" class="btn btn-neutral float-left" title="uqtpy.sensors.moisture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../temperature/index.html" class="btn btn-neutral float-right" title="uqtpy.sensors.temperature" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

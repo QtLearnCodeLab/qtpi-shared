@@ -1,0 +1,135 @@
+uqtpy.sensors.tof
+=================
+
+.. py:module:: uqtpy.sensors.tof
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: TOF(port=1, ob=True)
+
+   TOF
+
+
+   .. py:attribute:: tofFeatureEnabled
+      :value: [False, False, False, False, False, False]
+
+
+
+   .. py:attribute:: scl
+      :value: 22
+
+
+
+   .. py:attribute:: sda
+      :value: 21
+
+
+
+   .. py:attribute:: frequency
+      :value: 800000
+
+
+
+   .. py:attribute:: i2c
+
+
+   .. py:attribute:: tof
+      :value: None
+
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: name
+      :value: 'tof'
+
+
+
+   .. py:attribute:: type
+      :value: 'sensor'
+
+
+
+   .. py:attribute:: ob
+
+
+   .. py:method:: initialize()
+
+      :return:    No return value
+
+
+
+   .. py:method:: get_type()
+
+      get the type
+
+      Returns:
+          str: type of component
+
+
+
+   .. py:method:: get_name()
+
+      get the name
+
+      Returns:
+          str: name of component
+
+
+
+   .. py:method:: enable(port=None)
+
+
+   .. py:method:: disable(port=None)
+
+
+   .. py:method:: reset()
+
+      Reset TOF Sensor
+
+              
+
+
+
+   .. py:method:: read_distance()
+
+      Read Distance
+
+              
+
+
+
+   .. py:method:: process_message(message=None)
+
+      [process_message]
+
+      Args:
+          message (str, optional): Message in JSON format for processing. Defaults to None.
+      Example:
+          { 
+          {"g" : {"p":1}}
+          {"e" : {"p":1}}
+          {"d" : {"p":1}}
+          }
+      Returns:
+          str: returns JSON response
+
+
+
+   .. py:method:: get_value(port=None)
+
+      get the value in json format
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+

@@ -1,0 +1,135 @@
+uqtpy.sensors.limitswitch
+=========================
+
+.. py:module:: uqtpy.sensors.limitswitch
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: LimitSwitch(port=None, pin=None, ob=True)
+
+   LimitSwitch is a kind of switch
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: pin
+
+
+   .. py:attribute:: gpio
+      :value: None
+
+
+
+   .. py:attribute:: type
+      :value: 'sensor'
+
+
+
+   .. py:attribute:: name
+      :value: 'limitswitch'
+
+
+
+   .. py:attribute:: ob
+
+
+   .. py:attribute:: ls_pins
+      :value: []
+
+
+
+   .. py:attribute:: enabled_ls
+
+
+   .. py:method:: get_type()
+
+      get the type
+
+      Returns:
+          str: type of component
+
+
+
+   .. py:method:: get_name()
+
+      get the name
+
+      Returns:
+          str: name of component
+
+
+
+   .. py:method:: read(port=None)
+
+      Get the LimitSwitch Sensor value
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: is_activated(port=None)
+
+      Get the LimitSwitch Sensor value
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: get_status(port=None)
+
+      Get the LimitSwitch Sensor value
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: enable_ls(port=None)
+
+      Enable LimitSwitch Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: disable_ls(port=None)
+
+      Disable LimitSwitch Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: process_message(message=None)
+
+      [summary]
+
+      Args:
+          message (str, optional): Message in JSON format for processing. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+
+   .. py:method:: get_value(port=None)
+
+      get the value in json format
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+

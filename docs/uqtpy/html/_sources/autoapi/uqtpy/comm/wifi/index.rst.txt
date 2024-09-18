@@ -1,0 +1,15 @@
+uqtpy.comm.wifi
+===============
+
+.. py:module:: uqtpy.comm.wifi
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/uqtpy/comm/wifi/webserver/index
+
+

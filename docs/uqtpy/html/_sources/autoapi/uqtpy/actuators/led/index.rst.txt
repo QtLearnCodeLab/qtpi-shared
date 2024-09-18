@@ -1,0 +1,75 @@
+uqtpy.actuators.led
+===================
+
+.. py:module:: uqtpy.actuators.led
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: LED(port=None, ob=True, pin=None, frequency=5000)
+
+   LED stands for Light Emitting Diode.
+   It has two terminals
+   1. Anode(positive)-Longer Terminal
+   2. Cathode(negative)-Shorter terminal
+
+
+   .. py:attribute:: pins
+      :value: []
+
+
+
+   .. py:attribute:: qtPort
+
+
+   .. py:attribute:: count
+
+
+   .. py:attribute:: pinNum
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: type
+      :value: 'actuator'
+
+
+
+   .. py:attribute:: name
+      :value: 'led'
+
+
+
+   .. py:method:: get_type()
+
+      :return:
+
+
+
+   .. py:method:: get_name()
+
+      :return:
+
+
+
+   .. py:method:: on(brightness=255, port=None)
+
+      :param brightness:
+
+      :return:
+
+
+
+   .. py:method:: off(port=None)
+
+      :return:
+
+
+
+   .. py:method:: process_message(message=None)
+
+

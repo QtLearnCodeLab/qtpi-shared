@@ -1,0 +1,128 @@
+uqtpy.sensors.ir
+================
+
+.. py:module:: uqtpy.sensors.ir
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: IR(port=None, pin=None, ob=True)
+
+   IR (Infrared radiation) also called infrared light, is electromagnetic radiation with longer wavelengths
+   than those of visible light and is therefore generally invisible to human eye.
+
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: pin
+
+
+   .. py:attribute:: gpio
+      :value: None
+
+
+
+   .. py:attribute:: type
+      :value: 'sensor'
+
+
+
+   .. py:attribute:: name
+      :value: 'ir'
+
+
+
+   .. py:attribute:: ob
+
+
+   .. py:attribute:: ir_pins
+      :value: []
+
+
+
+   .. py:attribute:: enabled_irs
+
+
+   .. py:method:: get_type()
+
+      get the type
+
+      Returns:
+          str: type of component
+
+
+
+   .. py:method:: get_name()
+
+      get the name
+
+      Returns:
+          str: name of component
+
+
+
+   .. py:method:: read(port=None)
+
+      Get the IR Sensor value
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: get_status(port=None)
+
+      Get the IR Sensor value
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+
+   .. py:method:: enable_ir(port=None)
+
+      Enable IR Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: disable_ir(port=None)
+
+      Disable IR Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: process_message(message=None)
+
+      [summary]
+
+      Args:
+          message (str, optional): Message in JSON format for processing. Defaults to None.
+      Returns:
+          str: returns JSON response
+
+
+
+   .. py:method:: get_value(port=None)
+
+      get the value in json format
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+

@@ -1,0 +1,23 @@
+apds
+====
+
+.. py:module:: apds
+
+
+
+
+Module Contents
+---------------
+
+.. py:data:: apds2
+   :value: None
+
+
+.. py:data:: gesture
+   :value: None
+
+
+.. py:data:: apds2
+
+.. py:data:: gesture
+

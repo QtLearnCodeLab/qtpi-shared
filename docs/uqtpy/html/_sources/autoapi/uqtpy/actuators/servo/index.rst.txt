@@ -1,0 +1,97 @@
+uqtpy.actuators.servo
+=====================
+
+.. py:module:: uqtpy.actuators.servo
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: Servo(port=None, step=10, step_delay=100, start_position=0, ob=True)
+
+   Servo 
+
+
+   .. py:attribute:: servo_pins
+      :value: []
+
+
+
+   .. py:attribute:: qtPort
+
+
+   .. py:attribute:: count
+
+
+   .. py:attribute:: pinNum
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: ob
+      :value: False
+
+
+
+   .. py:attribute:: gpio
+      :value: None
+
+
+
+   .. py:attribute:: step
+
+
+   .. py:attribute:: step_delay
+
+
+   .. py:attribute:: current_position
+
+
+   .. py:attribute:: start_position
+
+
+   .. py:attribute:: name
+      :value: 'servo'
+
+
+
+   .. py:attribute:: type
+      :value: 'actuator'
+
+
+
+   .. py:method:: get_type()
+
+      :return:
+
+
+
+   .. py:method:: get_name()
+
+      :return:
+
+
+
+   .. py:method:: rotate(stop_angle=0, port=None)
+
+
+   .. py:method:: sweep(start_angle=None, stop_angle=0, port=None, step=None, step_delay=None)
+
+
+   .. py:method:: get_current_position()
+
+
+   .. py:method:: set_current_position(position=0)
+
+
+   .. py:method:: process_message(message=None)
+
+      {"s": {"p": 1, "t": "s", "sp": 20, "ep": 90,"st":10, "d":10 } #sweep from 20 to 90 by 10 steps at atime with delay of 0.05 sec
+      {"s": {"p": 1, "t": "r",  "ep": 180 } #rotate to 180 degrees
+
+
+
+

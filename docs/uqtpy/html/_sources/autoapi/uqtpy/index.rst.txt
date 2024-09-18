@@ -1,0 +1,29 @@
+uqtpy
+=====
+
+.. py:module:: uqtpy
+
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/uqtpy/actuators/index
+   /autoapi/uqtpy/comm/index
+   /autoapi/uqtpy/common/index
+   /autoapi/uqtpy/expander/index
+   /autoapi/uqtpy/helper/index
+   /autoapi/uqtpy/sensors/index
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/uqtpy/constants/index
+
+

@@ -1,0 +1,126 @@
+uqtpy.sensors.moisture
+======================
+
+.. py:module:: uqtpy.sensors.moisture
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: Moisture(port=None, pin=None, ob=True)
+
+   Moisture sensor class for real-time sensor interactions, 
+   compatible with framework requiring process_message and get_value,
+   including activation/deactivation functionality.
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: pin
+
+
+   .. py:attribute:: moisture_pin
+      :value: None
+
+
+
+   .. py:attribute:: type
+      :value: 'sensor'
+
+
+
+   .. py:attribute:: name
+      :value: 'moisture'
+
+
+
+   .. py:attribute:: ob
+
+
+   .. py:attribute:: calibrationAir
+      :value: 650
+
+
+
+   .. py:attribute:: calibrationWater
+      :value: 504
+
+
+
+   .. py:attribute:: moisture_pins
+      :value: []
+
+
+
+   .. py:attribute:: enabled_moistures
+
+
+   .. py:method:: get_type()
+
+      :return:
+
+
+
+   .. py:method:: get_name()
+
+      :return:
+
+
+
+   .. py:method:: enable_moisture(port=None)
+
+      Enable Moisture Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: disable_moisture(port=None)
+
+      Disable Moisture Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: read_moisture(port=None)
+
+      Get the Moisture Sensor value
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: process_message(message=None)
+
+      [summary]
+
+      Args:
+          message (str, optional): Message in JSON format for processing. Defaults to None.
+      Example:
+          { 
+          
+          }
+      Returns:
+          str: returns JSON response
+
+
+
+   .. py:method:: get_value(port=None)
+
+      get the value in json format
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+

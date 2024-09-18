@@ -1,0 +1,37 @@
+uqtpy.comm.websocket
+====================
+
+.. py:module:: uqtpy.comm.websocket
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: Client(url, name)
+
+   .. py:attribute:: url
+
+
+   .. py:attribute:: stream
+      :value: None
+
+
+
+   .. py:attribute:: connected
+      :value: False
+
+
+
+   .. py:method:: set_url(url)
+
+
+   .. py:method:: connect(url=None, reconnect=False)
+
+
+   .. py:method:: register(message=None)
+
+
+.. py:class:: Server
+

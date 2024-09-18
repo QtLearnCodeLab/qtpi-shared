@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>uqtpy.actuators.display &mdash; uqtpy 0.1 documentation</title>
-      <link rel="stylesheet" href="../../../../static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
+
+  
   <!--[if lt IE 9]>
-    <script src="../../../../static/js/html5shiv.min.js"></script>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../static/documentation_options.js"></script>
-        <script src="../../../../static/jquery.js"></script>
-        <script src="../../../../static/underscore.js"></script>
-        <script src="../../../../static/doctools.js"></script>
-    <script src="../../../../static/js/theme.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="uqtpy.actuators.led" href="../led/index.html" />
+    <link rel="prev" title="uqtpy.actuators.buzzer" href="../buzzer/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -26,19 +31,42 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../index.html" class="icon icon-home"> uqtpy
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            uqtpy
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">API Reference</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../ble/index.html">ble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../apds/index.html">apds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../test/index.html">test</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">uqtpy</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">uqtpy.actuators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../comm/index.html">uqtpy.comm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../common/index.html">uqtpy.common</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../expander/index.html">uqtpy.expander</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../helper/index.html">uqtpy.helper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sensors/index.html">uqtpy.sensors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ports/index.html">ports</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -54,10 +82,13 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">uqtpy.actuators.display</span></code></li>
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">uqtpy</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">uqtpy.actuators</a></li>
+      <li class="breadcrumb-item active">uqtpy.actuators.display</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../sources/autoapi/uqtpy/actuators/display/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/autoapi/uqtpy/actuators/display/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -66,32 +97,54 @@
            <div itemprop="articleBody">
              
   <section id="module-uqtpy.actuators.display">
-<span id="uqtpy-actuators-display"></span><h1><a class="reference internal" href="#module-uqtpy.actuators.display" title="uqtpy.actuators.display"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uqtpy.actuators.display</span></code></a><a class="headerlink" href="#module-uqtpy.actuators.display" title="Permalink to this headline"></a></h1>
+<span id="uqtpy-actuators-display"></span><h1>uqtpy.actuators.display<a class="headerlink" href="#module-uqtpy.actuators.display" title="Link to this heading"></a></h1>
 <section id="module-contents">
-<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
-<section id="classes">
-<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h3>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#uqtpy.actuators.display.OLED" title="uqtpy.actuators.display.OLED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OLED</span></code></a></p></td>
-<td><p>Display is an OLED module used to show any data on board</p></td>
-</tr>
-</tbody>
-</table>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="uqtpy.actuators.display.OLED">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uqtpy.actuators.display.</span></span><span class="sig-name descname"><span class="pre">OLED</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uqtpy.actuators.display.</span></span><span class="sig-name descname"><span class="pre">OLED</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED" title="Link to this definition"></a></dt>
 <dd><p>Display is an OLED module used to show any data on board
 Note: Not Implemented Fully</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.port">
+<span class="sig-name descname"><span class="pre">port</span></span><a class="headerlink" href="#uqtpy.actuators.display.OLED.port" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.i2c">
+<span class="sig-name descname"><span class="pre">i2c</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uqtpy.actuators.display.OLED.i2c" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.display">
+<span class="sig-name descname"><span class="pre">display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uqtpy.actuators.display.OLED.display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#uqtpy.actuators.display.OLED.width" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.height">
+<span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#uqtpy.actuators.display.OLED.height" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'actuator'</span></em><a class="headerlink" href="#uqtpy.actuators.display.OLED.type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'oled'</span></em><a class="headerlink" href="#uqtpy.actuators.display.OLED.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.set_i2c">
-<span class="sig-name descname"><span class="pre">set_i2c</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sda</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.set_i2c" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_i2c</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sda</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.set_i2c" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>scl</strong> – clock pin of esp32</p></li>
 <li><p><strong>sda</strong> – data pin of esp32</p></li>
@@ -104,15 +157,15 @@ Note: Not Implemented Fully</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.set_resolution">
-<span class="sig-name descname"><span class="pre">set_resolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.set_resolution" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_resolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.set_resolution" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>width</strong> – Maximum width of Display module</p></li>
 <li><p><strong>height</strong> – Maximum height of Display module</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>No return value</p>
 </dd>
 </dl>
@@ -120,9 +173,9 @@ Note: Not Implemented Fully</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.get_type">
-<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.get_type" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.get_type" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p>
 </dd>
 </dl>
@@ -130,9 +183,9 @@ Note: Not Implemented Fully</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.get_name">
-<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.get_name" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.get_name" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p>
 </dd>
 </dl>
@@ -140,10 +193,10 @@ Note: Not Implemented Fully</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.initialize">
-<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.initialize" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.initialize" title="Link to this definition"></a></dt>
 <dd><p>Used to initialize the display module</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Initializes the I2C communication</p>
 </dd>
 </dl>
@@ -151,10 +204,10 @@ Note: Not Implemented Fully</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.clear" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.clear" title="Link to this definition"></a></dt>
 <dd><p>clear_display is used to clear the oled display, It clears full disply</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>No return value</p>
 </dd>
 </dl>
@@ -162,9 +215,9 @@ Note: Not Implemented Fully</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.draw_pixel">
-<span class="sig-name descname"><span class="pre">draw_pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.draw_pixel" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">draw_pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.draw_pixel" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> – Starting x position</p></li>
 <li><p><strong>y</strong> – Starting y position</p></li>
@@ -172,7 +225,7 @@ Note: Not Implemented Fully</p>
 <li><p><strong>show</strong> – To display command</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>No return value</p>
 </dd>
 </dl>
@@ -180,10 +233,10 @@ Note: Not Implemented Fully</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.show">
-<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.show" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.show" title="Link to this definition"></a></dt>
 <dd><p>Used to display on oled</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>No return value</p>
 </dd>
 </dl>
@@ -191,10 +244,10 @@ Note: Not Implemented Fully</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.draw_text">
-<span class="sig-name descname"><span class="pre">draw_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.draw_text" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">draw_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.draw_text" title="Link to this definition"></a></dt>
 <dd><p>Used to display on oled</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>string</strong> – Message in string format</p></li>
 <li><p><strong>row</strong> – Starting position in row</p></li>
@@ -202,7 +255,7 @@ Note: Not Implemented Fully</p>
 <li><p><strong>show</strong> – To display</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>No return value</p>
 </dd>
 </dl>
@@ -210,19 +263,21 @@ Note: Not Implemented Fully</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="uqtpy.actuators.display.OLED.process_message">
-<span class="sig-name descname"><span class="pre">process_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.process_message" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">process_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uqtpy.actuators.display.OLED.process_message" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../buzzer/index.html" class="btn btn-neutral float-left" title="uqtpy.actuators.buzzer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../led/index.html" class="btn btn-neutral float-right" title="uqtpy.actuators.led" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

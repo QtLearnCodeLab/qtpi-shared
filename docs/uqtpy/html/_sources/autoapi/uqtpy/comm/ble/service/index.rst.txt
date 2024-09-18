@@ -1,0 +1,151 @@
+uqtpy.comm.ble.service
+======================
+
+.. py:module:: uqtpy.comm.ble.service
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: QtBLEAdvertiser(ble=None)
+
+   .. py:method:: create_payload(limited_disc=False, br_edr=False, name=None, services=None, appearance=BLEConstants.ADV_APPEARANCE_GENERIC_COMPUTER)
+
+      create_payload : create the ble payload for advertising the service
+
+
+
+   .. py:method:: advertise(name=None, services=None, interval_us=500000)
+
+      advertise: advertise the service
+
+
+
+.. py:class:: Service(uuid=None, properties=None)
+
+   Service class to hold uuid and properties for ble service
+
+
+   .. py:attribute:: uuid
+
+
+   .. py:attribute:: properties
+
+
+.. py:class:: QtBLEService(uuid='0x1011', components=None)
+
+   .. py:attribute:: uuid
+
+
+   .. py:attribute:: uuid_str
+
+
+   .. py:attribute:: component_names
+      :value: []
+
+
+
+   .. py:attribute:: components
+
+
+   .. py:attribute:: attrs
+
+
+.. py:class:: QtBLE(name='QtPi ESP32', debug=False)
+
+   QtBLEService: QtPI BLE Service object for creating component services
+
+
+   .. py:attribute:: TIMEOUT_MS
+      :value: 5000
+
+
+
+   .. py:attribute:: name
+
+
+   .. py:attribute:: components
+
+
+   .. py:attribute:: services
+      :value: []
+
+
+
+   .. py:attribute:: gatts_services
+      :value: []
+
+
+
+   .. py:attribute:: advertiser
+
+
+   .. py:attribute:: debug
+
+
+   .. py:attribute:: event_loop
+
+
+   .. py:method:: add_services(services=None)
+
+      register: register service with BLE gatt
+
+
+
+   .. py:method:: start_advertising()
+
+      start_advertising: Start Advertise the services
+
+
+
+   .. py:method:: irq(handler)
+
+      Irq: Internal function for interrupts
+
+
+
+   .. py:method:: handle_data(s_index, c_index, data)
+
+
+   .. py:method:: get_component(s_index, c_index)
+
+
+   .. py:method:: write(data=None, index=None)
+
+      write: Write data to connected devices
+
+
+
+   .. py:method:: read(sz=None)
+
+
+   .. py:method:: bytessplit(string, delimiter=0)
+
+
+   .. py:method:: bytessplit2(string, delimiter=0)
+
+
+   .. py:method:: on_receive(rec_data, component, jsonmsg)
+
+      on_receive: This method is called to write data to component when data is being received
+
+
+
+   .. py:method:: async_write(component, gatts_index, read_freq)
+      :async:
+
+
+
+   .. py:method:: async_wait(component, read_freq)
+      :async:
+
+
+
+   .. py:method:: start_services(read_freq=90)
+
+
+   .. py:method:: wait_for_event(timeout_ms)
+
+

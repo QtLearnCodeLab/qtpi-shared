@@ -1,0 +1,46 @@
+uqtpy.comm.wifi.webserver
+=========================
+
+.. py:module:: uqtpy.comm.wifi.webserver
+
+
+
+
+
+
+Module Contents
+---------------
+
+.. py:data:: app
+
+.. py:class:: Webserver
+
+   .. py:attribute:: station
+      :value: None
+
+
+
+   .. py:method:: connect(ssid, password)
+
+
+   .. py:method:: getip()
+
+
+   .. py:method:: qs_parse(qs)
+
+
+   .. py:method:: run_motor(port=1, direction=False, speed=0)
+
+
+   .. py:method:: sweep_servo(port=1, start_angle=0, stop_angle=0, step=10, delay=10)
+
+
+   .. py:method:: index(req, resp)
+
+
+   .. py:method:: simple_loop()
+
+
+   .. py:method:: start(**kwargs)
+
+

@@ -1,0 +1,22 @@
+uqtpy.actuators
+===============
+
+.. py:module:: uqtpy.actuators
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/uqtpy/actuators/argb/index
+   /autoapi/uqtpy/actuators/buzzer/index
+   /autoapi/uqtpy/actuators/display/index
+   /autoapi/uqtpy/actuators/led/index
+   /autoapi/uqtpy/actuators/motor/index
+   /autoapi/uqtpy/actuators/pumpmotor/index
+   /autoapi/uqtpy/actuators/rgb/index
+   /autoapi/uqtpy/actuators/servo/index
+
+

@@ -1,0 +1,145 @@
+uqtpy.sensors.temperature
+=========================
+
+.. py:module:: uqtpy.sensors.temperature
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: Temperature(port=None, pin=None, ob=True)
+
+   Temperature sensor is used to find the temperature
+
+
+   .. py:attribute:: gpio
+      :value: None
+
+
+
+   .. py:attribute:: roms
+      :value: None
+
+
+
+   .. py:attribute:: ds
+      :value: None
+
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: pin
+
+
+   .. py:attribute:: type
+      :value: 'sensor'
+
+
+
+   .. py:attribute:: name
+      :value: 'temperature'
+
+
+
+   .. py:attribute:: ob
+
+
+   .. py:attribute:: temp_pins
+      :value: []
+
+
+
+   .. py:attribute:: enabled_temp
+
+
+   .. py:method:: get_name()
+
+      get the name
+
+      Returns:
+          str: name of component
+
+
+
+   .. py:method:: read(port=None)
+
+      :return:
+
+
+
+   .. py:method:: get_type()
+
+      get the type
+
+      Returns:
+          str: type of component
+
+
+
+   .. py:method:: get_char()
+
+      get the characteristics
+
+      Returns:
+          str: name of component
+
+
+
+   .. py:method:: read_temperature(port=None)
+
+      read the temperature value
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          int: returns temperature value
+
+
+
+   .. py:method:: enable_temp(port=None)
+
+      Enable Temperature Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: disable_temp(port=None)
+
+      Disable Temperature Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: process_message(message=None)
+
+      [summary]
+
+      Args:
+          message (str, optional): Message in JSON format for processing. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+
+   .. py:method:: get_value(port=None)
+
+      get the value in json format
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+

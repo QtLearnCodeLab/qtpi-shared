@@ -1,0 +1,25 @@
+uqtpy.sensors
+=============
+
+.. py:module:: uqtpy.sensors
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/uqtpy/sensors/apds/index
+   /autoapi/uqtpy/sensors/gas/index
+   /autoapi/uqtpy/sensors/ir/index
+   /autoapi/uqtpy/sensors/joystick/index
+   /autoapi/uqtpy/sensors/ldr/index
+   /autoapi/uqtpy/sensors/limitswitch/index
+   /autoapi/uqtpy/sensors/moisture/index
+   /autoapi/uqtpy/sensors/mpu6050/index
+   /autoapi/uqtpy/sensors/temperature/index
+   /autoapi/uqtpy/sensors/tof/index
+   /autoapi/uqtpy/sensors/ultrasonic/index
+
+

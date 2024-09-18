@@ -1,0 +1,196 @@
+uqtpy.sensors.gas
+=================
+
+.. py:module:: uqtpy.sensors.gas
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: BaseMQ(pinData, pinHeater=-1, boardResistance=10, baseVoltage=5.0, measuringStrategy=STRATEGY_ACCURATE)
+
+   Bases: :py:obj:`object`
+
+
+   .. py:attribute:: MQ_SAMPLE_TIMES
+
+
+   .. py:attribute:: MQ_SAMPLE_INTERVAL
+
+
+   .. py:attribute:: MQ_HEATING_PERIOD
+
+
+   .. py:attribute:: MQ_COOLING_PERIOD
+
+
+   .. py:attribute:: STRATEGY_FAST
+
+
+   .. py:attribute:: STRATEGY_ACCURATE
+
+
+   .. py:attribute:: dataIsReliable
+      :value: False
+
+
+
+   .. py:attribute:: pinData
+
+
+   .. py:attribute:: measuringStrategy
+
+
+   .. py:method:: getRoInCleanAir()
+      :abstractmethod:
+
+
+
+   .. py:method:: calibrate(ro=-1)
+
+
+   .. py:method:: heaterPwrHigh()
+
+
+   .. py:method:: heaterPwrLow()
+
+
+   .. py:method:: heaterPwrOff()
+
+
+   .. py:method:: readScaled(a, b)
+
+
+   .. py:method:: readRatio()
+
+
+   .. py:method:: heatingCompleted()
+
+
+   .. py:method:: coolanceCompleted()
+
+
+   .. py:method:: cycleHeat()
+
+
+   .. py:method:: atHeatCycleEnd()
+
+
+.. py:class:: MQ6Sensor(pinData, pinHeater=-1, boardResistance=10, baseVoltage=5.0, measuringStrategy=STRATEGY_ACCURATE)
+
+   Bases: :py:obj:`BaseMQ`
+
+
+   .. py:method:: getRoInCleanAir()
+
+
+   .. py:method:: readLPG()
+
+
+.. py:class:: Gas(port=None, pin=None, ob=True)
+
+   Gas sensor class for real-time sensor interactions, 
+   compatible with framework requiring process_message and get_value,
+   including activation/deactivation functionality.
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: pin
+
+
+   .. py:attribute:: gas_pin
+      :value: None
+
+
+
+   .. py:attribute:: type
+      :value: 'sensor'
+
+
+
+   .. py:attribute:: name
+      :value: 'gas'
+
+
+
+   .. py:attribute:: ob
+
+
+   .. py:attribute:: gas_pins
+      :value: []
+
+
+
+   .. py:attribute:: enabled_gass
+
+
+   .. py:method:: get_type()
+
+      :return:
+
+
+
+   .. py:method:: get_name()
+
+      :return:
+
+
+
+   .. py:method:: enable_gas(port=None)
+
+      Enable Gas Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: disable_gas(port=None)
+
+      Disable Gas Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: read_gas(port=None)
+
+      Get the Gas Sensor value
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: process_message(message=None)
+
+      [summary]
+
+      Args:
+          message (str, optional): Message in JSON format for processing. Defaults to None.
+      Example:
+          { 
+          
+          }
+      Returns:
+          str: returns JSON response
+
+
+
+   .. py:method:: get_value(port=None)
+
+      get the value in json format
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+

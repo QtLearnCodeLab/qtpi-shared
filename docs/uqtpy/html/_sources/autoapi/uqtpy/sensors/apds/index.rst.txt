@@ -1,0 +1,230 @@
+uqtpy.sensors.apds
+==================
+
+.. py:module:: uqtpy.sensors.apds
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: APDS(port=1, ob=True)
+
+   .. py:attribute:: apds
+      :value: None
+
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: name
+      :value: 'apds'
+
+
+
+   .. py:attribute:: type
+      :value: 'sensor'
+
+
+
+   .. py:attribute:: ob
+
+
+   .. py:attribute:: scl
+      :value: 22
+
+
+
+   .. py:attribute:: sda
+      :value: 21
+
+
+
+   .. py:attribute:: frequency
+      :value: 800000
+
+
+
+   .. py:attribute:: ports_enabled
+
+
+   .. py:attribute:: directions
+
+
+   .. py:method:: initialize()
+
+      :return:    No return value
+
+
+
+   .. py:method:: enable(port=None)
+
+      Enabling sensor
+
+
+
+   .. py:method:: disable(port=None)
+
+
+   .. py:method:: get_type()
+
+      get the type
+
+      Returns:
+          str: type of component
+
+
+
+   .. py:method:: get_name()
+
+      get the name
+
+      Returns:
+          str: name of component
+
+
+
+   .. py:method:: enable_gesture()
+
+      Enable Gesture Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: disable_gesture()
+
+      Disable Gyro Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: read_gesture()
+
+      read the gesture when ever there is a movement
+
+      Returns:
+          str: Last gesture reported to sensor
+
+
+
+   .. py:method:: enable_proximity()
+
+      Enable Proximity Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: disable_proximity()
+
+      Disable Proximity Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: read_proximity()
+
+      read the proximity value
+
+      Returns:
+          int: return proximity value
+
+
+
+   .. py:method:: read_ambient_light()
+
+      read the light ambience value
+
+      Returns:
+          int: return light ambience value
+
+
+
+   .. py:method:: enable_light()
+
+      Enable the light sensor
+              
+
+
+
+   .. py:method:: disable_light()
+
+      Disable the light sensor
+              
+
+
+
+   .. py:method:: read_red()
+
+      read the light red value
+
+      Returns:
+          int: return light red value
+
+
+
+   .. py:method:: read_green()
+
+      read the light green value
+
+      Returns:
+          int: return light green value
+
+
+
+   .. py:method:: read_blue()
+
+      read the light blue value
+
+      Returns:
+          int: return light blue value
+
+
+
+   .. py:method:: read_color()
+
+      read the light rgb value
+
+      Returns:
+          int: return light rgb value
+
+
+
+   .. py:method:: process_message(message=None)
+
+      [summary]
+
+      Args:
+          message (str, optional): Message in JSON format for processing. Defaults to None.
+      Example:
+          { 
+          {"g" : ["g" ,"p", "c", "a"]}
+          {"e":["g","p","l"]}
+          {"d" : ["g" ,"p", "l"]}
+          }
+      Returns:
+          str: returns JSON response
+
+
+
+   .. py:method:: get_value()
+
+      get the value in json format
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+

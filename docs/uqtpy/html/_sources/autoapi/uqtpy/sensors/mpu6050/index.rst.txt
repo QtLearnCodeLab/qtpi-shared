@@ -1,0 +1,207 @@
+uqtpy.sensors.mpu6050
+=====================
+
+.. py:module:: uqtpy.sensors.mpu6050
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: MPU6050(port=1, ob=True)
+
+   .. py:attribute:: mpu
+      :value: None
+
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: name
+      :value: 'mpu'
+
+
+
+   .. py:attribute:: type
+      :value: 'sensor'
+
+
+
+   .. py:attribute:: gyro
+      :value: True
+
+
+
+   .. py:attribute:: accel
+      :value: True
+
+
+
+   .. py:attribute:: temp
+      :value: True
+
+
+
+   .. py:attribute:: scl
+      :value: 22
+
+
+
+   .. py:attribute:: sda
+      :value: 21
+
+
+
+   .. py:attribute:: frequency
+      :value: 800000
+
+
+
+   .. py:attribute:: ports_enabled
+
+
+   .. py:method:: initialize()
+
+      :return:    No return value
+
+
+
+   .. py:method:: enable(port=None)
+
+      Enabling sensor
+
+
+
+   .. py:method:: disable(port=None)
+
+
+   .. py:method:: get_type()
+
+      get the type
+
+      Returns:
+          str: type of component
+
+
+
+   .. py:method:: get_name()
+
+      get the name
+
+      Returns:
+          str: name of component
+
+
+
+   .. py:method:: enable_gyro()
+
+      Enable Gyro Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: disable_gyro()
+
+      Enable Gyro Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: enable_accel()
+
+      Enable Accelerometer Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: disable_acccel()
+
+      Disable Accelerometer Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: enable_temp()
+
+      Enable Temperature Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: disable_temp()
+
+      Disable Temperature Sensor
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+
+
+   .. py:method:: get_accel()
+
+      get accelerometer values
+
+      Returns:
+          (int,int,int): xyz accelerometer values
+
+
+
+   .. py:method:: get_gyro()
+
+      get gyroscope values
+
+      Returns:
+          (int,int,int): xyz accelerometer values
+
+
+
+   .. py:method:: get_temp()
+
+      get temperature value
+
+      Returns:
+          int: temperature value
+
+
+
+   .. py:method:: process_message(message=None)
+
+      [summary]
+
+      Args:
+          message (str, optional): Message in JSON format for processing. Defaults to None.
+      Example:
+          { 
+          "g" : ["a" ,"g", "t"]
+          "e" : ["a" ,"g", "t"]
+          "d" : ["a" ,"g", "t"]
+          }
+      Returns:
+          str: returns JSON response
+
+
+
+   .. py:method:: get_value()
+
+      get the value in json format
+
+      Args:
+          port (int, optional): port number. Defaults to None.
+
+      Returns:
+          str: returns JSON response
+
+
+

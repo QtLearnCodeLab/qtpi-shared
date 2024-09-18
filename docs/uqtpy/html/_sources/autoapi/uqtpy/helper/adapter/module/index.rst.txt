@@ -1,0 +1,60 @@
+uqtpy.helper.adapter.module
+===========================
+
+.. py:module:: uqtpy.helper.adapter.module
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: Module(name='', stream=None, module=None)
+
+   .. py:method:: set_task(task)
+
+
+   .. py:method:: get_task()
+
+
+   .. py:method:: set_notify(notify)
+
+
+   .. py:method:: get_notify()
+
+
+   .. py:method:: get_stream()
+
+
+   .. py:method:: set_stream(stream)
+
+
+   .. py:method:: get_name()
+
+
+   .. py:method:: set_name(name)
+
+
+   .. py:method:: get_queue()
+
+
+   .. py:method:: send_message(message, value)
+      :async:
+
+
+
+   .. py:method:: process_message(data)
+      :async:
+
+
+
+   .. py:method:: notify(freq=70)
+      :async:
+
+
+
+   .. py:method:: task()
+      :async:
+
+
+

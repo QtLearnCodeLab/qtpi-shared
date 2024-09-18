@@ -1,0 +1,106 @@
+uqtpy.actuators.pumpmotor
+=========================
+
+.. py:module:: uqtpy.actuators.pumpmotor
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: PumpMotor(port=None, ob=True)
+
+   PumpMotor 
+
+
+   .. py:attribute:: qtPort
+
+
+   .. py:attribute:: pins
+      :value: []
+
+
+
+   .. py:attribute:: frequency
+      :value: 5000
+
+
+
+   .. py:attribute:: count
+
+
+   .. py:attribute:: mpin1
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: type
+      :value: 'actuator'
+
+
+
+   .. py:attribute:: name
+      :value: 'pumpmotor'
+
+
+
+   .. py:attribute:: ob
+      :value: False
+
+
+
+   .. py:method:: set_i2c(scl=22, sda=21, id=-1, freq=400000)
+
+      :param scl: Clock pin in I2C communication
+
+      :param sda: Data pin in I2C communication
+
+      :param id: Software 1, Hardware -1
+
+      :param freq: Frequency
+
+      :return:    No return value
+
+
+
+   .. py:method:: run(port=None, speed=None)
+
+      :param port:    Port attached to motor
+
+      :param speed:   Speed of motor
+
+      :param direction:   Direction of motor True/False
+
+      :return:    No return value
+
+
+
+   .. py:method:: get_type()
+
+      :return:
+
+
+
+   .. py:method:: get_name()
+
+      :return:
+
+
+
+   .. py:method:: clockwise(port, speed)
+
+      Used to rotate motor in clockwire direction
+
+      :param port:    Motor attached port
+
+      :param speed:   Speed of motor
+
+      :return:    No return value
+
+
+
+   .. py:method:: process_message(message=None)
+
+

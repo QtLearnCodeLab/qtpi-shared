@@ -1,0 +1,151 @@
+uqtpy.constants
+===============
+
+.. py:module:: uqtpy.constants
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: QConstants
+
+   .. py:attribute:: QT_MOTOR_EXPANDER
+      :value: 80
+
+
+
+   .. py:attribute:: QT_GPIO_EXPANDER
+      :value: 81
+
+
+
+   .. py:attribute:: QT_ANALOG_INPUT
+      :value: 1
+
+
+
+   .. py:attribute:: QT_DIGITAL_INPUT
+      :value: 2
+
+
+
+   .. py:attribute:: QT_DIGITAL_OUTPUT
+      :value: 3
+
+
+
+   .. py:attribute:: QT_PWM
+      :value: 4
+
+
+
+   .. py:attribute:: QT_SERVO
+      :value: 5
+
+
+
+   .. py:attribute:: QT_NEOPIXEL_INIT
+      :value: 6
+
+
+
+   .. py:attribute:: QT_NEOPIXEL_CONTROL
+      :value: 7
+
+
+
+   .. py:attribute:: QT_NEOPIXEL_BEGIN
+      :value: 1
+
+
+
+   .. py:attribute:: QT_NEOPIXEL_SHOW
+      :value: 2
+
+
+
+   .. py:attribute:: QT_NEOPIXEL_CLEAR
+      :value: 3
+
+
+
+   .. py:attribute:: QT_TEMPERATURE_CMD
+      :value: 8
+
+
+
+   .. py:attribute:: QT_US_READ
+      :value: 9
+
+
+
+.. py:class:: QtService
+
+   Bases: :py:obj:`QConstants`
+
+
+   .. py:attribute:: QT_UUID
+
+
+   .. py:attribute:: QT_APDS_SERVICE
+
+
+   .. py:attribute:: QT_GAS_SERVICE
+
+
+   .. py:attribute:: QT_IR_SERVICE
+
+
+   .. py:attribute:: QT_LDR_SERVICE
+
+
+   .. py:attribute:: QT_LIMITSWITCH_SERVICE
+
+
+   .. py:attribute:: QT_TEMPERATURE_SERVICE
+
+
+   .. py:attribute:: QT_ULTRASONIC_SERVICE
+
+
+   .. py:attribute:: QT_MPU6050_SERVICE
+
+
+   .. py:attribute:: QT_ARGB_SERVICE
+
+
+   .. py:attribute:: QT_BUZZER_SERVICE
+
+
+   .. py:attribute:: QT_DISPLAY_SERVICE
+
+
+   .. py:attribute:: QT_LED_SERVICE
+
+
+   .. py:attribute:: QT_MOTOR_SERVICE
+
+
+   .. py:attribute:: QT_PUMP_MOTOR_SERVICE
+
+
+   .. py:attribute:: QT_RGB_SERVICE
+
+
+   .. py:attribute:: QT_SERVO_SERVICE
+
+
+   .. py:attribute:: QT_JOYSTICK_SERVICE
+
+
+   .. py:attribute:: QT_TOF_SERVICE
+
+
+   .. py:attribute:: QT_MOISTURE_SERVICE
+
+
+   .. py:attribute:: MODULE
+
+

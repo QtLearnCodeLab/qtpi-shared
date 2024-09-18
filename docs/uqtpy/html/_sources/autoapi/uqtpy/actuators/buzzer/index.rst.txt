@@ -1,0 +1,101 @@
+uqtpy.actuators.buzzer
+======================
+
+.. py:module:: uqtpy.actuators.buzzer
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: Buzzer(port=None, pin=None, ob=True)
+
+   A buzzer is an audio signaling device that makes buzzing sound.
+
+
+   .. py:attribute:: buzzer_pins
+      :value: []
+
+
+
+   .. py:attribute:: qtPort
+
+
+   .. py:attribute:: count
+
+
+   .. py:attribute:: pinNum
+
+
+   .. py:attribute:: port
+
+
+   .. py:attribute:: pin
+
+
+   .. py:attribute:: gpio
+      :value: None
+
+
+
+   .. py:attribute:: type
+      :value: 'actuator'
+
+
+
+   .. py:attribute:: name
+      :value: 'buzzer'
+
+
+
+   .. py:method:: get_type()
+
+      :return:
+
+
+
+   .. py:method:: get_name()
+
+      :return:
+
+
+
+   .. py:method:: buzz(port=None, sec=1)
+
+      Buzz Method
+
+      Args:
+          port (Number, optional): Port Number. Defaults to None.
+          sec (int, optional): [No of seconds]. Defaults to 1.
+
+
+
+   .. py:method:: on(port=None)
+
+      On Method
+
+      Args:
+          port (Number, optional): Port Number. Defaults to None.
+
+
+
+   .. py:method:: off(port=None)
+
+      Off Method
+
+      Args:
+          port (Number, optional): Port Number. Defaults to None.
+
+
+
+   .. py:method:: process_message(message=None)
+
+      Process Message
+
+      Args:
+          message ([JSON], optional): Message in JSON Format. Defaults to None.
+      Example: {"s":{"p":1,"v":2,"s":2}}
+
+
+

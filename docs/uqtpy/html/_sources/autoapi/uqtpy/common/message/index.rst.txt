@@ -1,0 +1,84 @@
+uqtpy.common.message
+====================
+
+.. py:module:: uqtpy.common.message
+
+
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: Generic(en=None, dn=None, da=None, rd=None, vn=None)
+
+   .. py:attribute:: en
+
+
+   .. py:attribute:: dn
+
+
+   .. py:attribute:: da
+
+
+   .. py:attribute:: rd
+
+
+   .. py:attribute:: vn
+
+
+   .. py:method:: to_json()
+
+
+   .. py:method:: from_json(json_str)
+      :classmethod:
+
+
+
+.. py:class:: Service(en=None, dn=None, da=None, rd=None, sn=None, rq=None, rs=None, vn=None)
+
+   Bases: :py:obj:`Generic`
+
+
+   .. py:attribute:: sn
+
+
+   .. py:attribute:: rq
+
+
+   .. py:attribute:: rs
+
+
+   .. py:method:: to_json()
+
+
+   .. py:method:: from_json(json_str)
+      :classmethod:
+
+
+
+.. py:class:: Module(en=None, dn=None, da=None, rd=None, mn=None, rq=None, rs=None, vn=None)
+
+   Bases: :py:obj:`Generic`
+
+
+   .. py:attribute:: mn
+
+
+   .. py:attribute:: rq
+
+
+   .. py:attribute:: rs
+
+
+   .. py:method:: to_json()
+
+
+   .. py:method:: from_json(json_str)
+      :classmethod:
+
+
+
+.. py:data:: mod
+

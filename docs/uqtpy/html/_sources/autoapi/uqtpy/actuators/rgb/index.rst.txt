@@ -1,0 +1,136 @@
+uqtpy.actuators.rgb
+===================
+
+.. py:module:: uqtpy.actuators.rgb
+
+
+
+
+Module Contents
+---------------
+
+.. py:class:: RGB(red_pin=None, green_pin=None, blue_pin=None, frequency=5000, ob=True)
+
+   RGB stands for "Red, Green, Blue"
+   RGB refers to three hues of light that can be mixed together to create different colors
+   Note: Not Implemented Fully
+
+
+   .. py:attribute:: red_pin
+      :value: None
+
+
+
+   .. py:attribute:: green_pin
+      :value: None
+
+
+
+   .. py:attribute:: blue_pin
+      :value: None
+
+
+
+   .. py:attribute:: frequency
+      :value: None
+
+
+
+   .. py:attribute:: type
+      :value: 'actuator'
+
+
+
+   .. py:attribute:: name
+      :value: 'rgb'
+
+
+
+   .. py:method:: set_pin(red_pin, green_pin, blue_pin, frequency=5000)
+
+      :param red_pin:  Pin attached to Red color LED
+
+      :param green_pin:    Pin attached to green color LED
+
+      :param blue_pin: Pin attached to blue color LED
+
+      :param frequency:   frequency default
+
+      :return:    No return value
+
+
+
+   .. py:method:: get_type()
+
+      :return:
+
+
+
+   .. py:method:: get_name()
+
+      :return:
+
+
+
+   .. py:method:: write(red=0, green=0, blue=0)
+
+      :param red: value of Red color
+
+      :param green:   value of Green color
+
+      :param blue:    value of Blue color
+
+      :return:    No return value
+
+
+
+   .. py:method:: red(value=255)
+
+      Sets led to REG color
+
+      :param value: Value of red color
+
+      :return:    No return value
+
+
+
+   .. py:method:: green(value=255)
+
+      Sets led to Green color
+
+      :param value: Value of green color
+
+      :return: No return value
+
+
+
+   .. py:method:: blue(value=255)
+
+      Sets led to Blue color
+
+      :param value: Value of blue color
+
+      :return: No return value
+
+
+
+   .. py:method:: yellow(value=255)
+
+      Sets led to Yellow color
+
+      :param value: Value of yellow color
+
+      :return: No return value
+
+
+
+   .. py:method:: white(value=255)
+
+      Sets led to White color
+
+      :param value: Value of white color
+
+      :return: No return value
+
+
+
