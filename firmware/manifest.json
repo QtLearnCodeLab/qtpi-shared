@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-31T15:30:00Z",
+  "boards": [
+    {
+      "boardId": "qtpi-veda-esp32",
+      "displayName": "QtPi Veda ESP32 (Next-Gen)",
+      "mcuFamily": "esp32",
+      "vidPids": [
+        { "vid": "10c4", "pid": "ea60", "chipName": "CP2102" },
+        { "vid": "1a86", "pid": "7523", "chipName": "CH340" },
+        { "vid": "303a", "pid": "1001", "chipName": "ESP32-S3 USB-JTAG" }
+      ],
+      "flavors": [
+        {
+          "flavorId": "firmata-dual",
+          "displayName": "QtPi Firmata Dual-Mode (BLE + BT + USB)",
+          "description": "Simultaneous BLE GATT, Bluetooth SPP, and USB Firmata for Code2Play / App Inventor.",
+          "defaultVersion": "1.0.5",
+          "versions": [
+            {
+              "version": "1.0.5",
+              "releaseDate": "2026-08-31",
+              "flashOffset": "0x0000",
+              "flashMode": "dio",
+              "flashFreq": "40m",
+              "flashSize": "16MB",
+              "defaultBaud": 921600,
+              "fallbackBaud": 115200,
+              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/v1.0.5/QtPiFirmataESP32.ino.merged.bin",
+              "sha256": "32124eb72180338eaa7899b14f7ce3e83983b0cd32aba2650c9cc0cd0b2c0b0c",
+              "sizeBytes": 1334112
+            }
+          ]
+        },
+        {
+          "flavorId": "micropython",
+          "displayName": "MicroPython Runtime",
+          "description": "Python REPL & script execution for Python Lab.",
+          "defaultVersion": "1.23.0",
+          "versions": [
+            {
+              "version": "1.23.0",
+              "releaseDate": "2026-08-20",
+              "flashOffset": "0x1000",
+              "flashMode": "dio",
+              "flashFreq": "40m",
+              "flashSize": "16MB",
+              "defaultBaud": 921600,
+              "fallbackBaud": 115200,
+              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.23.0/esp32-micropython.bin",
+              "sha256": "4be1920bbc8a990ab7e4e984da599852e5e29699c5f5973fa781a46f8191ef42",
+              "sizeBytes": 1572864
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boardId": "qtpi-veda-2560",
+      "displayName": "QtPi Veda (ATmega2560 Classic)",
+      "mcuFamily": "avr-mega2560",
+      "protocol": "stk500v2",
+      "baudRate": 115200,
+      "vidPids": [
+        { "vid": "2341", "pid": "0042", "chipName": "Arduino Mega 2560" },
+        { "vid": "1a86", "pid": "7523", "chipName": "CH340" }
+      ],
+      "flavors": [
+        {
+          "flavorId": "firmata",
+          "displayName": "QtPi Firmata Veda (Mega 2560)",
+          "description": "High-pinout robotics firmware for QtPi Veda 2560.",
+          "defaultVersion": "1.0.4",
+          "versions": [
+            {
+              "version": "1.0.4",
+              "releaseDate": "2024-09-21",
+              "format": "hex",
+              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda/latest/QtPiFirmataVeda.ino.hex",
+              "sha256": "797a09264e810fa40c16a37f2e435d723f77140d2c6d0c8f9fc827cedbd4dbf2",
+              "sizeBytes": 96985
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boardId": "qtpi-rio-328p",
+      "displayName": "QtPi Rio (ATmega328P Classic)",
+      "mcuFamily": "avr-328p",
+      "protocol": "stk500v1",
+      "baudRate": 115200,
+      "vidPids": [
+        { "vid": "1a86", "pid": "7523", "chipName": "CH340" },
+        { "vid": "0403", "pid": "6001", "chipName": "FTDI" },
+        { "vid": "2341", "pid": "0043", "chipName": "Arduino Uno" }
+      ],
+      "flavors": [
+        {
+          "flavorId": "firmata",
+          "displayName": "QtPi Firmata Rio (328P)",
+          "description": "Standard Firmata firmware for QtPi Rio.",
+          "defaultVersion": "1.0.2",
+          "versions": [
+            {
+              "version": "1.0.2",
+              "releaseDate": "2024-09-21",
+              "format": "hex",
+              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/rio/latest/QtPiFirmataRio.ino.hex",
+              "sha256": "4108937093e5d7d43741ad5f0a382adcca4153e0f50fea4ad448a06817d2ba49",
+              "sizeBytes": 77344
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
