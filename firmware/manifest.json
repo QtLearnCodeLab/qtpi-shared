@@ -1,11 +1,14 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-31T15:30:00Z",
+  "updatedAt": "2026-09-02T01:26:48Z",
   "boards": [
     {
       "boardId": "qtpi-veda-esp32",
       "displayName": "QtPi Veda ESP32 (Next-Gen)",
       "mcuFamily": "esp32",
+      "protocol": "esptool",
+      "defaultBaud": 921600,
+      "fallbackBaud": 115200,
       "vidPids": [
         { "vid": "10c4", "pid": "ea60", "chipName": "CP2102" },
         { "vid": "1a86", "pid": "7523", "chipName": "CH340" },
@@ -30,27 +33,6 @@
               "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/v1.0.5/QtPiFirmataESP32.ino.merged.bin",
               "sha256": "32124eb72180338eaa7899b14f7ce3e83983b0cd32aba2650c9cc0cd0b2c0b0c",
               "sizeBytes": 1334112
-            }
-          ]
-        },
-        {
-          "flavorId": "micropython",
-          "displayName": "MicroPython Runtime",
-          "description": "Python REPL & script execution for Python Lab.",
-          "defaultVersion": "1.23.0",
-          "versions": [
-            {
-              "version": "1.23.0",
-              "releaseDate": "2026-08-20",
-              "flashOffset": "0x1000",
-              "flashMode": "dio",
-              "flashFreq": "40m",
-              "flashSize": "16MB",
-              "defaultBaud": 921600,
-              "fallbackBaud": 115200,
-              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.23.0/esp32-micropython.bin",
-              "sha256": "4be1920bbc8a990ab7e4e984da599852e5e29699c5f5973fa781a46f8191ef42",
-              "sizeBytes": 1572864
             }
           ]
         }
@@ -78,7 +60,7 @@
               "releaseDate": "2024-09-21",
               "format": "hex",
               "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda/latest/QtPiFirmataVeda.ino.hex",
-              "sha256": "797a09264e810fa40c16a37f2e435d723f77140d2c6d0c8f9fc827cedbd4dbf2",
+              "sha256": "0af74c81c01e26e569583db5f54b8b992b2be90fd65ce4c2dc48130a28bda1b0",
               "sizeBytes": 96985
             }
           ]
