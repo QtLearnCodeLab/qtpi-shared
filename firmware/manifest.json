@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-02T01:26:48Z",
+  "updatedAt": "2026-09-19T11:45:36.364Z",
   "boards": [
     {
       "boardId": "qtpi-veda-esp32",
@@ -10,9 +10,21 @@
       "defaultBaud": 921600,
       "fallbackBaud": 115200,
       "vidPids": [
-        { "vid": "10c4", "pid": "ea60", "chipName": "CP2102" },
-        { "vid": "1a86", "pid": "7523", "chipName": "CH340" },
-        { "vid": "303a", "pid": "1001", "chipName": "ESP32-S3 USB-JTAG" }
+        {
+          "vid": "10c4",
+          "pid": "ea60",
+          "chipName": "CP2102"
+        },
+        {
+          "vid": "1a86",
+          "pid": "7523",
+          "chipName": "CH340"
+        },
+        {
+          "vid": "303a",
+          "pid": "1001",
+          "chipName": "ESP32-S3 USB-JTAG"
+        }
       ],
       "flavors": [
         {
@@ -35,6 +47,27 @@
               "sizeBytes": 1334112
             }
           ]
+        },
+        {
+          "flavorId": "micropython",
+          "displayName": "MicroPython Runtime",
+          "description": "Official MicroPython OS with Python REPL, script storage (main.py), and AI/ML for QtBlocks.",
+          "defaultVersion": "1.23.0",
+          "versions": [
+            {
+              "version": "1.23.0",
+              "releaseDate": "2026-08-20",
+              "flashOffset": "0x1000",
+              "flashMode": "dio",
+              "flashFreq": "40m",
+              "flashSize": "16MB",
+              "defaultBaud": 921600,
+              "fallbackBaud": 115200,
+              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.23.0/esp32-micropython.bin",
+              "sha256": "5e442176c7e90347aa102915077dda59f795af190f907f3919ee1e4e57984716",
+              "sizeBytes": 1734240
+            }
+          ]
         }
       ]
     },
@@ -45,8 +78,16 @@
       "protocol": "stk500v2",
       "baudRate": 115200,
       "vidPids": [
-        { "vid": "2341", "pid": "0042", "chipName": "Arduino Mega 2560" },
-        { "vid": "1a86", "pid": "7523", "chipName": "CH340" }
+        {
+          "vid": "2341",
+          "pid": "0042",
+          "chipName": "Arduino Mega 2560"
+        },
+        {
+          "vid": "1a86",
+          "pid": "7523",
+          "chipName": "CH340"
+        }
       ],
       "flavors": [
         {
@@ -74,9 +115,21 @@
       "protocol": "stk500v1",
       "baudRate": 115200,
       "vidPids": [
-        { "vid": "1a86", "pid": "7523", "chipName": "CH340" },
-        { "vid": "0403", "pid": "6001", "chipName": "FTDI" },
-        { "vid": "2341", "pid": "0043", "chipName": "Arduino Uno" }
+        {
+          "vid": "1a86",
+          "pid": "7523",
+          "chipName": "CH340"
+        },
+        {
+          "vid": "0403",
+          "pid": "6001",
+          "chipName": "FTDI"
+        },
+        {
+          "vid": "2341",
+          "pid": "0043",
+          "chipName": "Arduino Uno"
+        }
       ],
       "flavors": [
         {
