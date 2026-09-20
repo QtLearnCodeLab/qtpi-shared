@@ -17,7 +17,7 @@
       "properties": {
         "repository": {"type": "string", "minLength": 1},
         "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
-        "tag": {"type": ["string", "null"]}
+        "tag": {"type": "string", "minLength": 1}
       }
     },
     "dependencies": {"type": "object", "additionalProperties": {"type": "string"}},

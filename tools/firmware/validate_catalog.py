@@ -3,8 +3,11 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
+import re
+import subprocess
 import sys
 from pathlib import Path
 from urllib.parse import urlparse
@@ -14,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[2]
 FIRMWARE = ROOT / "firmware"
 RAW_PATH_PREFIX = "/QtLearnCodeLab/qtpi-shared/main/"
 errors: list[str] = []
+VERSIONED_PATH = re.compile(r"^firmware/(?:[^/]+/)+v\d+\.\d+\.\d+/")
 
 
 def fail(message: str) -> None:
@@ -46,6 +50,46 @@ def digest(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             result.update(block)
     return result.hexdigest()
+
+
+def validate_schema(instance: dict, schema_path: Path, label: str) -> None:
+    try:
+        import jsonschema
+    except ImportError:
+        fail("jsonschema is required; install tools/firmware/requirements.txt")
+        return
+    schema = load(schema_path)
+    try:
+        jsonschema.Draft202012Validator.check_schema(schema)
+        jsonschema.validate(instance, schema)
+    except jsonschema.exceptions.SchemaError as exc:
+        fail(f"{schema_path.relative_to(ROOT)}: invalid schema: {exc.message}")
+    except jsonschema.exceptions.ValidationError as exc:
+        location = "/".join(str(part) for part in exc.absolute_path) or "<root>"
+        fail(f"{label}:{location}: {exc.message}")
+
+
+def validate_ranges(images: list[dict], label: str, container_size: int | None = None) -> None:
+    ranges: list[tuple[int, int, str]] = []
+    for image in images:
+        if "offset" not in image:
+            continue
+        try:
+            start = int(image["offset"], 16)
+            size = int(image["sizeBytes"])
+        except (KeyError, TypeError, ValueError):
+            fail(f"{label}: invalid image offset or size")
+            continue
+        end = start + size
+        if start < 0 or size <= 0:
+            fail(f"{label}: image ranges must be positive")
+        if container_size is not None and end > container_size:
+            fail(f"{label}: {image.get('role')} exceeds its containing image")
+        ranges.append((start, end, image.get("role", "unknown")))
+    ranges.sort()
+    for previous, current in zip(ranges, ranges[1:]):
+        if current[0] < previous[1]:
+            fail(f"{label}: {previous[2]} overlaps {current[2]}")
 
 
 def check_artifact(url: str, expected_sha: str, expected_size: int, label: str) -> None:
@@ -96,16 +140,19 @@ def validate_v1(catalog: dict) -> set[tuple[str, str, str]]:
         url = version.get("downloadUrl", "")
         if "/latest/" in url:
             fail(f"{'/'.join(key)}: v1 downloadUrl must be immutable")
+        if f"/v{name}/" not in url:
+            fail(f"{'/'.join(key)}: v1 downloadUrl must use its version directory")
         check_artifact(url, version.get("sha256"), version.get("sizeBytes"), "/".join(key))
     return keys
 
 
-def validate_release(url: str, key: tuple[str, str, str]) -> None:
+def validate_release(url: str, key: tuple[str, str, str], catalog_images: list[dict]) -> None:
     path = local_path(url)
     if path is None or not path.is_file():
         fail(f"{'/'.join(key)}: missing release descriptor")
         return
     release = load(path)
+    validate_schema(release, FIRMWARE / "schema/release-v1.schema.json", str(path.relative_to(ROOT)))
     if release.get("schemaVersion") != 1:
         fail(f"{path.relative_to(ROOT)}: schemaVersion must be 1")
     if tuple(release.get(field) for field in ("boardId", "flavorId", "version")) != key:
@@ -120,6 +167,24 @@ def validate_release(url: str, key: tuple[str, str, str]) -> None:
             continue
         if artifact.stat().st_size != image.get("sizeBytes") or digest(artifact) != image.get("sha256"):
             fail(f"{path.relative_to(ROOT)}: image metadata mismatch for {artifact.name}")
+        contained = image.get("contains", [])
+        if contained:
+            validate_ranges(contained, f"{path.relative_to(ROOT)}:{artifact.name}", image.get("sizeBytes"))
+    validate_ranges(images, str(path.relative_to(ROOT)))
+    expected_tag_flavor = {"firmata-dual": "firmata", "micropython": "micropython"}.get(key[1])
+    if expected_tag_flavor:
+        expected_tag = f"qtpi-esp32-{expected_tag_flavor}-v{key[2]}"
+        if release.get("source", {}).get("tag") != expected_tag:
+            fail(f"{path.relative_to(ROOT)}: source tag must be {expected_tag}")
+    catalog_by_name = {Path(urlparse(image["downloadUrl"]).path).name: image for image in catalog_images}
+    for image in images:
+        catalog_image = catalog_by_name.get(image.get("file"))
+        if not catalog_image:
+            fail(f"{path.relative_to(ROOT)}: {image.get('file')} is absent from manifest-v2")
+            continue
+        for field in ("role", "offset", "sha256", "sizeBytes"):
+            if image.get(field) != catalog_image.get(field):
+                fail(f"{path.relative_to(ROOT)}: {field} disagrees with manifest-v2")
     sums = path.parent / "SHA256SUMS"
     if not sums.is_file():
         fail(f"{path.relative_to(ROOT)}: SHA256SUMS is missing")
@@ -130,7 +195,9 @@ def validate_release(url: str, key: tuple[str, str, str]) -> None:
             fail(f"{sums.relative_to(ROOT)}: entries do not match release.json")
 
 
-def validate_latest(url: str, board_id: str, flavor_id: str, default_version: str) -> None:
+def validate_latest(
+    url: str, board_id: str, flavor_id: str, default_version: str, expected_release_url: str
+) -> None:
     path = local_path(url)
     if path is None or not path.is_file():
         fail(f"{board_id}/{flavor_id}: missing latest.json")
@@ -142,11 +209,14 @@ def validate_latest(url: str, board_id: str, flavor_id: str, default_version: st
     release_path = local_path(latest.get("releaseUrl", ""))
     if release_path is None or not release_path.is_file():
         fail(f"{path.relative_to(ROOT)}: releaseUrl does not exist")
+    if latest.get("releaseUrl") != expected_release_url:
+        fail(f"{path.relative_to(ROOT)}: releaseUrl does not match the default release")
 
 
 def validate_v2(catalog: dict, v1_keys: set[tuple[str, str, str]]) -> None:
     if catalog.get("schemaVersion") != 2:
         fail("firmware/manifest-v2.json: schemaVersion must be 2")
+    validate_schema(catalog, FIRMWARE / "schema/manifest-v2.schema.json", "firmware/manifest-v2.json")
     v2_keys: set[tuple[str, str, str]] = set()
     checked_latest: set[tuple[str, str]] = set()
     for board_id, flavor_id, flavor, version in iter_versions(catalog):
@@ -156,28 +226,76 @@ def validate_v2(catalog: dict, v1_keys: set[tuple[str, str, str]]) -> None:
         if not images:
             fail(f"{'/'.join(key)}: v2 release has no images")
         for image in images:
+            if f"/v{key[2]}/" not in image.get("downloadUrl", ""):
+                fail(f"{'/'.join(key)}: image URL must use its version directory")
             check_artifact(
                 image.get("downloadUrl", ""),
                 image.get("sha256"),
                 image.get("sizeBytes"),
                 "/".join(key),
             )
+        validate_ranges(images, "/".join(key))
         release_url = version.get("releaseUrl")
         if release_url:
-            validate_release(release_url, key)
+            if f"/v{key[2]}/" not in release_url:
+                fail(f"{'/'.join(key)}: releaseUrl must use its version directory")
+            validate_release(release_url, key, images)
         flavor_key = (board_id, flavor_id)
         if flavor.get("latestUrl") and flavor_key not in checked_latest:
-            validate_latest(flavor["latestUrl"], board_id, flavor_id, flavor["defaultVersion"])
+            default_release = next(
+                (item.get("releaseUrl", "") for item in flavor.get("versions", []) if item.get("version") == flavor["defaultVersion"]),
+                "",
+            )
+            validate_latest(
+                flavor["latestUrl"], board_id, flavor_id, flavor["defaultVersion"], default_release
+            )
             checked_latest.add(flavor_key)
     if v2_keys != v1_keys:
         fail("manifest v1 and v2 publish different board/flavor/version sets")
 
 
+def validate_immutability(base_ref: str) -> None:
+    try:
+        subprocess.check_call(
+            ["git", "rev-parse", "--verify", f"{base_ref}^{{commit}}"],
+            cwd=ROOT,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        changed = subprocess.check_output(
+            ["git", "diff", "--name-only", f"{base_ref}...HEAD"], cwd=ROOT, text=True
+        ).splitlines()
+    except subprocess.CalledProcessError:
+        fail(f"cannot resolve immutability base ref: {base_ref}")
+        return
+    checked_dirs: set[str] = set()
+    for name in changed:
+        match = VERSIONED_PATH.match(name)
+        if not match:
+            continue
+        version_dir = match.group(0).rstrip("/")
+        if version_dir in checked_dirs:
+            continue
+        checked_dirs.add(version_dir)
+        existed = subprocess.check_output(
+            ["git", "ls-tree", "-r", "--name-only", base_ref, "--", version_dir],
+            cwd=ROOT,
+            text=True,
+        ).strip()
+        if existed:
+            fail(f"immutable published directory changed: {version_dir}")
+
+
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--base-ref", help="reject changes to version directories present at this ref")
+    args = parser.parse_args()
     for schema in sorted((FIRMWARE / "schema").glob("*.json")):
         load(schema)
     v1_keys = validate_v1(load(FIRMWARE / "manifest.json"))
     validate_v2(load(FIRMWARE / "manifest-v2.json"), v1_keys)
+    if args.base_ref:
+        validate_immutability(args.base_ref)
     if errors:
         for error in errors:
             print(f"[ERROR] {error}", file=sys.stderr)

@@ -21,5 +21,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Install validator dependencies
+        run: python3 -m pip install -r tools/firmware/requirements.txt
       - name: Validate catalogs and artifacts
         run: python3 tools/firmware/validate_catalog.py
+      - name: Enforce published-directory immutability on pull requests
+        if: github.event_name == 'pull_request'
+        run: python3 tools/firmware/validate_catalog.py --base-ref "origin/${{ github.base_ref }}"
+      - name: Enforce published-directory immutability on pushes
+        if: github.event_name == 'push'
+        run: python3 tools/firmware/validate_catalog.py --base-ref "${{ github.event.before }}"
