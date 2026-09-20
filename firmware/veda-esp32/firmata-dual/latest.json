@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "boardId": "qtpi-veda-esp32",
+  "flavorId": "firmata-dual",
+  "version": "1.0.6",
+  "releaseUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/v1.0.6/release.json"
+}

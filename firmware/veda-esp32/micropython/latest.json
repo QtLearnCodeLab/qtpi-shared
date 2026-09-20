@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "boardId": "qtpi-veda-esp32",
+  "flavorId": "micropython",
+  "version": "1.1.0",
+  "releaseUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.1.0/release.json"
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-20T06:30:41Z",
+  "updatedAt": "2026-09-20T10:26:19Z",
   "boards": [
     {
       "boardId": "qtpi-veda-esp32",
@@ -126,7 +126,7 @@
               "version": "1.0.4",
               "releaseDate": "2024-09-21",
               "format": "hex",
-              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda/latest/QtPiFirmataVeda.ino.hex",
+              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/mega2560/firmata/v1.0.4/QtPiFirmataVeda.ino.hex",
               "sha256": "0af74c81c01e26e569583db5f54b8b992b2be90fd65ce4c2dc48130a28bda1b0",
               "sizeBytes": 96985
             }
@@ -168,7 +168,7 @@
               "version": "1.0.2",
               "releaseDate": "2024-09-21",
               "format": "hex",
-              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/rio/latest/QtPiFirmataRio.ino.hex",
+              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/rio/firmata/v1.0.2/QtPiFirmataRio.hex",
               "sha256": "4108937093e5d7d43741ad5f0a382adcca4153e0f50fea4ad448a06817d2ba49",
               "sizeBytes": 77344
             }

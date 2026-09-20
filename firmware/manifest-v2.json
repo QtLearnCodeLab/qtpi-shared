@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "updatedAt": "2026-09-20T10:26:19Z",
+  "boards": [
+    {
+      "boardId": "qtpi-veda-esp32",
+      "displayName": "QtPi Veda ESP32 (Next-Gen)",
+      "mcuFamily": "esp32",
+      "protocol": "esptool",
+      "flavors": [
+        {
+          "flavorId": "firmata-dual",
+          "displayName": "QtPi Firmata Dual-Mode (BLE + BT + USB)",
+          "description": "Simultaneous BLE GATT, Bluetooth SPP, and USB Firmata for Code2Play / App Inventor.",
+          "defaultVersion": "1.0.6",
+          "latestUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/latest.json",
+          "versions": [
+            {
+              "version": "1.0.6",
+              "releaseDate": "2026-09-20",
+              "releaseUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/v1.0.6/release.json",
+              "metadataStatus": "release-descriptor",
+              "images": [
+                {
+                  "role": "complete",
+                  "offset": "0x0000",
+                  "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/v1.0.6/qtpi-esp32-firmata-v1.0.6.bin",
+                  "sha256": "7367e6f2a1d2af6ab283ed0a9d2cd183b443b3fe5d83422f08478021fde6621c",
+                  "sizeBytes": 1334272
+                }
+              ]
+            },
+            {
+              "version": "1.0.5",
+              "releaseDate": "2026-08-31",
+              "metadataStatus": "legacy",
+              "images": [
+                {
+                  "role": "complete",
+                  "offset": "0x0000",
+                  "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/v1.0.5/QtPiFirmataESP32.ino.merged.bin",
+                  "sha256": "32124eb72180338eaa7899b14f7ce3e83983b0cd32aba2650c9cc0cd0b2c0b0c",
+                  "sizeBytes": 1334112
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "flavorId": "micropython",
+          "displayName": "QtPi MicroPython Runtime",
+          "description": "QtPi MicroPython firmware with the frozen uqtpy framework and populated LittleFS content for QtBlocks.",
+          "defaultVersion": "1.1.0",
+          "latestUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/latest.json",
+          "versions": [
+            {
+              "version": "1.1.0",
+              "releaseDate": "2026-09-20",
+              "releaseUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.1.0/release.json",
+              "metadataStatus": "release-descriptor",
+              "images": [
+                {
+                  "role": "complete",
+                  "offset": "0x0000",
+                  "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.1.0/qtpi-esp32-micropython-v1.1.0.bin",
+                  "sha256": "25fa11e07f90cfe3cad24e0714e3b7765b766f3c8191a48495fc77a5aadc2df4",
+                  "sizeBytes": 15794176
+                }
+              ]
+            },
+            {
+              "version": "1.23.0",
+              "releaseDate": "2026-08-20",
+              "metadataStatus": "legacy",
+              "images": [
+                {
+                  "role": "firmware",
+                  "offset": "0x1000",
+                  "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.23.0/esp32-micropython.bin",
+                  "sha256": "5e442176c7e90347aa102915077dda59f795af190f907f3919ee1e4e57984716",
+                  "sizeBytes": 1734240
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boardId": "qtpi-veda-2560",
+      "displayName": "QtPi Veda (ATmega2560 Classic)",
+      "mcuFamily": "avr-mega2560",
+      "protocol": "stk500v2",
+      "flavors": [
+        {
+          "flavorId": "firmata",
+          "displayName": "QtPi Firmata Veda (Mega 2560)",
+          "description": "High-pinout robotics firmware for QtPi Veda 2560.",
+          "defaultVersion": "1.0.4",
+          "versions": [
+            {
+              "version": "1.0.4",
+              "releaseDate": "2024-09-21",
+              "metadataStatus": "legacy",
+              "images": [
+                {
+                  "role": "firmware",
+                  "format": "hex",
+                  "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/mega2560/firmata/v1.0.4/QtPiFirmataVeda.ino.hex",
+                  "sha256": "0af74c81c01e26e569583db5f54b8b992b2be90fd65ce4c2dc48130a28bda1b0",
+                  "sizeBytes": 96985
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boardId": "qtpi-rio-328p",
+      "displayName": "QtPi Rio (ATmega328P Classic)",
+      "mcuFamily": "avr-328p",
+      "protocol": "stk500v1",
+      "flavors": [
+        {
+          "flavorId": "firmata",
+          "displayName": "QtPi Firmata Rio (328P)",
+          "description": "Standard Firmata firmware for QtPi Rio.",
+          "defaultVersion": "1.0.2",
+          "versions": [
+            {
+              "version": "1.0.2",
+              "releaseDate": "2024-09-21",
+              "metadataStatus": "legacy",
+              "images": [
+                {
+                  "role": "firmware",
+                  "format": "hex",
+                  "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/rio/firmata/v1.0.2/QtPiFirmataRio.hex",
+                  "sha256": "4108937093e5d7d43741ad5f0a382adcca4153e0f50fea4ad448a06817d2ba49",
+                  "sizeBytes": 77344
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

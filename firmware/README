@@ -1,7 +1,10 @@
 QtPi firmware artifacts
 =======================
 
-The machine-readable release catalog is `manifest.json`.
+The backward-compatible machine-readable release catalog is `manifest.json`
+(schema v1). Existing Desktop Suite builds use its single `downloadUrl` per
+version. New tooling should use `manifest-v2.json`, which represents releases
+as image arrays and links to immutable release descriptors.
 
 ESP32 Firmata releases are stored under:
 
@@ -16,5 +19,11 @@ MicroPython runtime version. Current QtPi images merge the bootloader,
 partition table, application, and populated LittleFS partition into one binary
 that is flashed at offset `0x0000`.
 
-The `latest/` directory mirrors the artifact selected by `defaultVersion` in
-the manifest. Versioned directories are immutable after publication.
+Each current ESP32 version directory contains `release.json` and
+`SHA256SUMS`. Each flavor also has a small `latest.json` pointer. The
+`latest/` binary directory remains as a compatibility mirror; versioned
+directories are the canonical, immutable publication locations.
+
+JSON schemas live under `schema/`. Validate the full local catalog with:
+
+    python3 tools/firmware/validate_catalog.py

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "boardId": "qtpi-veda-esp32",
+  "flavorId": "micropython",
+  "version": "1.1.0",
+  "source": {
+    "repository": "QtLearnCodeLab/qtmicropython",
+    "commit": "15f9d8d07a0eab8b5f9b916d32d8c39ff2152807",
+    "tag": null
+  },
+  "dependencies": {
+    "espIdf": "v5.5",
+    "micropython": "1.27.0-preview",
+    "uqtpy": "1.1.0"
+  },
+  "images": [
+    {
+      "role": "complete",
+      "file": "qtpi-esp32-micropython-v1.1.0.bin",
+      "offset": "0x0000",
+      "sha256": "25fa11e07f90cfe3cad24e0714e3b7765b766f3c8191a48495fc77a5aadc2df4",
+      "sizeBytes": 15794176,
+      "contains": [
+        {
+          "role": "firmware",
+          "offset": "0x1000",
+          "sizeBytes": 1912064
+        },
+        {
+          "role": "littlefs",
+          "offset": "0x610000",
+          "sizeBytes": 9437184
+        }
+      ]
+    }
+  ],
+  "flash": {
+    "chip": "esp32",
+    "size": "16MB"
+  },
+  "requiresErase": false
+}
