@@ -1,0 +1,11 @@
+QtPi firmware artifacts
+=======================
+
+The machine-readable release catalog is `manifest.json`.
+
+ESP32 Firmata releases are stored under:
+
+    veda-esp32/firmata-dual/v<version>/qtpi-esp32-firmata-v<version>.bin
+
+The `latest/` directory mirrors the artifact selected by `defaultVersion` in
+the manifest. Versioned directories are immutable after publication.
