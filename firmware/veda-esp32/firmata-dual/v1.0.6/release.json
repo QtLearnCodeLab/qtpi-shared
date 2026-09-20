@@ -6,7 +6,7 @@
   "source": {
     "repository": "PlugPlayInnovate/QtPiFirmata",
     "commit": "05f9ca2f36f69e4319d2d1ddd11a2dfebbfb9700",
-    "tag": null
+    "tag": "qtpi-esp32-firmata-v1.0.6"
   },
   "dependencies": {
     "arduinoEsp32": "3.3.7",

@@ -6,7 +6,7 @@
   "source": {
     "repository": "QtLearnCodeLab/qtmicropython",
     "commit": "15f9d8d07a0eab8b5f9b916d32d8c39ff2152807",
-    "tag": null
+    "tag": "qtpi-esp32-micropython-v1.1.0"
   },
   "dependencies": {
     "espIdf": "v5.5",
