@@ -7,5 +7,14 @@ ESP32 Firmata releases are stored under:
 
     veda-esp32/firmata-dual/v<version>/qtpi-esp32-firmata-v<version>.bin
 
+QtPi MicroPython releases are stored under:
+
+    veda-esp32/micropython/v<version>/qtpi-esp32-micropython-v<version>.bin
+
+QtPi MicroPython product versions are independent of the bundled upstream
+MicroPython runtime version. Current QtPi images merge the bootloader,
+partition table, application, and populated LittleFS partition into one binary
+that is flashed at offset `0x0000`.
+
 The `latest/` directory mirrors the artifact selected by `defaultVersion` in
 the manifest. Versioned directories are immutable after publication.
