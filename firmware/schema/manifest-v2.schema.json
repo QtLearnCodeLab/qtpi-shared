@@ -4,66 +4,219 @@
   "title": "QtPi firmware catalog v2",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "updatedAt", "boards"],
+  "required": [
+    "schemaVersion",
+    "updatedAt",
+    "boards"
+  ],
   "properties": {
-    "schemaVersion": {"const": 2},
-    "updatedAt": {"type": "string", "format": "date-time"},
+    "schemaVersion": {
+      "const": 2
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
     "boards": {
       "type": "array",
       "minItems": 1,
-      "items": {"$ref": "#/$defs/board"}
+      "items": {
+        "$ref": "#/$defs/board"
+      }
     }
   },
   "$defs": {
     "image": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["role", "downloadUrl", "sha256", "sizeBytes"],
+      "required": [
+        "role",
+        "downloadUrl",
+        "sha256",
+        "sizeBytes"
+      ],
       "properties": {
-        "role": {"type": "string", "minLength": 1},
-        "downloadUrl": {"type": "string", "format": "uri"},
-        "offset": {"type": "string", "pattern": "^0x[0-9a-fA-F]+$"},
-        "format": {"type": "string"},
-        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-        "sizeBytes": {"type": "integer", "minimum": 1}
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "downloadUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "offset": {
+          "type": "string",
+          "pattern": "^0x[0-9a-fA-F]+$"
+        },
+        "format": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "sizeBytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "contains": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "role",
+              "offset",
+              "sizeBytes"
+            ],
+            "properties": {
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "file": {
+                "type": "string"
+              },
+              "downloadUrl": {
+                "type": "string",
+                "format": "uri"
+              },
+              "offset": {
+                "type": "string",
+                "pattern": "^0x[0-9a-fA-F]+$"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "sizeBytes": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        }
       },
-      "oneOf": [{"required": ["offset"]}, {"required": ["format"]}]
+      "oneOf": [
+        {
+          "required": [
+            "offset"
+          ]
+        },
+        {
+          "required": [
+            "format"
+          ]
+        }
+      ]
     },
     "version": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["version", "releaseDate", "images"],
+      "required": [
+        "version",
+        "releaseDate",
+        "images"
+      ],
       "properties": {
-        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
-        "releaseDate": {"type": "string", "format": "date"},
-        "releaseUrl": {"type": "string", "format": "uri"},
-        "metadataStatus": {"enum": ["release-descriptor", "legacy"]},
-        "images": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/image"}}
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "releaseDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "releaseUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "metadataStatus": {
+          "enum": [
+            "release-descriptor",
+            "legacy"
+          ]
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/image"
+          }
+        }
       }
     },
     "flavor": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["flavorId", "displayName", "defaultVersion", "versions"],
+      "required": [
+        "flavorId",
+        "displayName",
+        "defaultVersion",
+        "versions"
+      ],
       "properties": {
-        "flavorId": {"type": "string", "minLength": 1},
-        "displayName": {"type": "string", "minLength": 1},
-        "description": {"type": "string"},
-        "defaultVersion": {"type": "string"},
-        "latestUrl": {"type": "string", "format": "uri"},
-        "versions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/version"}}
+        "flavorId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "defaultVersion": {
+          "type": "string"
+        },
+        "latestUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "versions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/version"
+          }
+        }
       }
     },
     "board": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["boardId", "displayName", "mcuFamily", "protocol", "flavors"],
+      "required": [
+        "boardId",
+        "displayName",
+        "mcuFamily",
+        "protocol",
+        "flavors"
+      ],
       "properties": {
-        "boardId": {"type": "string", "minLength": 1},
-        "displayName": {"type": "string", "minLength": 1},
-        "mcuFamily": {"type": "string", "minLength": 1},
-        "protocol": {"type": "string", "minLength": 1},
-        "flavors": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/flavor"}}
+        "boardId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mcuFamily": {
+          "type": "string",
+          "minLength": 1
+        },
+        "protocol": {
+          "type": "string",
+          "minLength": 1
+        },
+        "flavors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/flavor"
+          }
+        }
       }
     }
   }

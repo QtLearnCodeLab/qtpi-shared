@@ -23,12 +23,16 @@
       "contains": [
         {
           "role": "firmware",
+          "file": "firmware.bin",
           "offset": "0x1000",
+          "sha256": "92d249b2a4233452eaf838e5e2fdec478c42fe17772e7fcac4ad8a7e11b053f8",
           "sizeBytes": 1912064
         },
         {
           "role": "littlefs",
+          "file": "qtpi_lfs.bin",
           "offset": "0x610000",
+          "sha256": "1185bafd606dbd9af75e74ce27d8f5d9637358d9f1582855002e9080b1360c9c",
           "sizeBytes": 9437184
         }
       ]

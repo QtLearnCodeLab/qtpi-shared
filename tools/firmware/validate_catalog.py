@@ -170,6 +170,15 @@ def validate_release(url: str, key: tuple[str, str, str], catalog_images: list[d
         contained = image.get("contains", [])
         if contained:
             validate_ranges(contained, f"{path.relative_to(ROOT)}:{artifact.name}", image.get("sizeBytes"))
+            for sub in contained:
+                if "file" in sub:
+                    sub_file = path.parent / sub["file"]
+                    if not sub_file.is_file():
+                        fail(f"{path.relative_to(ROOT)}: missing contained file {sub['file']}")
+                    elif sub.get("sizeBytes") and sub_file.stat().st_size != sub["sizeBytes"]:
+                        fail(f"{path.relative_to(ROOT)}: size mismatch for {sub['file']}")
+                    elif sub.get("sha256") and digest(sub_file) != sub["sha256"]:
+                        fail(f"{path.relative_to(ROOT)}: SHA-256 mismatch for {sub['file']}")
     validate_ranges(images, str(path.relative_to(ROOT)))
     expected_tag_flavor = {"firmata-dual": "firmata", "micropython": "micropython"}.get(key[1])
     if expected_tag_flavor:
@@ -190,6 +199,10 @@ def validate_release(url: str, key: tuple[str, str, str], catalog_images: list[d
         fail(f"{path.relative_to(ROOT)}: SHA256SUMS is missing")
     else:
         expected = {f"{image['sha256']}  {image['file']}" for image in images}
+        for image in images:
+            for sub in image.get("contains", []):
+                if "sha256" in sub and "file" in sub:
+                    expected.add(f"{sub['sha256']}  {sub['file']}")
         actual = {line.strip() for line in sums.read_text(encoding="utf-8").splitlines() if line.strip()}
         if actual != expected:
             fail(f"{sums.relative_to(ROOT)}: entries do not match release.json")
@@ -234,6 +247,16 @@ def validate_v2(catalog: dict, v1_keys: set[tuple[str, str, str]]) -> None:
                 image.get("sizeBytes"),
                 "/".join(key),
             )
+            for sub in image.get("contains", []):
+                if sub.get("downloadUrl"):
+                    if f"/v{key[2]}/" not in sub["downloadUrl"]:
+                        fail(f"{'/'.join(key)}: contained image URL must use its version directory")
+                    check_artifact(
+                        sub["downloadUrl"],
+                        sub.get("sha256"),
+                        sub.get("sizeBytes"),
+                        f"{'/'.join(key)}:{sub.get('role')}",
+                    )
         validate_ranges(images, "/".join(key))
         release_url = version.get("releaseUrl")
         if release_url:
@@ -277,14 +300,14 @@ def validate_immutability(base_ref: str) -> None:
         if version_dir in checked_dirs:
             continue
         checked_dirs.add(version_dir)
-        existed = subprocess.check_output(
+        existed_files = subprocess.check_output(
             ["git", "ls-tree", "-r", "--name-only", base_ref, "--", version_dir],
             cwd=ROOT,
             text=True,
-        ).strip()
-        if existed:
-            fail(f"immutable published directory changed: {version_dir}")
-
+        ).splitlines()
+        for changed_file in changed:
+            if changed_file in existed_files and changed_file.endswith((".bin", ".hex")):
+                fail(f"immutable published binary modified: {changed_file}")
 
 def main() -> int:
     parser = argparse.ArgumentParser()
