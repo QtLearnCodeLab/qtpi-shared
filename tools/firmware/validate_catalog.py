@@ -179,6 +179,16 @@ def validate_release(url: str, key: tuple[str, str, str], catalog_images: list[d
                         fail(f"{path.relative_to(ROOT)}: size mismatch for {sub['file']}")
                     elif sub.get("sha256") and digest(sub_file) != sub["sha256"]:
                         fail(f"{path.relative_to(ROOT)}: SHA-256 mismatch for {sub['file']}")
+    artifacts = release.get("artifacts", [])
+    for artifact in artifacts:
+        artifact_file = path.parent / artifact.get("file", "")
+        if not artifact_file.is_file():
+            fail(f"{path.relative_to(ROOT)}: missing artifact {artifact_file.name}")
+            continue
+        if artifact_file.stat().st_size != artifact.get("sizeBytes"):
+            fail(f"{path.relative_to(ROOT)}: size mismatch for {artifact_file.name}")
+        if digest(artifact_file) != artifact.get("sha256"):
+            fail(f"{path.relative_to(ROOT)}: SHA-256 mismatch for {artifact_file.name}")
     validate_ranges(images, str(path.relative_to(ROOT)))
     expected_tag_flavor = {"firmata-dual": "firmata", "micropython": "micropython"}.get(key[1])
     if expected_tag_flavor:
@@ -203,6 +213,8 @@ def validate_release(url: str, key: tuple[str, str, str], catalog_images: list[d
             for sub in image.get("contains", []):
                 if "sha256" in sub and "file" in sub:
                     expected.add(f"{sub['sha256']}  {sub['file']}")
+        for artifact in artifacts:
+            expected.add(f"{artifact['sha256']}  {artifact['file']}")
         actual = {line.strip() for line in sums.read_text(encoding="utf-8").splitlines() if line.strip()}
         if actual != expected:
             fail(f"{sums.relative_to(ROOT)}: entries do not match release.json")
@@ -224,6 +236,29 @@ def validate_latest(
         fail(f"{path.relative_to(ROOT)}: releaseUrl does not exist")
     if latest.get("releaseUrl") != expected_release_url:
         fail(f"{path.relative_to(ROOT)}: releaseUrl does not match the default release")
+    if release_path is None or not release_path.is_file():
+        return
+    release = load(release_path)
+    complete_images = [
+        image for image in release.get("images", []) if image.get("role") == "complete"
+    ]
+    mirror_dir = path.parent / "latest"
+    expected_names = {image.get("file") for image in complete_images}
+    actual_names = (
+        {item.name for item in mirror_dir.glob("*.bin")} if mirror_dir.is_dir() else set()
+    )
+    if actual_names != expected_names:
+        fail(
+            f"{mirror_dir.relative_to(ROOT)}: latest binary mirror contains "
+            f"{sorted(actual_names)}, expected {sorted(expected_names)}"
+        )
+    for image in complete_images:
+        mirror = mirror_dir / image["file"]
+        if mirror.is_file() and (
+            mirror.stat().st_size != image.get("sizeBytes")
+            or digest(mirror) != image.get("sha256")
+        ):
+            fail(f"{mirror.relative_to(ROOT)}: latest mirror does not match release descriptor")
 
 
 def validate_v2(catalog: dict, v1_keys: set[tuple[str, str, str]]) -> None:
@@ -307,7 +342,36 @@ def validate_immutability(base_ref: str) -> None:
         ).splitlines()
         for changed_file in changed:
             if changed_file in existed_files and changed_file.endswith((".bin", ".hex")):
-                fail(f"immutable published binary modified: {changed_file}")
+                introduction_commits = subprocess.check_output(
+                    [
+                        "git",
+                        "log",
+                        "--diff-filter=A",
+                        "--format=%H",
+                        base_ref,
+                        "--",
+                        changed_file,
+                    ],
+                    cwd=ROOT,
+                    text=True,
+                ).splitlines()
+                if not introduction_commits:
+                    fail(f"cannot find original publication for immutable binary: {changed_file}")
+                    continue
+                original_commit = introduction_commits[-1]
+                original_blob = subprocess.check_output(
+                    ["git", "rev-parse", f"{original_commit}:{changed_file}"],
+                    cwd=ROOT,
+                    text=True,
+                ).strip()
+                current_blob = subprocess.check_output(
+                    ["git", "hash-object", str(ROOT / changed_file)],
+                    cwd=ROOT,
+                    text=True,
+                ).strip()
+                if current_blob != original_blob:
+                    fail(f"immutable published binary differs from original: {changed_file}")
+
 
 def main() -> int:
     parser = argparse.ArgumentParser()

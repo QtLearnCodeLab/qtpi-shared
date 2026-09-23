@@ -66,6 +66,12 @@
         "$ref": "#/$defs/image"
       }
     },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/image"
+      }
+    },
     "flash": {
       "type": "object"
     },

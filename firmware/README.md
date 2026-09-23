@@ -22,7 +22,7 @@ All manifests and firmware artifacts are hosted in [`qtpi-shared`](https://githu
 | Board ID | Flavor ID | Version | Protocol | Primary Flash Offset | Binary File | Size (Bytes) | SHA-256 Digest |
 | :--- | :--- | :---: | :--- | :---: | :--- | :---: | :--- |
 | **`qtpi-veda-esp32`** | `firmata-dual` | **`1.0.6`** | `esptool` | `0x0000` | `qtpi-esp32-firmata-v1.0.6.bin` | 1,334,272 | `7367e6f2a1d2af6ab283ed0a9d2cd183b443b3fe5d83422f08478021fde6621c` |
-| **`qtpi-veda-esp32`** | `micropython` | **`1.1.0`** | `esptool` | `0x0000` | `qtpi-esp32-micropython-v1.1.0.bin` | 15,794,176 | `af0e99b80cf9508425778a87bb66277424af0e2481dba00fb112e3a82d2257da` |
+| **`qtpi-veda-esp32`** | `micropython` | **`1.1.1`** | `esptool` | `0x0000` | `qtpi-esp32-micropython-v1.1.1.bin` | 15,794,176 | `a98799ffe236a7d143a51ec06131dfa98b1af2b8eeef663318e6d1d0bf3a46a7` |
 | **`qtpi-veda-2560`** | `firmata` | **`1.0.4`** | `stk500v2` | — | `QtPiFirmataVeda.ino.hex` | 96,985 | `0af74c81c01e26e569583db5f54b8b992b2be90fd65ce4c2dc48130a28bda1b0` |
 | **`qtpi-rio-328p`** | `firmata` | **`1.0.2`** | `stk500v1` | — | `QtPiFirmataRio.hex` | 77,344 | `4108937093e5d7d43741ad5f0a382adcca4153e0f50fea4ad448a06817d2ba49` |
 
@@ -33,8 +33,8 @@ All manifests and firmware artifacts are hosted in [`qtpi-shared`](https://githu
 QtPi MicroPython builds for the Veda ESP32 using a custom 16MB OTA partition scheme (`partitions-ota-qtpy-16.csv`). All standalone partition binaries are published in the version directory alongside the merged factory image:
 
 ```text
-firmware/veda-esp32/micropython/v1.1.0/
-├── qtpi-esp32-micropython-v1.1.0.bin  (0x0000  - 16MB full factory merged image)
+firmware/veda-esp32/micropython/v1.1.1/
+├── qtpi-esp32-micropython-v1.1.1.bin  (0x0000  - 16MB full factory merged image)
 ├── firmware.bin                       (0x1000  - Bootloader + Partitions + OTA Data + App)
 ├── qtpi_lfs.bin                       (0x610000- 9MB LittleFS filesystem with QtPi scripts)
 ├── micropython.bin                    (0x10000 - MicroPython app slot only)
@@ -49,14 +49,14 @@ firmware/veda-esp32/micropython/v1.1.0/
 
 | Partition / Role | Type | SubType | Flash Offset | Binary File | Size (Bytes) | SHA-256 Digest |
 | :--- | :--- | :--- | :---: | :--- | :---: | :--- |
-| **Complete Factory** | — | — | `0x0000` | `qtpi-esp32-micropython-v1.1.0.bin` | 15,794,176 | `af0e99b80cf9508425778a87bb66277424af0e2481dba00fb112e3a82d2257da` |
-| **Core Firmware** | — | — | `0x1000` | `firmware.bin` | 1,912,064 | `39b394f1e687dd6b2d28098ad59e79bc091ecbc529dbc210b5f366ca7704b846` |
+| **Complete Factory** | — | — | `0x0000` | `qtpi-esp32-micropython-v1.1.1.bin` | 15,794,176 | `a98799ffe236a7d143a51ec06131dfa98b1af2b8eeef663318e6d1d0bf3a46a7` |
+| **Core Firmware** | — | — | `0x1000` | `firmware.bin` | 1,912,064 | `8faf92c64485d6b49882a21d42918324c479195a627c4d364eb68587bbab3201` |
 | **Bootloader** | — | — | `0x1000` | `bootloader.bin` | 24,320 | `c3d6a516ded9d81fe0d49a35098bf1f97eee7bb99cb28767a15ebb0e26571cf2` |
 | **Partitions** | — | — | `0x8000` | `partition-table.bin` | 3,072 | `bd84ce25a5eced1c114ab591b97b22b90ff9c793d7cc683e7de3f3ebf32c54d0` |
 | **NVS** | `data` | `nvs` | `0x9000` | *(runtime)* | 16,384 | — |
 | **OTA Data** | `data` | `ota` | `0xd000` | `ota_data_initial.bin` | 8,192 | `7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f` |
 | **PHY Init** | `data` | `phy` | `0xf000` | *(runtime)* | 4,096 | — |
-| **App Slot 0 (`ota_0`)** | `app` | `ota_0` | `0x10000` | `micropython.bin` | 1,850,624 | `3e6591bab049b4b48e98e6df27239c7d730a1bd421ce6ae5b2e5779728748fb8` |
+| **App Slot 0 (`ota_0`)** | `app` | `ota_0` | `0x10000` | `micropython.bin` | 1,850,624 | `6cc249847a59e9bf25b45c8381641d89f08c5394c6ffbffa371fc279456bc83e` |
 | **App Slot 1 (`ota_1`)** | `app` | `ota_1` | `0x310000` | *(reserved)* | 3,145,728 | — |
 | **LittleFS (`vfs`)** | `data` | `littlefs`| `0x610000` | `qtpi_lfs.bin` | 9,437,184 | `ede7bd01e624210bc2f022b65bee1bd189f37046d92aa1d7d557a4043ad41555` |
 | **Extended NVS** | `data` | `nvs` | `0xf10000` | *(runtime)* | 917,504 | — |
@@ -70,7 +70,7 @@ Downstream flashers (e.g., Web Serial, `esptool-js`, or CLI `esptool.py`) can ch
 ### Mode A: Full Factory Flash (`0x0000`)
 Flashes the complete 16MB image containing bootloader, partition table, otadata, MicroPython runtime, and initial LittleFS content:
 ```bash
-esptool.py --chip esp32 --port <PORT> --baud 921600 write_flash 0x0000 qtpi-esp32-micropython-v1.1.0.bin
+esptool.py --chip esp32 --port <PORT> --baud 921600 write_flash 0x0000 qtpi-esp32-micropython-v1.1.1.bin
 ```
 
 ### Mode B: Firmware-Only Update (`0x1000` or `0x10000` — Preserves User Files)
@@ -222,6 +222,12 @@ for (const target of imagesToFlash) {
 ---
 
 ## 8. Catalog Validation
+
+Version directories such as `v1.1.0/` are immutable after publication. New
+firmware bytes require a new semantic version and a new directory. The
+`latest.json` file is the authoritative mutable pointer. The adjacent `latest/`
+directory is retained only as a compatibility mirror and must contain exactly
+the complete image named by the selected release descriptor.
 
 Validate schemas, binary digests, and offset non-overlapping rules at any time:
 

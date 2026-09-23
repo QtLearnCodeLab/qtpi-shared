@@ -1,0 +1,9 @@
+release=qtpi-esp32-micropython-v1.1.1
+source_commit=bcf7a0d2d5107cda0d43944659de7fa717cdb2cb
+esp_idf=5.5
+micropython=1.27.0-preview
+uqtpy=1.1.1
+firmware_offset=0x1000
+littlefs_offset=0x610000
+sha256=a98799ffe236a7d143a51ec06131dfa98b1af2b8eeef663318e6d1d0bf3a46a7
+size_bytes=15794176
