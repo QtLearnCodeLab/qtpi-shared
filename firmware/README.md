@@ -22,7 +22,7 @@ All manifests and firmware artifacts are hosted in [`qtpi-shared`](https://githu
 | Board ID | Flavor ID | Version | Protocol | Primary Flash Offset | Binary File | Size (Bytes) | SHA-256 Digest |
 | :--- | :--- | :---: | :--- | :---: | :--- | :---: | :--- |
 | **`qtpi-veda-esp32`** | `firmata-dual` | **`1.0.6`** | `esptool` | `0x0000` | `qtpi-esp32-firmata-v1.0.6.bin` | 1,334,272 | `7367e6f2a1d2af6ab283ed0a9d2cd183b443b3fe5d83422f08478021fde6621c` |
-| **`qtpi-veda-esp32`** | `micropython` | **`1.1.0`** | `esptool` | `0x0000` | `qtpi-esp32-micropython-v1.1.0.bin` | 15,794,176 | `25fa11e07f90cfe3cad24e0714e3b7765b766f3c8191a48495fc77a5aadc2df4` |
+| **`qtpi-veda-esp32`** | `micropython` | **`1.1.0`** | `esptool` | `0x0000` | `qtpi-esp32-micropython-v1.1.0.bin` | 15,794,176 | `af0e99b80cf9508425778a87bb66277424af0e2481dba00fb112e3a82d2257da` |
 | **`qtpi-veda-2560`** | `firmata` | **`1.0.4`** | `stk500v2` | — | `QtPiFirmataVeda.ino.hex` | 96,985 | `0af74c81c01e26e569583db5f54b8b992b2be90fd65ce4c2dc48130a28bda1b0` |
 | **`qtpi-rio-328p`** | `firmata` | **`1.0.2`** | `stk500v1` | — | `QtPiFirmataRio.hex` | 77,344 | `4108937093e5d7d43741ad5f0a382adcca4153e0f50fea4ad448a06817d2ba49` |
 
@@ -49,16 +49,16 @@ firmware/veda-esp32/micropython/v1.1.0/
 
 | Partition / Role | Type | SubType | Flash Offset | Binary File | Size (Bytes) | SHA-256 Digest |
 | :--- | :--- | :--- | :---: | :--- | :---: | :--- |
-| **Complete Factory** | — | — | `0x0000` | `qtpi-esp32-micropython-v1.1.0.bin` | 15,794,176 | `25fa11e07f90cfe3cad24e0714e3b7765b766f3c8191a48495fc77a5aadc2df4` |
-| **Core Firmware** | — | — | `0x1000` | `firmware.bin` | 1,912,064 | `92d249b2a4233452eaf838e5e2fdec478c42fe17772e7fcac4ad8a7e11b053f8` |
-| **Bootloader** | — | — | `0x1000` | `bootloader.bin` | 24,320 | `66a86e79298d12647debab38175105fe727d43674a51fd9a709bd6d7c72774c8` |
+| **Complete Factory** | — | — | `0x0000` | `qtpi-esp32-micropython-v1.1.0.bin` | 15,794,176 | `af0e99b80cf9508425778a87bb66277424af0e2481dba00fb112e3a82d2257da` |
+| **Core Firmware** | — | — | `0x1000` | `firmware.bin` | 1,912,064 | `39b394f1e687dd6b2d28098ad59e79bc091ecbc529dbc210b5f366ca7704b846` |
+| **Bootloader** | — | — | `0x1000` | `bootloader.bin` | 24,320 | `c3d6a516ded9d81fe0d49a35098bf1f97eee7bb99cb28767a15ebb0e26571cf2` |
 | **Partitions** | — | — | `0x8000` | `partition-table.bin` | 3,072 | `bd84ce25a5eced1c114ab591b97b22b90ff9c793d7cc683e7de3f3ebf32c54d0` |
 | **NVS** | `data` | `nvs` | `0x9000` | *(runtime)* | 16,384 | — |
 | **OTA Data** | `data` | `ota` | `0xd000` | `ota_data_initial.bin` | 8,192 | `7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f` |
 | **PHY Init** | `data` | `phy` | `0xf000` | *(runtime)* | 4,096 | — |
-| **App Slot 0 (`ota_0`)** | `app` | `ota_0` | `0x10000` | `micropython.bin` | 1,850,624 | `c8674b53c24fb31fb9f193db0cdf02dc5152eb3035ea3294bcc7a0ab76e8ee72` |
+| **App Slot 0 (`ota_0`)** | `app` | `ota_0` | `0x10000` | `micropython.bin` | 1,850,624 | `3e6591bab049b4b48e98e6df27239c7d730a1bd421ce6ae5b2e5779728748fb8` |
 | **App Slot 1 (`ota_1`)** | `app` | `ota_1` | `0x310000` | *(reserved)* | 3,145,728 | — |
-| **LittleFS (`vfs`)** | `data` | `littlefs`| `0x610000` | `qtpi_lfs.bin` | 9,437,184 | `1185bafd606dbd9af75e74ce27d8f5d9637358d9f1582855002e9080b1360c9c` |
+| **LittleFS (`vfs`)** | `data` | `littlefs`| `0x610000` | `qtpi_lfs.bin` | 9,437,184 | `ede7bd01e624210bc2f022b65bee1bd189f37046d92aa1d7d557a4043ad41555` |
 | **Extended NVS** | `data` | `nvs` | `0xf10000` | *(runtime)* | 917,504 | — |
 
 ---

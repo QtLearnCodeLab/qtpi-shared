@@ -77,7 +77,7 @@
               "defaultBaud": 921600,
               "fallbackBaud": 115200,
               "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.1.0/qtpi-esp32-micropython-v1.1.0.bin",
-              "sha256": "25fa11e07f90cfe3cad24e0714e3b7765b766f3c8191a48495fc77a5aadc2df4",
+              "sha256": "af0e99b80cf9508425778a87bb66277424af0e2481dba00fb112e3a82d2257da",
               "sizeBytes": 15794176
             },
             {
