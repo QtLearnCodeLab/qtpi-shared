@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-09-23T18:25:50Z",
+  "updatedAt": "2026-09-24T01:42:54Z",
   "boards": [
     {
       "boardId": "qtpi-veda-esp32",
@@ -12,9 +12,24 @@
           "flavorId": "firmata-dual",
           "displayName": "QtPi Firmata Dual-Mode (BLE + BT + USB)",
           "description": "Simultaneous BLE GATT, Bluetooth SPP, and USB Firmata for Code2Play / App Inventor.",
-          "defaultVersion": "1.0.7",
+          "defaultVersion": "1.0.8",
           "latestUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/latest.json",
           "versions": [
+            {
+              "version": "1.0.8",
+              "releaseDate": "2026-09-24",
+              "releaseUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/v1.0.8/release.json",
+              "metadataStatus": "release-descriptor",
+              "images": [
+                {
+                  "role": "complete",
+                  "offset": "0x0000",
+                  "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/v1.0.8/qtpi-esp32-firmata-v1.0.8.bin",
+                  "sha256": "6df3ab9213448e8e69774d2c697d67e880be343f8327d1ebc7ef2664b091d115",
+                  "sizeBytes": 1336512
+                }
+              ]
+            },
             {
               "version": "1.0.7",
               "releaseDate": "2026-09-23",
