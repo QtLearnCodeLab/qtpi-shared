@@ -21,8 +21,8 @@ All manifests and firmware artifacts are hosted in [`qtpi-shared`](https://githu
 
 | Board ID | Flavor ID | Version | Protocol | Primary Flash Offset | Binary File | Size (Bytes) | SHA-256 Digest |
 | :--- | :--- | :---: | :--- | :---: | :--- | :---: | :--- |
-| **`qtpi-veda-esp32`** | `firmata-dual` | **`1.0.8`** | `esptool` | `0x0000` | `qtpi-esp32-firmata-v1.0.8.bin` | 1,336,512 | `6df3ab9213448e8e69774d2c697d67e880be343f8327d1ebc7ef2664b091d115` |
-| **`qtpi-veda-esp32`** | `micropython` | **`1.1.1`** | `esptool` | `0x0000` | `qtpi-esp32-micropython-v1.1.1.bin` | 15,794,176 | `a98799ffe236a7d143a51ec06131dfa98b1af2b8eeef663318e6d1d0bf3a46a7` |
+| **`qtpi-veda-esp32`** | `firmata-dual` | **`1.0.9`** | `esptool` | `0x0000` | `qtpi-esp32-firmata-v1.0.9.bin` | 1,336,880 | `aa1c4dc1ce36e6fca231de3743664810ac7d952a102542d54f4fdd96d5c5c90a` |
+| **`qtpi-veda-esp32`** | `micropython` | **`1.1.2`** | `esptool` | `0x0000` | `qtpi-esp32-micropython-v1.1.2.bin` | 15,794,176 | `f68ca9bd2653e2a0525f729f86dc87f7dc62f16afe4db6789c82327f22c61c86` |
 | **`qtpi-veda-2560`** | `firmata` | **`1.0.4`** | `stk500v2` | — | `QtPiFirmataVeda.ino.hex` | 96,985 | `0af74c81c01e26e569583db5f54b8b992b2be90fd65ce4c2dc48130a28bda1b0` |
 | **`qtpi-rio-328p`** | `firmata` | **`1.0.2`** | `stk500v1` | — | `QtPiFirmataRio.hex` | 77,344 | `4108937093e5d7d43741ad5f0a382adcca4153e0f50fea4ad448a06817d2ba49` |
 

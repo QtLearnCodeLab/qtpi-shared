@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "boardId": "qtpi-veda-esp32",
+  "flavorId": "micropython",
+  "version": "1.1.2",
+  "source": {
+    "repository": "QtLearnCodeLab/qtmicropython",
+    "commit": "ba9446d77ed2adb43d9d37011c975f4cf15f0b7b",
+    "tag": "qtpi-esp32-micropython-v1.1.2"
+  },
+  "dependencies": {
+    "espIdf": "5.5",
+    "micropython": "1.27.0-preview",
+    "uqtpy": "1.1.2"
+  },
+  "images": [
+    {
+      "role": "complete",
+      "file": "qtpi-esp32-micropython-v1.1.2.bin",
+      "offset": "0x0000",
+      "sha256": "f68ca9bd2653e2a0525f729f86dc87f7dc62f16afe4db6789c82327f22c61c86",
+      "sizeBytes": 15794176,
+      "contains": [
+        {
+          "role": "firmware",
+          "file": "firmware.bin",
+          "offset": "0x1000",
+          "sha256": "b29c0efb0ca72a2684f7c4418c69b9b37004ce6dd7f33de44b61a429c34f8a20",
+          "sizeBytes": 1912192
+        },
+        {
+          "role": "littlefs",
+          "file": "qtpi_lfs.bin",
+          "offset": "0x610000",
+          "sha256": "ede7bd01e624210bc2f022b65bee1bd189f37046d92aa1d7d557a4043ad41555",
+          "sizeBytes": 9437184
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "role": "firmware",
+      "file": "firmware.bin",
+      "offset": "0x1000",
+      "sha256": "b29c0efb0ca72a2684f7c4418c69b9b37004ce6dd7f33de44b61a429c34f8a20",
+      "sizeBytes": 1912192
+    },
+    {
+      "role": "littlefs",
+      "file": "qtpi_lfs.bin",
+      "offset": "0x610000",
+      "sha256": "ede7bd01e624210bc2f022b65bee1bd189f37046d92aa1d7d557a4043ad41555",
+      "sizeBytes": 9437184
+    },
+    {
+      "role": "bootloader",
+      "file": "bootloader.bin",
+      "offset": "0x1000",
+      "sha256": "c3d6a516ded9d81fe0d49a35098bf1f97eee7bb99cb28767a15ebb0e26571cf2",
+      "sizeBytes": 24320
+    },
+    {
+      "role": "partition-table",
+      "file": "partition-table.bin",
+      "offset": "0x8000",
+      "sha256": "bd84ce25a5eced1c114ab591b97b22b90ff9c793d7cc683e7de3f3ebf32c54d0",
+      "sizeBytes": 3072
+    },
+    {
+      "role": "ota-data",
+      "file": "ota_data_initial.bin",
+      "offset": "0xd000",
+      "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f",
+      "sizeBytes": 8192
+    },
+    {
+      "role": "application",
+      "file": "micropython.bin",
+      "offset": "0x10000",
+      "sha256": "cc1a0f6d40697a17320f70b345d39da48b72666e30c6b7d9e39c76d51badc505",
+      "sizeBytes": 1850752
+    }
+  ],
+  "flash": {
+    "chip": "esp32",
+    "size": "16MB"
+  },
+  "requiresErase": false
+}

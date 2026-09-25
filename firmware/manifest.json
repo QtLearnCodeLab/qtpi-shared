@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-24T01:42:54Z",
+  "updatedAt": "2026-09-25T05:01:31Z",
   "boards": [
     {
       "boardId": "qtpi-veda-esp32",
@@ -31,8 +31,21 @@
           "flavorId": "firmata-dual",
           "displayName": "QtPi Firmata Dual-Mode (BLE + BT + USB)",
           "description": "Simultaneous BLE GATT, Bluetooth SPP, and USB Firmata for Code2Play / App Inventor.",
-          "defaultVersion": "1.0.8",
+          "defaultVersion": "1.0.9",
           "versions": [
+            {
+              "version": "1.0.9",
+              "releaseDate": "2026-09-25",
+              "flashOffset": "0x0000",
+              "flashMode": "dio",
+              "flashFreq": "40m",
+              "flashSize": "16MB",
+              "defaultBaud": 921600,
+              "fallbackBaud": 115200,
+              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/v1.0.9/qtpi-esp32-firmata-v1.0.9.bin",
+              "sha256": "aa1c4dc1ce36e6fca231de3743664810ac7d952a102542d54f4fdd96d5c5c90a",
+              "sizeBytes": 1336880
+            },
             {
               "version": "1.0.8",
               "releaseDate": "2026-09-24",
@@ -91,8 +104,21 @@
           "flavorId": "micropython",
           "displayName": "QtPi MicroPython Runtime",
           "description": "QtPi MicroPython firmware with the frozen uqtpy framework and populated LittleFS content for QtBlocks.",
-          "defaultVersion": "1.1.1",
+          "defaultVersion": "1.1.2",
           "versions": [
+            {
+              "version": "1.1.2",
+              "releaseDate": "2026-09-25",
+              "flashOffset": "0x0000",
+              "flashMode": "dio",
+              "flashFreq": "80m",
+              "flashSize": "16MB",
+              "defaultBaud": 921600,
+              "fallbackBaud": 115200,
+              "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.1.2/qtpi-esp32-micropython-v1.1.2.bin",
+              "sha256": "f68ca9bd2653e2a0525f729f86dc87f7dc62f16afe4db6789c82327f22c61c86",
+              "sizeBytes": 15794176
+            },
             {
               "version": "1.1.1",
               "releaseDate": "2026-09-23",

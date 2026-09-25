@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-09-24T01:42:54Z",
+  "updatedAt": "2026-09-25T05:01:31Z",
   "boards": [
     {
       "boardId": "qtpi-veda-esp32",
@@ -12,9 +12,24 @@
           "flavorId": "firmata-dual",
           "displayName": "QtPi Firmata Dual-Mode (BLE + BT + USB)",
           "description": "Simultaneous BLE GATT, Bluetooth SPP, and USB Firmata for Code2Play / App Inventor.",
-          "defaultVersion": "1.0.8",
+          "defaultVersion": "1.0.9",
           "latestUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/latest.json",
           "versions": [
+            {
+              "version": "1.0.9",
+              "releaseDate": "2026-09-25",
+              "releaseUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/v1.0.9/release.json",
+              "metadataStatus": "release-descriptor",
+              "images": [
+                {
+                  "role": "complete",
+                  "offset": "0x0000",
+                  "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/firmata-dual/v1.0.9/qtpi-esp32-firmata-v1.0.9.bin",
+                  "sha256": "aa1c4dc1ce36e6fca231de3743664810ac7d952a102542d54f4fdd96d5c5c90a",
+                  "sizeBytes": 1336880
+                }
+              ]
+            },
             {
               "version": "1.0.8",
               "releaseDate": "2026-09-24",
@@ -80,9 +95,40 @@
           "flavorId": "micropython",
           "displayName": "QtPi MicroPython Runtime",
           "description": "QtPi MicroPython firmware with the frozen uqtpy framework and populated LittleFS content for QtBlocks.",
-          "defaultVersion": "1.1.1",
+          "defaultVersion": "1.1.2",
           "latestUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/latest.json",
           "versions": [
+            {
+              "version": "1.1.2",
+              "releaseDate": "2026-09-25",
+              "releaseUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.1.2/release.json",
+              "metadataStatus": "release-descriptor",
+              "images": [
+                {
+                  "role": "complete",
+                  "offset": "0x0000",
+                  "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.1.2/qtpi-esp32-micropython-v1.1.2.bin",
+                  "sha256": "f68ca9bd2653e2a0525f729f86dc87f7dc62f16afe4db6789c82327f22c61c86",
+                  "sizeBytes": 15794176,
+                  "contains": [
+                    {
+                      "role": "firmware",
+                      "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.1.2/firmware.bin",
+                      "offset": "0x1000",
+                      "sha256": "b29c0efb0ca72a2684f7c4418c69b9b37004ce6dd7f33de44b61a429c34f8a20",
+                      "sizeBytes": 1912192
+                    },
+                    {
+                      "role": "littlefs",
+                      "downloadUrl": "https://raw.githubusercontent.com/QtLearnCodeLab/qtpi-shared/main/firmware/veda-esp32/micropython/v1.1.2/qtpi_lfs.bin",
+                      "offset": "0x610000",
+                      "sha256": "ede7bd01e624210bc2f022b65bee1bd189f37046d92aa1d7d557a4043ad41555",
+                      "sizeBytes": 9437184
+                    }
+                  ]
+                }
+              ]
+            },
             {
               "version": "1.1.1",
               "releaseDate": "2026-09-23",
