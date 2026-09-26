@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "boardId": "qtpi-veda-esp32",
+  "flavorId": "firmata-dual",
+  "version": "1.0.11",
+  "source": {
+    "repository": "PlugPlayInnovate/QtPiFirmata",
+    "commit": "c77acbee3e81d9313f0e9c7af8ea5da30fa9a3ec",
+    "tag": "qtpi-esp32-firmata-v1.0.11"
+  },
+  "dependencies": {
+    "arduinoEsp32": "3.3.7",
+    "firmata": "2.5.8"
+  },
+  "images": [
+    {
+      "role": "complete",
+      "file": "qtpi-esp32-firmata-v1.0.11.bin",
+      "offset": "0x0000",
+      "sha256": "cd6681d2f27412b9fb58fb571c998a24d389a08a907c78fc9210e0fc1532b68b",
+      "sizeBytes": 1337488
+    }
+  ],
+  "flash": {
+    "chip": "esp32",
+    "mode": "dio",
+    "frequency": "40m",
+    "size": "16MB"
+  },
+  "requiresErase": false
+}

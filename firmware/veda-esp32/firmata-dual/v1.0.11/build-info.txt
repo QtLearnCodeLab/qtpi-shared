@@ -1,0 +1,7 @@
+release=qtpi-esp32-firmata-v1.0.11
+source_commit=c77acbee3e81d9313f0e9c7af8ea5da30fa9a3ec
+board_fqbn=esp32:esp32:esp32:PSRAM=disabled,PartitionScheme=app3M_fat9M_16MB,CPUFreq=240,FlashMode=dio,FlashFreq=40,FlashSize=16M,UploadSpeed=921600,DebugLevel=none
+arduino_esp32=3.3.7
+firmata=2.5.8
+sha256=cd6681d2f27412b9fb58fb571c998a24d389a08a907c78fc9210e0fc1532b68b
+size_bytes=1337488
